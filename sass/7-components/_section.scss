@@ -1,0 +1,60 @@
+/*
+================================================================================
+Section
+================================================================================
+
+Stylized container for grouping contents of a page.
+*/
+
+
+// Vertical padding.
+
+$section-padding: $spacer * 4;
+
+
+.section {
+    padding-bottom: $section-padding;
+    padding-top: $section-padding;
+
+    &--bordered {
+        border-bottom: 1px solid $color-border;
+        border-top: 1px solid $color-border;
+    }
+}
+
+
+/* Background variants
+============================================================================= */
+
+// Register the background variants for the sections that you will
+// use in your project. These may use different colors,
+// textures or images as backgrounds.
+
+
+.section--light {
+    background-color: $color-gray-lighten-5;
+}
+
+
+/* Size variants
+============================================================================= */
+
+.section--xs {
+    padding-bottom: $section-padding * 0.5;
+    padding-top: $section-padding * 0.5;
+}
+
+.section--sm {
+    padding-bottom: $section-padding * 0.75;
+    padding-top: $section-padding * 0.75;
+}
+
+.section--lg {
+    padding-bottom: $section-padding * 1.5;
+    padding-top: $section-padding * 1.5;
+}
+
+.section--xl {
+    padding-bottom: $section-padding * 2;
+    padding-top: $section-padding * 2;
+}

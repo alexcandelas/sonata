@@ -1,0 +1,16 @@
+/*
+================================================================================
+List inline
+================================================================================
+
+Removes bullets from a list and displays its items in a single line.
+*/
+
+.list-inline {
+    list-style: none;
+    margin-left: 0;
+
+    > li {
+        display: inline-block;
+    }
+}

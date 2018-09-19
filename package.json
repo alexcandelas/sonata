@@ -1,0 +1,50 @@
+{
+  "name": "sonatacss",
+  "version": "0.1.0",
+  "description": "A responsive CSS framework based on ITCSS architecture and BEM methodology.",
+  "main": "sass/sonata.scss",
+  "scripts": {
+    "build": "rimraf css/* && npm run css-compile && npm run css-prefix && npm run css-minify",
+    "css-compile": "node-sass --output-style expanded sass/sonata.scss css/sonata.css",
+    "css-minify": "cleancss css/sonata.css -o css/sonata.min.css",
+    "css-prefix": "postcss --no-map --use autoprefixer -r css/sonata.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexcandelas/sonata.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "framework",
+    "itcss",
+    "bem",
+    "ui",
+    "front-end"
+  ],
+  "author": "Alex Candelas <axcandelas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexcandelas/sonata/issues"
+  },
+  "homepage": "https://github.com/alexcandelas/sonata",
+  "browserslist": [
+    "> 0.5%",
+    "last 3 versions",
+    "not dead",
+    "Edge >= 12",
+    "Explorer 11",
+    "Firefox ESR"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.9.3",
+    "postcss-cli": "^6.0.0",
+    "rimraf": "^2.6.2"
+  },
+  "files": [
+    "css",
+    "sass"
+  ]
+}

@@ -1,0 +1,21 @@
+# Common files
+*~
+._*
+.DS_Store
+.Spotlight-V100
+.Trashes
+Desktop.ini
+Thumbs.db
+
+# IDEs
+.idea
+.settings
+.sublime-*
+
+# Node
+/node_modules
+npm-debug.log
+
+# Sass/CSS
+.sass-cache
+*.css.map
