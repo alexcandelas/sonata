@@ -72,4 +72,4 @@ Sonata takes ideas or inspiration from other projects made by awesome people:
 
 ## License
 
-Released under the [MIT License](https://github.com/alexcandelas/sonata/LICENSE.md).
+Released under the [MIT License](https://github.com/alexcandelas/sonata/blob/master/LICENSE).
