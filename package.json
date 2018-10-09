@@ -14,11 +14,11 @@
     "url": "git+https://github.com/alexcandelas/sonata.git"
   },
   "keywords": [
-    "css",
-    "sass",
-    "framework",
     "itcss",
+    "css",
+    "framework",
     "bem",
+    "sass",
     "ui",
     "front-end"
   ],
