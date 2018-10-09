@@ -35,12 +35,6 @@ $form-field-icon-invalid: icon-solid-warning();
     position: relative;
     transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
     width: 100%;
-
-    &:focus,
-    &--focus {
-        border-color: $color-blue-lighten-2;
-        box-shadow: 0 0 3px $color-blue-lighten-3;
-    }
 }
 
 /*
@@ -141,4 +135,18 @@ select.form-field {
             background-image: url(icon-caret()), url($form-field-icon-valid);
         }
     }
+}
+
+
+/* Focus state
+============================================================================= */
+
+/*
+ * The focus modifier is defined after validation classes
+ * so that it can override them without increasing specificity.
+ */
+.form-field:focus,
+.form-field--focus {
+    border-color: $color-blue-lighten-2;
+    box-shadow: 0 0 3px $color-blue-lighten-3;
 }
