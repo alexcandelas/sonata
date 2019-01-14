@@ -1,5 +1,5 @@
 /*!
- * Sonata CSS Framework v0.1.0
+ * Sonata CSS Framework v0.1.2
  * https://github.com/alexcandelas/sonata
  * MIT License
  */
@@ -3049,12 +3049,6 @@ and textareas. It contains modifiers for validation feedback.
   width: 100%;
 }
 
-.form-field:focus, .form-file__text:focus,
-.form-file__upload:focus, .form-field--focus {
-  border-color: #85c2e0;
-  box-shadow: 0 0 3px #add6eb;
-}
-
 /*
  * Use a background icon in select elements for cross-browser consistency.
  *
@@ -3150,6 +3144,19 @@ select:not([size]):not([multiple]).form-field--invalid {
 
 select:not([size]):not([multiple]).form-field--valid {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23505963' d='M12 16l-6-6h12z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2320c372' stroke-width='2' stroke-miterlimit='10'%3E%3Cpath d='M5.5 12.5L10 17 20 7'/%3E%3C/svg%3E");
+}
+
+/* Focus state
+============================================================================= */
+/*
+ * The focus modifier is defined after validation classes
+ * so that it can override them without increasing specificity.
+ */
+.form-field:focus, .form-file__text:focus,
+.form-file__upload:focus,
+.form-field--focus {
+  border-color: #85c2e0;
+  box-shadow: 0 0 3px #add6eb;
 }
 
 /*
@@ -6884,7 +6891,7 @@ Position
 ================================================================================
 */
 .absolute {
-  position: relative !important;
+  position: absolute !important;
 }
 
 .fixed {
@@ -6938,7 +6945,7 @@ Position
 
 @media (min-width: 37.5em) {
   .sm\:absolute {
-    position: relative !important;
+    position: absolute !important;
   }
   .sm\:fixed {
     position: fixed !important;
@@ -6981,7 +6988,7 @@ Position
 
 @media (min-width: 45em) {
   .md\:absolute {
-    position: relative !important;
+    position: absolute !important;
   }
   .md\:fixed {
     position: fixed !important;
@@ -7024,7 +7031,7 @@ Position
 
 @media (min-width: 60em) {
   .lg\:absolute {
-    position: relative !important;
+    position: absolute !important;
   }
   .lg\:fixed {
     position: fixed !important;

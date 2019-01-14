@@ -7,7 +7,7 @@ Position
 @each $affix, $min-width in utility-breakpoints("position") {
     @include media($min-width) {
 
-        #{set-affix("absolute", $affix)} { position: relative !important; }
+        #{set-affix("absolute", $affix)} { position: absolute !important; }
         #{set-affix("fixed", $affix)}    { position: fixed !important; }
         #{set-affix("relative", $affix)} { position: relative !important; }
         #{set-affix("static", $affix)}   { position: static !important; }
