@@ -35,42 +35,42 @@ $alert-padding-y: 0.75em;
 
 // Icon for "info" type alerts.
 
-$message-icon-info: icon-info($size: 23);
+$alert-icon-info: icon-info($size: 23);
 
 
 // Icon for "info" type alerts with strong background.
 
-$message-icon-info-strong: icon-info(#fff, 23);
+$alert-icon-info-strong: icon-info(#fff, 23);
 
 
 // Icon for "danger" type alerts.
 
-$message-icon-danger: icon-error($size: 23);
+$alert-icon-danger: icon-error($size: 23);
 
 
 // Icon for "danger" type alerts with strong background.
 
-$message-icon-danger-strong: icon-error(#fff, 23);
+$alert-icon-danger-strong: icon-error(#fff, 23);
 
 
 // Icon for "success" type alerts.
 
-$message-icon-success: icon-check();
+$alert-icon-success: icon-check();
 
 
 // Icon for "success" type alerts with strong background.
 
-$message-icon-success-strong: icon-check(#fff);
+$alert-icon-success-strong: icon-check(#fff);
 
 
 // Icon for "warning" type alerts.
 
-$message-icon-warning: icon-solid-warning($color-warning);
+$alert-icon-warning: icon-solid-warning($color-warning);
 
 
 // Icon for "warning" type alerts with strong background.
 
-$message-icon-warning-strong: icon-warning($color-warning-text, 23);
+$alert-icon-warning-strong: icon-warning($color-warning-text, 23);
 
 
 /*
@@ -170,13 +170,13 @@ $message-icon-warning-strong: icon-warning($color-warning-text, 23);
     background-repeat: no-repeat;
     padding-left: 50px;
 
-    &.alert--info    { background-image: url($message-icon-info); }
-    &.alert--success { background-image: url($message-icon-success); }
-    &.alert--warning { background-image: url($message-icon-warning); }
-    &.alert--danger  { background-image: url($message-icon-danger); }
+    &.alert--info    { background-image: url($alert-icon-info); }
+    &.alert--success { background-image: url($alert-icon-success); }
+    &.alert--warning { background-image: url($alert-icon-warning); }
+    &.alert--danger  { background-image: url($alert-icon-danger); }
 
-    &.alert--strong.alert--info    { background-image: url($message-icon-info-strong); }
-    &.alert--strong.alert--success { background-image: url($message-icon-success-strong); }
-    &.alert--strong.alert--warning { background-image: url($message-icon-warning-strong); }
-    &.alert--strong.alert--danger  { background-image: url($message-icon-danger-strong); }
+    &.alert--strong.alert--info    { background-image: url($alert-icon-info-strong); }
+    &.alert--strong.alert--success { background-image: url($alert-icon-success-strong); }
+    &.alert--strong.alert--warning { background-image: url($alert-icon-warning-strong); }
+    &.alert--strong.alert--danger  { background-image: url($alert-icon-danger-strong); }
 }
