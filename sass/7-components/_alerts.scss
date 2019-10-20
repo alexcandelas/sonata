@@ -9,68 +9,68 @@ Show feedback to users in a nice dedicated container.
 // Define the side for the `accent border` variant.
 // Accepted values: `top`, `left`, `right`, `bottom`.
 
-$alert-accent-border-side: "left";
+$alert-accent-border-side: "left" !default;
 
 
 // Font size for the alert component. Use pixels or rems.
 
-$alert-font-size: 15px;
+$alert-font-size: 15px !default;
 
 
 // Define the `border-radius` property for the alert component.
 // The global `$radius` value is used by default.
 
-$alert-radius: $radius;
+$alert-radius: $radius !default;
 
 
 // Horizontal padding.
 
-$alert-padding-x: 1em;
+$alert-padding-x: 1em !default;
 
 
 // Vertical padding.
 
-$alert-padding-y: 0.75em;
+$alert-padding-y: 0.75em !default;
 
 
 // Icon for "info" type alerts.
 
-$alert-icon-info: icon-info($size: 23);
+$alert-icon-info: icon-info($size: 23) !default;
 
 
 // Icon for "info" type alerts with strong background.
 
-$alert-icon-info-strong: icon-info(#fff, 23);
+$alert-icon-info-strong: icon-info(#fff, 23) !default;
 
 
 // Icon for "danger" type alerts.
 
-$alert-icon-danger: icon-error($size: 23);
+$alert-icon-danger: icon-error($size: 23) !default;
 
 
 // Icon for "danger" type alerts with strong background.
 
-$alert-icon-danger-strong: icon-error(#fff, 23);
+$alert-icon-danger-strong: icon-error(#fff, 23) !default;
 
 
 // Icon for "success" type alerts.
 
-$alert-icon-success: icon-check();
+$alert-icon-success: icon-check() !default;
 
 
 // Icon for "success" type alerts with strong background.
 
-$alert-icon-success-strong: icon-check(#fff);
+$alert-icon-success-strong: icon-check(#fff) !default;
 
 
 // Icon for "warning" type alerts.
 
-$alert-icon-warning: icon-solid-warning($color-warning);
+$alert-icon-warning: icon-solid-warning($color-warning) !default;
 
 
 // Icon for "warning" type alerts with strong background.
 
-$alert-icon-warning-strong: icon-warning($color-warning-text, 23);
+$alert-icon-warning-strong: icon-warning($color-warning-text, 23) !default;
 
 
 /*

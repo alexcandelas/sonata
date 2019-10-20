@@ -13,22 +13,22 @@ completely functional and accessible.
 
 // Size of the component.
 
-$checkbox-size: 13px;
+$checkbox-size: 13px !default;
 
 
 // Define the `border-radius` property for the component.
 
-$checkbox-radius: $radius-sm;
+$checkbox-radius: $radius-sm !default;
 
 
 // Color for when the component is checked.
 
-$checkbox-color: saturate($color-blue, 15%);
+$checkbox-color: saturate($color-blue, 15%) !default;
 
 
 // Icon to display when the component is checked.
 
-$checkbox-icon: icon-check(#fff, $checkbox-size, 3);
+$checkbox-icon: icon-check(#fff, $checkbox-size, 3) !default;
 
 
 /*

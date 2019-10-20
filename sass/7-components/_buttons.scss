@@ -13,17 +13,17 @@ Optionally, color variants can easily be created with the `button` mixin.
 // Define the `border-radius` property for all buttons.
 // The global `$radius` value is used by default.
 
-$button-radius: $radius;
+$button-radius: $radius !default;
 
 
 // Horizontal padding.
 
-$button-padding-x: 1.25em;
+$button-padding-x: 1.25em !default;
 
 
 // Vertical padding.
 
-$button-padding-y: 0.75em;
+$button-padding-y: 0.75em !default;
 
 
 /*

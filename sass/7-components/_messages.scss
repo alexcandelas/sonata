@@ -10,43 +10,43 @@ and a section for the content.
 
 // Font size for the message component. Use pixels or rems.
 
-$message-font-size: 15px;
+$message-font-size: 15px !default;
 
 
 // Define the `border-radius` property for the message component.
 // The global `$radius` value is used by default.
 
-$message-radius: $radius;
+$message-radius: $radius !default;
 
 
 // Horizontal padding.
 
-$message-padding-x: 1em;
+$message-padding-x: 1em !default;
 
 
 // Vertical padding.
 
-$message-padding-y: 0.75em;
+$message-padding-y: 0.75em !default;
 
 
 // Icon for the title of "info" type messages.
 
-$message-icon-info: icon-info(#fff, 23);
+$message-icon-info: icon-info(#fff, 23) !default;
 
 
 // Icon for the title of "danger" type messages.
 
-$message-icon-danger: icon-error(#fff, 23);
+$message-icon-danger: icon-error(#fff, 23) !default;
 
 
 // Icon for the title of "success" type messages.
 
-$message-icon-success: icon-check(#fff);
+$message-icon-success: icon-check(#fff) !default;
 
 
 // Icon for the title of "warning" type messages.
 
-$message-icon-warning: icon-warning($color-warning-text, 23);
+$message-icon-warning: icon-warning($color-warning-text, 23) !default;
 
 
 /*

@@ -65,12 +65,12 @@ $color-blue-darken-5:  darken($color-blue, 35%) !default;
 // A default global color for borders.
 // This is used for tables, border utility classes and components.
 
-$color-border: $color-gray-lighten-2;
+$color-border: $color-gray-lighten-2 !default;
 
 
 // Default color for input and textarea borders.
 
-$color-border-input: $color-gray-lighten-1;
+$color-border-input: $color-gray-lighten-1 !default;
 
 
 // =============================================================================

@@ -12,7 +12,7 @@ of a pure BEM approach to avoid unnecessary CSS classes.
 // Font size for the tables. Use pixels or rems.
 // The global font size is used by default.
 
-$table-font-size: $font-size;
+$table-font-size: $font-size !default;
 
 
 // Define the background colors for the header variants.
@@ -32,17 +32,17 @@ $table-header-variants: (
     "primary": $color-primary,
     "light":   $color-gray-lighten-4,
     "dark":    $color-gray-darken-5
-);
+) !default;
 
 
 // Horizontal padding for cells.
 
-$table-padding-x: 0.8em;
+$table-padding-x: 0.8em !default;
 
 
 // Vertical padding for cells.
 
-$table-padding-y: 0.6em;
+$table-padding-y: 0.6em !default;
 
 
 .table {

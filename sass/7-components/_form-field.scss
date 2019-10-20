@@ -11,22 +11,22 @@ and textareas. It contains modifiers for validation feedback.
 // Define the `border-radius` property for the form field component.
 // The global `$radius` value is used by default.
 
-$form-field-radius: $radius;
+$form-field-radius: $radius !default;
 
 
 // Define if the validation modifiers will display background icons.
 
-$form-field-validation-icons: true;
+$form-field-validation-icons: true !default;
 
 
 // Background icon for valid fields.
 
-$form-field-icon-valid: icon-check();
+$form-field-icon-valid: icon-check() !default;
 
 
 // Background icon for invalid fields.
 
-$form-field-icon-invalid: icon-solid-warning();
+$form-field-icon-invalid: icon-solid-warning() !default;
 
 
 .form-field {

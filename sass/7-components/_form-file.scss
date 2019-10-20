@@ -20,13 +20,13 @@ Requires javascript for full functionality.
 
 // Viewport width from which the styles for wide screens will be applied.
 
-$form-file-breakpoint: 420;
+$form-file-breakpoint: 420 !default;
 
 
 // Button text is replaced by this icon on small screens.
 // By default, a "browse" icon is used.
 
-$form-file-icon: escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$color-text}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'><path stroke-linejoin='round' d='M13.019 19.019H5.023a2.004 2.004 0 0 1-2.002-2.006V6.024c0-1.107.896-2.005 2.002-2.005H11l2 2h6.019c1.105 0 2.002.898 2.002 2.005v2.893'/><circle cx='16' cy='14' r='3'/><path d='M18.5 16.5L21 19'/></svg>");
+$form-file-icon: escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$color-text}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'><path stroke-linejoin='round' d='M13.019 19.019H5.023a2.004 2.004 0 0 1-2.002-2.006V6.024c0-1.107.896-2.005 2.002-2.005H11l2 2h6.019c1.105 0 2.002.898 2.002 2.005v2.893'/><circle cx='16' cy='14' r='3'/><path d='M18.5 16.5L21 19'/></svg>") !default;
 
 
 /*

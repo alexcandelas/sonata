@@ -13,12 +13,12 @@ completely functional and accessible.
 
 // Size of the component.
 
-$radio-size: 14px;
+$radio-size: 14px !default;
 
 
 // Color for when the component is checked.
 
-$radio-color: saturate($color-blue, 15%);
+$radio-color: saturate($color-blue, 15%) !default;
 
 
 /*
