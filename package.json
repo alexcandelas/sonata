@@ -1,6 +1,6 @@
 {
   "name": "sonatacss",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A responsive CSS framework based on ITCSS architecture and BEM methodology.",
   "main": "sass/sonata.scss",
   "scripts": {
