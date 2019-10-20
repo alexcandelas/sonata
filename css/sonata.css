@@ -4002,23 +4002,23 @@ Border
 ================================================================================
 */
 .b-0 {
-  border: 0 solid #e0e3e6 !important;
+  border: 0 !important;
 }
 
 .bb-0 {
-  border-bottom: 0 solid #e0e3e6 !important;
+  border-bottom: 0 !important;
 }
 
 .bl-0 {
-  border-left: 0 solid #e0e3e6 !important;
+  border-left: 0 !important;
 }
 
 .br-0 {
-  border-right: 0 solid #e0e3e6 !important;
+  border-right: 0 !important;
 }
 
 .bt-0 {
-  border-top: 0 solid #e0e3e6 !important;
+  border-top: 0 !important;
 }
 
 .b-1 {
@@ -4103,19 +4103,19 @@ Border
 
 @media (min-width: 37.5em) {
   .sm\:b-0 {
-    border: 0 solid #e0e3e6 !important;
+    border: 0 !important;
   }
   .sm\:bb-0 {
-    border-bottom: 0 solid #e0e3e6 !important;
+    border-bottom: 0 !important;
   }
   .sm\:bl-0 {
-    border-left: 0 solid #e0e3e6 !important;
+    border-left: 0 !important;
   }
   .sm\:br-0 {
-    border-right: 0 solid #e0e3e6 !important;
+    border-right: 0 !important;
   }
   .sm\:bt-0 {
-    border-top: 0 solid #e0e3e6 !important;
+    border-top: 0 !important;
   }
   .sm\:b-1 {
     border: 1px solid #e0e3e6 !important;
@@ -4181,19 +4181,19 @@ Border
 
 @media (min-width: 45em) {
   .md\:b-0 {
-    border: 0 solid #e0e3e6 !important;
+    border: 0 !important;
   }
   .md\:bb-0 {
-    border-bottom: 0 solid #e0e3e6 !important;
+    border-bottom: 0 !important;
   }
   .md\:bl-0 {
-    border-left: 0 solid #e0e3e6 !important;
+    border-left: 0 !important;
   }
   .md\:br-0 {
-    border-right: 0 solid #e0e3e6 !important;
+    border-right: 0 !important;
   }
   .md\:bt-0 {
-    border-top: 0 solid #e0e3e6 !important;
+    border-top: 0 !important;
   }
   .md\:b-1 {
     border: 1px solid #e0e3e6 !important;
@@ -4259,19 +4259,19 @@ Border
 
 @media (min-width: 60em) {
   .lg\:b-0 {
-    border: 0 solid #e0e3e6 !important;
+    border: 0 !important;
   }
   .lg\:bb-0 {
-    border-bottom: 0 solid #e0e3e6 !important;
+    border-bottom: 0 !important;
   }
   .lg\:bl-0 {
-    border-left: 0 solid #e0e3e6 !important;
+    border-left: 0 !important;
   }
   .lg\:br-0 {
-    border-right: 0 solid #e0e3e6 !important;
+    border-right: 0 !important;
   }
   .lg\:bt-0 {
-    border-top: 0 solid #e0e3e6 !important;
+    border-top: 0 !important;
   }
   .lg\:b-1 {
     border: 1px solid #e0e3e6 !important;

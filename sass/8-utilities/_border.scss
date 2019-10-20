@@ -29,23 +29,23 @@ $utility-border-widths: (
 
         @each $name, $value in $utility-border-widths {
             #{set-affix("b-" + $name, $affix)}  {
-                border: $value solid $color-border !important;
+                border: if($value == 0, 0, $value solid $color-border) !important;
             }
 
             #{set-affix("bb-" + $name, $affix)} {
-                border-bottom: $value solid $color-border !important;
+                border-bottom: if($value == 0, 0, $value solid $color-border) !important;
             }
 
             #{set-affix("bl-" + $name, $affix)} {
-                border-left: $value solid $color-border !important;
+                border-left: if($value == 0, 0, $value solid $color-border) !important;
             }
 
             #{set-affix("br-" + $name, $affix)} {
-                border-right: $value solid $color-border !important;
+                border-right: if($value == 0, 0, $value solid $color-border) !important;
             }
 
             #{set-affix("bt-" + $name, $affix)} {
-                border-top: $value solid $color-border !important;
+                border-top: if($value == 0, 0, $value solid $color-border) !important;
             }
         }
 
