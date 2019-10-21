@@ -3841,159 +3841,159 @@ Background colors
 ================================================================================
 */
 .bg-transparent {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .bg-primary {
-  background-color: #502a7a;
+  background-color: #502a7a !important;
 }
 
 .bg-black {
-  background-color: #000;
+  background-color: #000 !important;
 }
 
 .bg-white {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 .bg-link {
-  background-color: #39c;
+  background-color: #39c !important;
 }
 
 .bg-gray {
-  background-color: #adb5bd;
+  background-color: #adb5bd !important;
 }
 
 .bg-gray-lighten-1 {
-  background-color: #cfd4d8;
+  background-color: #cfd4d8 !important;
 }
 
 .bg-gray-lighten-2 {
-  background-color: #e0e3e6;
+  background-color: #e0e3e6 !important;
 }
 
 .bg-gray-lighten-3 {
-  background-color: #ebedef;
+  background-color: #ebedef !important;
 }
 
 .bg-gray-lighten-4 {
-  background-color: #f1f2f4;
+  background-color: #f1f2f4 !important;
 }
 
 .bg-gray-lighten-5 {
-  background-color: #f9fafa;
+  background-color: #f9fafa !important;
 }
 
 .bg-gray-darken-1 {
-  background-color: #919ca6;
+  background-color: #919ca6 !important;
 }
 
 .bg-gray-darken-2 {
-  background-color: #6f7d8a;
+  background-color: #6f7d8a !important;
 }
 
 .bg-gray-darken-3 {
-  background-color: #505963;
+  background-color: #505963 !important;
 }
 
 .bg-gray-darken-4 {
-  background-color: #343b41;
+  background-color: #343b41 !important;
 }
 
 .bg-gray-darken-5 {
-  background-color: #202428;
+  background-color: #202428 !important;
 }
 
 .bg-blue {
-  background-color: #39c;
+  background-color: #39c !important;
 }
 
 .bg-blue-lighten-1 {
-  background-color: #5cadd6;
+  background-color: #5cadd6 !important;
 }
 
 .bg-blue-lighten-2 {
-  background-color: #85c2e0;
+  background-color: #85c2e0 !important;
 }
 
 .bg-blue-lighten-3 {
-  background-color: #add6eb;
+  background-color: #add6eb !important;
 }
 
 .bg-blue-lighten-4 {
-  background-color: #d6ebf5;
+  background-color: #d6ebf5 !important;
 }
 
 .bg-blue-lighten-5 {
-  background-color: #ebf5fa;
+  background-color: #ebf5fa !important;
 }
 
 .bg-blue-darken-1 {
-  background-color: #2e8ab8;
+  background-color: #2e8ab8 !important;
 }
 
 .bg-blue-darken-2 {
-  background-color: #297aa3;
+  background-color: #297aa3 !important;
 }
 
 .bg-blue-darken-3 {
-  background-color: #1f5c7a;
+  background-color: #1f5c7a !important;
 }
 
 .bg-blue-darken-4 {
-  background-color: #143d52;
+  background-color: #143d52 !important;
 }
 
 .bg-blue-darken-5 {
-  background-color: #0f2e3d;
+  background-color: #0f2e3d !important;
 }
 
 .bg-info {
-  background-color: #2e8ab8;
+  background-color: #2e8ab8 !important;
 }
 
 .bg-info-light {
-  background-color: #d6ebf5;
+  background-color: #d6ebf5 !important;
 }
 
 .bg-info-text {
-  background-color: #1f5c7a;
+  background-color: #1f5c7a !important;
 }
 
 .bg-success {
-  background-color: #20c372;
+  background-color: #20c372 !important;
 }
 
 .bg-success-light {
-  background-color: #bbf4d8;
+  background-color: #bbf4d8 !important;
 }
 
 .bg-success-text {
-  background-color: #126b3f;
+  background-color: #126b3f !important;
 }
 
 .bg-danger {
-  background-color: #d03a40;
+  background-color: #d03a40 !important;
 }
 
 .bg-danger-light {
-  background-color: #f4d2d4;
+  background-color: #f4d2d4 !important;
 }
 
 .bg-danger-text {
-  background-color: #992529;
+  background-color: #992529 !important;
 }
 
 .bg-warning {
-  background-color: #ffc31a;
+  background-color: #ffc31a !important;
 }
 
 .bg-warning-light {
-  background-color: #fff0c7;
+  background-color: #fff0c7 !important;
 }
 
 .bg-warning-text {
-  background-color: #6c4f00;
+  background-color: #6c4f00 !important;
 }
 
 /*
@@ -7435,544 +7435,544 @@ Color
 ================================================================================
 */
 .color-transparent {
-  color: transparent;
+  color: transparent !important;
 }
 
 .color-primary {
-  color: #502a7a;
+  color: #502a7a !important;
 }
 
 .color-black {
-  color: #000;
+  color: #000 !important;
 }
 
 .color-white {
-  color: #fff;
+  color: #fff !important;
 }
 
 .color-link {
-  color: #39c;
+  color: #39c !important;
 }
 
 .color-gray {
-  color: #adb5bd;
+  color: #adb5bd !important;
 }
 
 .color-gray-lighten-1 {
-  color: #cfd4d8;
+  color: #cfd4d8 !important;
 }
 
 .color-gray-lighten-2 {
-  color: #e0e3e6;
+  color: #e0e3e6 !important;
 }
 
 .color-gray-lighten-3 {
-  color: #ebedef;
+  color: #ebedef !important;
 }
 
 .color-gray-lighten-4 {
-  color: #f1f2f4;
+  color: #f1f2f4 !important;
 }
 
 .color-gray-lighten-5 {
-  color: #f9fafa;
+  color: #f9fafa !important;
 }
 
 .color-gray-darken-1 {
-  color: #919ca6;
+  color: #919ca6 !important;
 }
 
 .color-gray-darken-2 {
-  color: #6f7d8a;
+  color: #6f7d8a !important;
 }
 
 .color-gray-darken-3 {
-  color: #505963;
+  color: #505963 !important;
 }
 
 .color-gray-darken-4 {
-  color: #343b41;
+  color: #343b41 !important;
 }
 
 .color-gray-darken-5 {
-  color: #202428;
+  color: #202428 !important;
 }
 
 .color-blue {
-  color: #39c;
+  color: #39c !important;
 }
 
 .color-blue-lighten-1 {
-  color: #5cadd6;
+  color: #5cadd6 !important;
 }
 
 .color-blue-lighten-2 {
-  color: #85c2e0;
+  color: #85c2e0 !important;
 }
 
 .color-blue-lighten-3 {
-  color: #add6eb;
+  color: #add6eb !important;
 }
 
 .color-blue-lighten-4 {
-  color: #d6ebf5;
+  color: #d6ebf5 !important;
 }
 
 .color-blue-lighten-5 {
-  color: #ebf5fa;
+  color: #ebf5fa !important;
 }
 
 .color-blue-darken-1 {
-  color: #2e8ab8;
+  color: #2e8ab8 !important;
 }
 
 .color-blue-darken-2 {
-  color: #297aa3;
+  color: #297aa3 !important;
 }
 
 .color-blue-darken-3 {
-  color: #1f5c7a;
+  color: #1f5c7a !important;
 }
 
 .color-blue-darken-4 {
-  color: #143d52;
+  color: #143d52 !important;
 }
 
 .color-blue-darken-5 {
-  color: #0f2e3d;
+  color: #0f2e3d !important;
 }
 
 .color-info {
-  color: #2e8ab8;
+  color: #2e8ab8 !important;
 }
 
 .color-info-light {
-  color: #d6ebf5;
+  color: #d6ebf5 !important;
 }
 
 .color-info-text {
-  color: #1f5c7a;
+  color: #1f5c7a !important;
 }
 
 .color-success {
-  color: #20c372;
+  color: #20c372 !important;
 }
 
 .color-success-light {
-  color: #bbf4d8;
+  color: #bbf4d8 !important;
 }
 
 .color-success-text {
-  color: #126b3f;
+  color: #126b3f !important;
 }
 
 .color-danger {
-  color: #d03a40;
+  color: #d03a40 !important;
 }
 
 .color-danger-light {
-  color: #f4d2d4;
+  color: #f4d2d4 !important;
 }
 
 .color-danger-text {
-  color: #992529;
+  color: #992529 !important;
 }
 
 .color-warning {
-  color: #ffc31a;
+  color: #ffc31a !important;
 }
 
 .color-warning-light {
-  color: #fff0c7;
+  color: #fff0c7 !important;
 }
 
 .color-warning-text {
-  color: #6c4f00;
+  color: #6c4f00 !important;
 }
 
 .color-text {
-  color: #505963;
+  color: #505963 !important;
 }
 
 .color-link-focus {
-  color: #297aa3;
+  color: #297aa3 !important;
 }
 
 @media (min-width: 37.5em) {
   .sm\:color-transparent {
-    color: transparent;
+    color: transparent !important;
   }
   .sm\:color-primary {
-    color: #502a7a;
+    color: #502a7a !important;
   }
   .sm\:color-black {
-    color: #000;
+    color: #000 !important;
   }
   .sm\:color-white {
-    color: #fff;
+    color: #fff !important;
   }
   .sm\:color-link {
-    color: #39c;
+    color: #39c !important;
   }
   .sm\:color-gray {
-    color: #adb5bd;
+    color: #adb5bd !important;
   }
   .sm\:color-gray-lighten-1 {
-    color: #cfd4d8;
+    color: #cfd4d8 !important;
   }
   .sm\:color-gray-lighten-2 {
-    color: #e0e3e6;
+    color: #e0e3e6 !important;
   }
   .sm\:color-gray-lighten-3 {
-    color: #ebedef;
+    color: #ebedef !important;
   }
   .sm\:color-gray-lighten-4 {
-    color: #f1f2f4;
+    color: #f1f2f4 !important;
   }
   .sm\:color-gray-lighten-5 {
-    color: #f9fafa;
+    color: #f9fafa !important;
   }
   .sm\:color-gray-darken-1 {
-    color: #919ca6;
+    color: #919ca6 !important;
   }
   .sm\:color-gray-darken-2 {
-    color: #6f7d8a;
+    color: #6f7d8a !important;
   }
   .sm\:color-gray-darken-3 {
-    color: #505963;
+    color: #505963 !important;
   }
   .sm\:color-gray-darken-4 {
-    color: #343b41;
+    color: #343b41 !important;
   }
   .sm\:color-gray-darken-5 {
-    color: #202428;
+    color: #202428 !important;
   }
   .sm\:color-blue {
-    color: #39c;
+    color: #39c !important;
   }
   .sm\:color-blue-lighten-1 {
-    color: #5cadd6;
+    color: #5cadd6 !important;
   }
   .sm\:color-blue-lighten-2 {
-    color: #85c2e0;
+    color: #85c2e0 !important;
   }
   .sm\:color-blue-lighten-3 {
-    color: #add6eb;
+    color: #add6eb !important;
   }
   .sm\:color-blue-lighten-4 {
-    color: #d6ebf5;
+    color: #d6ebf5 !important;
   }
   .sm\:color-blue-lighten-5 {
-    color: #ebf5fa;
+    color: #ebf5fa !important;
   }
   .sm\:color-blue-darken-1 {
-    color: #2e8ab8;
+    color: #2e8ab8 !important;
   }
   .sm\:color-blue-darken-2 {
-    color: #297aa3;
+    color: #297aa3 !important;
   }
   .sm\:color-blue-darken-3 {
-    color: #1f5c7a;
+    color: #1f5c7a !important;
   }
   .sm\:color-blue-darken-4 {
-    color: #143d52;
+    color: #143d52 !important;
   }
   .sm\:color-blue-darken-5 {
-    color: #0f2e3d;
+    color: #0f2e3d !important;
   }
   .sm\:color-info {
-    color: #2e8ab8;
+    color: #2e8ab8 !important;
   }
   .sm\:color-info-light {
-    color: #d6ebf5;
+    color: #d6ebf5 !important;
   }
   .sm\:color-info-text {
-    color: #1f5c7a;
+    color: #1f5c7a !important;
   }
   .sm\:color-success {
-    color: #20c372;
+    color: #20c372 !important;
   }
   .sm\:color-success-light {
-    color: #bbf4d8;
+    color: #bbf4d8 !important;
   }
   .sm\:color-success-text {
-    color: #126b3f;
+    color: #126b3f !important;
   }
   .sm\:color-danger {
-    color: #d03a40;
+    color: #d03a40 !important;
   }
   .sm\:color-danger-light {
-    color: #f4d2d4;
+    color: #f4d2d4 !important;
   }
   .sm\:color-danger-text {
-    color: #992529;
+    color: #992529 !important;
   }
   .sm\:color-warning {
-    color: #ffc31a;
+    color: #ffc31a !important;
   }
   .sm\:color-warning-light {
-    color: #fff0c7;
+    color: #fff0c7 !important;
   }
   .sm\:color-warning-text {
-    color: #6c4f00;
+    color: #6c4f00 !important;
   }
   .sm\:color-text {
-    color: #505963;
+    color: #505963 !important;
   }
   .sm\:color-link-focus {
-    color: #297aa3;
+    color: #297aa3 !important;
   }
 }
 
 @media (min-width: 45em) {
   .md\:color-transparent {
-    color: transparent;
+    color: transparent !important;
   }
   .md\:color-primary {
-    color: #502a7a;
+    color: #502a7a !important;
   }
   .md\:color-black {
-    color: #000;
+    color: #000 !important;
   }
   .md\:color-white {
-    color: #fff;
+    color: #fff !important;
   }
   .md\:color-link {
-    color: #39c;
+    color: #39c !important;
   }
   .md\:color-gray {
-    color: #adb5bd;
+    color: #adb5bd !important;
   }
   .md\:color-gray-lighten-1 {
-    color: #cfd4d8;
+    color: #cfd4d8 !important;
   }
   .md\:color-gray-lighten-2 {
-    color: #e0e3e6;
+    color: #e0e3e6 !important;
   }
   .md\:color-gray-lighten-3 {
-    color: #ebedef;
+    color: #ebedef !important;
   }
   .md\:color-gray-lighten-4 {
-    color: #f1f2f4;
+    color: #f1f2f4 !important;
   }
   .md\:color-gray-lighten-5 {
-    color: #f9fafa;
+    color: #f9fafa !important;
   }
   .md\:color-gray-darken-1 {
-    color: #919ca6;
+    color: #919ca6 !important;
   }
   .md\:color-gray-darken-2 {
-    color: #6f7d8a;
+    color: #6f7d8a !important;
   }
   .md\:color-gray-darken-3 {
-    color: #505963;
+    color: #505963 !important;
   }
   .md\:color-gray-darken-4 {
-    color: #343b41;
+    color: #343b41 !important;
   }
   .md\:color-gray-darken-5 {
-    color: #202428;
+    color: #202428 !important;
   }
   .md\:color-blue {
-    color: #39c;
+    color: #39c !important;
   }
   .md\:color-blue-lighten-1 {
-    color: #5cadd6;
+    color: #5cadd6 !important;
   }
   .md\:color-blue-lighten-2 {
-    color: #85c2e0;
+    color: #85c2e0 !important;
   }
   .md\:color-blue-lighten-3 {
-    color: #add6eb;
+    color: #add6eb !important;
   }
   .md\:color-blue-lighten-4 {
-    color: #d6ebf5;
+    color: #d6ebf5 !important;
   }
   .md\:color-blue-lighten-5 {
-    color: #ebf5fa;
+    color: #ebf5fa !important;
   }
   .md\:color-blue-darken-1 {
-    color: #2e8ab8;
+    color: #2e8ab8 !important;
   }
   .md\:color-blue-darken-2 {
-    color: #297aa3;
+    color: #297aa3 !important;
   }
   .md\:color-blue-darken-3 {
-    color: #1f5c7a;
+    color: #1f5c7a !important;
   }
   .md\:color-blue-darken-4 {
-    color: #143d52;
+    color: #143d52 !important;
   }
   .md\:color-blue-darken-5 {
-    color: #0f2e3d;
+    color: #0f2e3d !important;
   }
   .md\:color-info {
-    color: #2e8ab8;
+    color: #2e8ab8 !important;
   }
   .md\:color-info-light {
-    color: #d6ebf5;
+    color: #d6ebf5 !important;
   }
   .md\:color-info-text {
-    color: #1f5c7a;
+    color: #1f5c7a !important;
   }
   .md\:color-success {
-    color: #20c372;
+    color: #20c372 !important;
   }
   .md\:color-success-light {
-    color: #bbf4d8;
+    color: #bbf4d8 !important;
   }
   .md\:color-success-text {
-    color: #126b3f;
+    color: #126b3f !important;
   }
   .md\:color-danger {
-    color: #d03a40;
+    color: #d03a40 !important;
   }
   .md\:color-danger-light {
-    color: #f4d2d4;
+    color: #f4d2d4 !important;
   }
   .md\:color-danger-text {
-    color: #992529;
+    color: #992529 !important;
   }
   .md\:color-warning {
-    color: #ffc31a;
+    color: #ffc31a !important;
   }
   .md\:color-warning-light {
-    color: #fff0c7;
+    color: #fff0c7 !important;
   }
   .md\:color-warning-text {
-    color: #6c4f00;
+    color: #6c4f00 !important;
   }
   .md\:color-text {
-    color: #505963;
+    color: #505963 !important;
   }
   .md\:color-link-focus {
-    color: #297aa3;
+    color: #297aa3 !important;
   }
 }
 
 @media (min-width: 60em) {
   .lg\:color-transparent {
-    color: transparent;
+    color: transparent !important;
   }
   .lg\:color-primary {
-    color: #502a7a;
+    color: #502a7a !important;
   }
   .lg\:color-black {
-    color: #000;
+    color: #000 !important;
   }
   .lg\:color-white {
-    color: #fff;
+    color: #fff !important;
   }
   .lg\:color-link {
-    color: #39c;
+    color: #39c !important;
   }
   .lg\:color-gray {
-    color: #adb5bd;
+    color: #adb5bd !important;
   }
   .lg\:color-gray-lighten-1 {
-    color: #cfd4d8;
+    color: #cfd4d8 !important;
   }
   .lg\:color-gray-lighten-2 {
-    color: #e0e3e6;
+    color: #e0e3e6 !important;
   }
   .lg\:color-gray-lighten-3 {
-    color: #ebedef;
+    color: #ebedef !important;
   }
   .lg\:color-gray-lighten-4 {
-    color: #f1f2f4;
+    color: #f1f2f4 !important;
   }
   .lg\:color-gray-lighten-5 {
-    color: #f9fafa;
+    color: #f9fafa !important;
   }
   .lg\:color-gray-darken-1 {
-    color: #919ca6;
+    color: #919ca6 !important;
   }
   .lg\:color-gray-darken-2 {
-    color: #6f7d8a;
+    color: #6f7d8a !important;
   }
   .lg\:color-gray-darken-3 {
-    color: #505963;
+    color: #505963 !important;
   }
   .lg\:color-gray-darken-4 {
-    color: #343b41;
+    color: #343b41 !important;
   }
   .lg\:color-gray-darken-5 {
-    color: #202428;
+    color: #202428 !important;
   }
   .lg\:color-blue {
-    color: #39c;
+    color: #39c !important;
   }
   .lg\:color-blue-lighten-1 {
-    color: #5cadd6;
+    color: #5cadd6 !important;
   }
   .lg\:color-blue-lighten-2 {
-    color: #85c2e0;
+    color: #85c2e0 !important;
   }
   .lg\:color-blue-lighten-3 {
-    color: #add6eb;
+    color: #add6eb !important;
   }
   .lg\:color-blue-lighten-4 {
-    color: #d6ebf5;
+    color: #d6ebf5 !important;
   }
   .lg\:color-blue-lighten-5 {
-    color: #ebf5fa;
+    color: #ebf5fa !important;
   }
   .lg\:color-blue-darken-1 {
-    color: #2e8ab8;
+    color: #2e8ab8 !important;
   }
   .lg\:color-blue-darken-2 {
-    color: #297aa3;
+    color: #297aa3 !important;
   }
   .lg\:color-blue-darken-3 {
-    color: #1f5c7a;
+    color: #1f5c7a !important;
   }
   .lg\:color-blue-darken-4 {
-    color: #143d52;
+    color: #143d52 !important;
   }
   .lg\:color-blue-darken-5 {
-    color: #0f2e3d;
+    color: #0f2e3d !important;
   }
   .lg\:color-info {
-    color: #2e8ab8;
+    color: #2e8ab8 !important;
   }
   .lg\:color-info-light {
-    color: #d6ebf5;
+    color: #d6ebf5 !important;
   }
   .lg\:color-info-text {
-    color: #1f5c7a;
+    color: #1f5c7a !important;
   }
   .lg\:color-success {
-    color: #20c372;
+    color: #20c372 !important;
   }
   .lg\:color-success-light {
-    color: #bbf4d8;
+    color: #bbf4d8 !important;
   }
   .lg\:color-success-text {
-    color: #126b3f;
+    color: #126b3f !important;
   }
   .lg\:color-danger {
-    color: #d03a40;
+    color: #d03a40 !important;
   }
   .lg\:color-danger-light {
-    color: #f4d2d4;
+    color: #f4d2d4 !important;
   }
   .lg\:color-danger-text {
-    color: #992529;
+    color: #992529 !important;
   }
   .lg\:color-warning {
-    color: #ffc31a;
+    color: #ffc31a !important;
   }
   .lg\:color-warning-light {
-    color: #fff0c7;
+    color: #fff0c7 !important;
   }
   .lg\:color-warning-text {
-    color: #6c4f00;
+    color: #6c4f00 !important;
   }
   .lg\:color-text {
-    color: #505963;
+    color: #505963 !important;
   }
   .lg\:color-link-focus {
-    color: #297aa3;
+    color: #297aa3 !important;
   }
 }
 
@@ -7982,19 +7982,19 @@ Leading
 ================================================================================
 */
 .leading-none {
-  line-height: 1;
+  line-height: 1 !important;
 }
 
 .leading-tight {
-  line-height: 1.2;
+  line-height: 1.2 !important;
 }
 
 .leading-normal {
-  line-height: 1.6;
+  line-height: 1.6 !important;
 }
 
 .leading-loose {
-  line-height: 2;
+  line-height: 2 !important;
 }
 
 /*
@@ -8003,31 +8003,31 @@ Size
 ================================================================================
 */
 .size-base {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 .size-xs {
-  font-size: 65%;
+  font-size: 65% !important;
 }
 
 .size-sm {
-  font-size: 80%;
+  font-size: 80% !important;
 }
 
 .size-caption {
-  font-size: 90%;
+  font-size: 90% !important;
 }
 
 .size-normal {
-  font-size: 100%;
+  font-size: 100% !important;
 }
 
 .size-lg {
-  font-size: 112%;
+  font-size: 112% !important;
 }
 
 .size-xl {
-  font-size: 125%;
+  font-size: 125% !important;
 }
 
 /*
@@ -8039,18 +8039,18 @@ Ellipsis
          * Truncate long text with an ellipsis.
          */
 .truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 /*
          * Reset the properties of the `truncate` class to default values.
          */
 .truncate-none {
-  overflow: visible;
-  text-overflow: clip;
-  white-space: normal;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
 }
 
 @media (min-width: 37.5em) {
@@ -8058,17 +8058,17 @@ Ellipsis
          * Truncate long text with an ellipsis.
          */
   .sm\:truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
   }
   /*
          * Reset the properties of the `truncate` class to default values.
          */
   .sm\:truncate-none {
-    overflow: visible;
-    text-overflow: clip;
-    white-space: normal;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
   }
 }
 
@@ -8077,17 +8077,17 @@ Ellipsis
          * Truncate long text with an ellipsis.
          */
   .md\:truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
   }
   /*
          * Reset the properties of the `truncate` class to default values.
          */
   .md\:truncate-none {
-    overflow: visible;
-    text-overflow: clip;
-    white-space: normal;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
   }
 }
 
@@ -8096,17 +8096,17 @@ Ellipsis
          * Truncate long text with an ellipsis.
          */
   .lg\:truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
   }
   /*
          * Reset the properties of the `truncate` class to default values.
          */
   .lg\:truncate-none {
-    overflow: visible;
-    text-overflow: clip;
-    white-space: normal;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
   }
 }
 

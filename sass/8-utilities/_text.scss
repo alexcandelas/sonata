@@ -43,7 +43,7 @@ $utility-text-colors: map-merge($utility-colors,
 
         @each $name, $value in $utility-text-colors {
             #{set-affix("color-" + $name, $affix)} {
-                color: $value;
+                color: $value !important;
             }
         }
 
@@ -60,10 +60,10 @@ Leading
 @each $affix, $min-width in utility-breakpoints("leading") {
     @include media($min-width) {
 
-        #{set-affix("leading-none", $affix)}   { line-height: 1; }
-        #{set-affix("leading-tight", $affix)}  { line-height: $line-height-tight; }
-        #{set-affix("leading-normal", $affix)} { line-height: $line-height; }
-        #{set-affix("leading-loose", $affix)}  { line-height: $line-height-loose; }
+        #{set-affix("leading-none", $affix)}   { line-height: 1 !important; }
+        #{set-affix("leading-tight", $affix)}  { line-height: $line-height-tight !important; }
+        #{set-affix("leading-normal", $affix)} { line-height: $line-height !important; }
+        #{set-affix("leading-loose", $affix)}  { line-height: $line-height-loose !important; }
 
     }
 }
@@ -78,13 +78,13 @@ Size
 @each $affix, $min-width in utility-breakpoints("text-size") {
     @include media($min-width) {
 
-        #{set-affix("size-base", $affix)}    { font-size: $font-size; }
-        #{set-affix("size-xs", $affix)}      { font-size: 65%; }
-        #{set-affix("size-sm", $affix)}      { font-size: 80%; }
-        #{set-affix("size-caption", $affix)} { font-size: 90%; }
-        #{set-affix("size-normal", $affix)}  { font-size: 100%; }
-        #{set-affix("size-lg", $affix)}      { font-size: 112%; }
-        #{set-affix("size-xl", $affix)}      { font-size: 125%; }
+        #{set-affix("size-base", $affix)}    { font-size: $font-size !important; }
+        #{set-affix("size-xs", $affix)}      { font-size: 65% !important; }
+        #{set-affix("size-sm", $affix)}      { font-size: 80% !important; }
+        #{set-affix("size-caption", $affix)} { font-size: 90% !important; }
+        #{set-affix("size-normal", $affix)}  { font-size: 100% !important; }
+        #{set-affix("size-lg", $affix)}      { font-size: 112% !important; }
+        #{set-affix("size-xl", $affix)}      { font-size: 125% !important; }
 
     }
 }
@@ -103,14 +103,14 @@ Ellipsis
          * Truncate long text with an ellipsis.
          */
         #{set-affix("truncate", $affix)} {
-            @include truncate;
+            @include truncate(true);
         }
 
         /*
          * Reset the properties of the `truncate` class to default values.
          */
         #{set-affix("truncate-none", $affix)} {
-            @include truncate-none;
+            @include truncate-none(true);
         }
 
     }

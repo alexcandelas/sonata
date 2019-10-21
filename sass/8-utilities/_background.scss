@@ -21,7 +21,7 @@ $utility-bg-colors: $utility-colors !default;
 
         @each $name, $value in $utility-bg-colors {
             #{set-affix("bg-" + $name, $affix)}  {
-                background-color: $value;
+                background-color: $value !important;
             }
         }
 
