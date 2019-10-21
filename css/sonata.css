@@ -5174,13 +5174,10 @@ Flex
 Float
 ================================================================================
 */
-.clearfix::before, .clearfix::after {
-  content: " ";
-  display: table;
-}
-
 .clearfix::after {
   clear: both;
+  content: "";
+  display: block;
 }
 
 .float-left {
@@ -5196,12 +5193,10 @@ Float
 }
 
 @media (min-width: 37.5em) {
-  .sm\:clearfix::before, .sm\:clearfix::after {
-    content: " ";
-    display: table;
-  }
   .sm\:clearfix::after {
     clear: both;
+    content: "";
+    display: block;
   }
   .sm\:float-left {
     float: left !important;
@@ -5215,12 +5210,10 @@ Float
 }
 
 @media (min-width: 45em) {
-  .md\:clearfix::before, .md\:clearfix::after {
-    content: " ";
-    display: table;
-  }
   .md\:clearfix::after {
     clear: both;
+    content: "";
+    display: block;
   }
   .md\:float-left {
     float: left !important;
@@ -5234,12 +5227,10 @@ Float
 }
 
 @media (min-width: 60em) {
-  .lg\:clearfix::before, .lg\:clearfix::after {
-    content: " ";
-    display: table;
-  }
   .lg\:clearfix::after {
     clear: both;
+    content: "";
+    display: block;
   }
   .lg\:float-left {
     float: left !important;
