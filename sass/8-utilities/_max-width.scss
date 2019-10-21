@@ -1,0 +1,31 @@
+/*
+================================================================================
+Max width
+================================================================================
+*/
+
+
+// The values used for generating max-width utility classes.
+// Values for `none` and `100%` are included by default.
+//
+// The following class is generated for each one of the values:
+//
+// .max-w-{size}
+
+$utility-max-widths: (
+    "none":  none,
+    "full":  100%
+) !default;
+
+
+@each $affix, $min-width in utility-breakpoints("width") {
+    @include media($min-width) {
+
+        @each $name, $value in $utility-max-widths {
+            #{set-affix(#{"max-w-" + fraction-to-class-name($name)}, $affix)} {
+                max-width: $value !important;
+            }
+        }
+
+    }
+}

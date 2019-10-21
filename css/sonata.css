@@ -6150,6 +6150,46 @@ Margin
 
 /*
 ================================================================================
+Max width
+================================================================================
+*/
+.max-w-none {
+  max-width: none !important;
+}
+
+.max-w-full {
+  max-width: 100% !important;
+}
+
+@media (min-width: 37.5em) {
+  .sm\:max-w-none {
+    max-width: none !important;
+  }
+  .sm\:max-w-full {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 45em) {
+  .md\:max-w-none {
+    max-width: none !important;
+  }
+  .md\:max-w-full {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 60em) {
+  .lg\:max-w-none {
+    max-width: none !important;
+  }
+  .lg\:max-w-full {
+    max-width: 100% !important;
+  }
+}
+
+/*
+================================================================================
 Overflow
 ================================================================================
 */
