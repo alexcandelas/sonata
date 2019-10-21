@@ -502,7 +502,7 @@
 // =============================================================================
 
 
-// Check if the given value is a valid CSS length.
+// Check for a valid CSS length.
 //
 // Credit: https://github.com/thoughtbot/bourbon
 //
@@ -510,7 +510,11 @@
 // @return {boolean}
 
 @function is-length($value) {
-    @return type-of($value) != "null" and (str-slice($value + "", 1, 4) == "calc"
+    @return type-of($value) != "null" and (
+        str-slice($value + "", 1, 4) == "calc"
+        or str-slice($value + "", 1, 3) == "var"
+        or str-slice($value + "", 1, 3) == "env"
         or index(auto inherit initial 0, $value)
-        or (type-of($value) == "number" and not(unitless($value))));
+        or (type-of($value) == "number" and not(unitless($value)))
+    );
 }
