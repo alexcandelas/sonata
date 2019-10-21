@@ -7,8 +7,8 @@
 //
 // @param {map} $options
 // @prop {color} $options.background-color [#fff]
-// @prop {color} $options.background-color-hover [#f2f2f2]
-// @prop {color} $options.background-color-active [#fcfcfc]
+// @prop {color} $options.background-color-hover [#ededed]
+// @prop {color} $options.background-color-active [#e0e0e0]
 // @prop {color} $options.border-color [transparent]
 // @prop {color} $options.border-color-hover [transparent]
 // @prop {color} $options.border-color-active [transparent]
@@ -17,8 +17,18 @@
 
 @mixin button($options: ()) {
     $bg-color: map-get($options, background-color) or #fff;
-    $bg-color-hover: best-color-contrast($bg-color, (darken($bg-color, 5%), lighten($bg-color, 5%)));
-    $bg-color-active: best-color-contrast($bg-color, (darken($bg-color, 10%), lighten($bg-color, 10%)));
+
+    $bg-luminance: luminance($bg-color);
+
+    $bg-color-hover: if($bg-luminance < 0.15,
+        scale-color($bg-color, $lightness: 10%),
+        scale-color($bg-color, $lightness: -8%)
+    );
+
+    $bg-color-active: if($bg-luminance < 0.15,
+        scale-color($bg-color, $lightness: 15%),
+        scale-color($bg-color, $lightness: -12%)
+    );
 
     $props: map-merge((
             background-color: $bg-color,
@@ -27,7 +37,7 @@
             border-color: transparent,
             border-color-hover: map-get($options, border-color) or transparent,
             border-color-active: map-get($options, border-color) or transparent,
-            text-color: best-color-contrast($bg-color, (rgba(#000, 0.7), #fff)),
+            text-color: best-color-contrast($bg-color, (#fff, rgba(#000, 0.7))),
             text-color-hover: null
         ), $options
     );
@@ -74,24 +84,29 @@
 //
 // @param {map} $options
 // @prop {color} $options.background-color [transparent]
-// @prop {color} $options.background-color-hover [transparent]
-// @prop {color} $options.background-color-active [transparent]
+// @prop {color} $options.background-color-hover [$color-primary]
+// @prop {color} $options.background-color-active [#643599]
 // @prop {color} $options.border-color [$color-primary]
-// @prop {color} $options.border-color-hover [darken($text-color, 15%)]
+// @prop {color} $options.border-color-hover [$color-primary]
 // @prop {color} $options.border-color-active [$color-primary]
 // @prop {color} $options.text-color [$color-primary]
-// @prop {color} $options.text-color-hover [darken($text-color, 15%)]
+// @prop {color} $options.text-color-hover [#fff]
 
 @mixin button-outline($options: ()) {
     $text-color: map-get($options, text-color) or $color-primary;
 
-    $text-color-hover: best-color-contrast($text-color, (darken($text-color, 15%), lighten($text-color, 15%)));
+    $text-color-hover: map-get($options, text-color-hover) or best-color-contrast($text-color, (rgba(#000, 0.8), #fff));
+
+    $bg-color-active: if(luminance($text-color) < 0.15,
+        scale-color($text-color, $lightness: 15%),
+        scale-color($text-color, $lightness: -12%)
+    );
 
     $props: map-merge((
             background-color: transparent,
+            background-color-hover: $text-color,
+            background-color-active: $bg-color-active,
             border-color: $text-color,
-            border-color-hover: $text-color-hover,
-            border-color-active: $text-color,
             text-color: $text-color,
             text-color-hover: $text-color-hover
         ), $options

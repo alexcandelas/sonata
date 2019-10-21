@@ -80,6 +80,7 @@ default state. They can be created with the `button-outline` mixin.
 .btn--outline-inverted {
     @include button-outline((
         background-color-hover: rgba(#fff, 0.15),
+        background-color-active: transparent,
         text-color: #fff,
         text-color-hover: #fff
     ));

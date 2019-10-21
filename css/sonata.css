@@ -2651,12 +2651,12 @@ Optionally, color variants can easily be created with the `button` mixin.
 }
 
 .btn:focus, .btn:hover {
-  background-color: #f2f2f2;
+  background-color: #ebebeb;
   border-color: #e0e3e6;
 }
 
 .btn:active {
-  background-color: #e6e6e6;
+  background-color: #e0e0e0;
   border-color: #e0e3e6;
 }
 
@@ -2686,12 +2686,12 @@ Optionally, color variants can easily be created with the `button` mixin.
 }
 
 .btn--primary:focus, .btn--primary:hover {
-  background-color: #5c318d;
+  background-color: #613394;
   border-color: transparent;
 }
 
 .btn--primary:active {
-  background-color: #6937a0;
+  background-color: #6937a1;
   border-color: transparent;
 }
 
@@ -2719,12 +2719,12 @@ Optionally, color variants can easily be created with the `button` mixin.
 }
 
 .btn--light:focus, .btn--light:hover {
-  background-color: #dde0e4;
+  background-color: #d6dade;
   border-color: transparent;
 }
 
 .btn--light:active {
-  background-color: #cfd4d8;
+  background-color: #ccd1d6;
   border-color: transparent;
 }
 
@@ -2752,12 +2752,12 @@ Optionally, color variants can easily be created with the `button` mixin.
 }
 
 .btn--white:focus, .btn--white:hover {
-  background-color: #f2f2f2;
+  background-color: #ebebeb;
   border-color: transparent;
 }
 
 .btn--white:active {
-  background-color: #e6e6e6;
+  background-color: #e0e0e0;
   border-color: transparent;
 }
 
@@ -2785,12 +2785,12 @@ Optionally, color variants can easily be created with the `button` mixin.
 }
 
 .btn--danger:focus, .btn--danger:hover {
-  background-color: #c22e34;
+  background-color: #c62f35;
   border-color: transparent;
 }
 
 .btn--danger:active {
-  background-color: #ae292f;
+  background-color: #bd2d33;
   border-color: transparent;
 }
 
@@ -2818,12 +2818,12 @@ Optionally, color variants can easily be created with the `button` mixin.
 }
 
 .btn--success:focus, .btn--success:hover {
-  background-color: #1cad65;
+  background-color: #1db369;
   border-color: transparent;
 }
 
 .btn--success:active {
-  background-color: #199758;
+  background-color: #1cac64;
   border-color: transparent;
 }
 
@@ -2852,17 +2852,17 @@ default state. They can be created with the `button-outline` mixin.
 }
 
 .btn--outline-primary:focus, .btn--outline-primary:hover, .btn--outline-primary:active {
-  color: #753eb3;
+  color: #fff;
   text-decoration: none;
 }
 
 .btn--outline-primary:focus, .btn--outline-primary:hover {
-  background-color: transparent;
-  border-color: #753eb3;
+  background-color: #502a7a;
+  border-color: #502a7a;
 }
 
 .btn--outline-primary:active {
-  background-color: transparent;
+  background-color: #6937a1;
   border-color: #502a7a;
 }
 
@@ -2894,7 +2894,7 @@ default state. They can be created with the `button-outline` mixin.
 
 .btn--outline-inverted:focus, .btn--outline-inverted:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  border-color: #d9d9d9;
+  border-color: #fff;
 }
 
 .btn--outline-inverted:active {
@@ -3568,7 +3568,7 @@ of a pure BEM approach to avoid unnecessary CSS classes.
 
 .table--header-light thead {
   background-color: #f1f2f4;
-  color: #505963;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .table--header-dark thead {
