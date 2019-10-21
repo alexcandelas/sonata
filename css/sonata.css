@@ -889,7 +889,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/12 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/12 - 27.5px);
+  width: calc(99.9% * 1/12 - (30px - 1/12 * 30px));
 }
 
 .col-1\/12:nth-child(n) {
@@ -904,7 +904,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/10 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/10 - 27px);
+  width: calc(99.9% * 1/10 - (30px - 1/10 * 30px));
 }
 
 .col-1\/10:nth-child(n) {
@@ -919,7 +919,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/6 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/6 - 25px);
+  width: calc(99.9% * 1/6 - (30px - 1/6 * 30px));
 }
 
 .col-1\/6:nth-child(n) {
@@ -934,7 +934,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/5 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/5 - 24px);
+  width: calc(99.9% * 1/5 - (30px - 1/5 * 30px));
 }
 
 .col-1\/5:nth-child(n) {
@@ -949,7 +949,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/4 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/4 - 22.5px);
+  width: calc(99.9% * 1/4 - (30px - 1/4 * 30px));
 }
 
 .col-1\/4:nth-child(n) {
@@ -964,7 +964,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-3\/10 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 3/10 - 21px);
+  width: calc(99.9% * 3/10 - (30px - 3/10 * 30px));
 }
 
 .col-3\/10:nth-child(n) {
@@ -979,7 +979,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/3 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/3 - 20px);
+  width: calc(99.9% * 1/3 - (30px - 1/3 * 30px));
 }
 
 .col-1\/3:nth-child(n) {
@@ -994,7 +994,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-2\/5 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 2/5 - 18px);
+  width: calc(99.9% * 2/5 - (30px - 2/5 * 30px));
 }
 
 .col-2\/5:nth-child(n) {
@@ -1009,7 +1009,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-5\/12 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 5/12 - 17.5px);
+  width: calc(99.9% * 5/12 - (30px - 5/12 * 30px));
 }
 
 .col-5\/12:nth-child(n) {
@@ -1024,7 +1024,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-1\/2 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 1/2 - 15px);
+  width: calc(99.9% * 1/2 - (30px - 1/2 * 30px));
 }
 
 .col-1\/2:nth-child(n) {
@@ -1039,7 +1039,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-7\/12 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 7/12 - 12.5px);
+  width: calc(99.9% * 7/12 - (30px - 7/12 * 30px));
 }
 
 .col-7\/12:nth-child(n) {
@@ -1054,7 +1054,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-3\/5 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 3/5 - 12px);
+  width: calc(99.9% * 3/5 - (30px - 3/5 * 30px));
 }
 
 .col-3\/5:nth-child(n) {
@@ -1069,7 +1069,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-2\/3 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 2/3 - 10px);
+  width: calc(99.9% * 2/3 - (30px - 2/3 * 30px));
 }
 
 .col-2\/3:nth-child(n) {
@@ -1084,7 +1084,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-7\/10 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 7/10 - 9px);
+  width: calc(99.9% * 7/10 - (30px - 7/10 * 30px));
 }
 
 .col-7\/10:nth-child(n) {
@@ -1099,7 +1099,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-3\/4 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 3/4 - 7.5px);
+  width: calc(99.9% * 3/4 - (30px - 3/4 * 30px));
 }
 
 .col-3\/4:nth-child(n) {
@@ -1114,7 +1114,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-4\/5 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 4/5 - 6px);
+  width: calc(99.9% * 4/5 - (30px - 4/5 * 30px));
 }
 
 .col-4\/5:nth-child(n) {
@@ -1129,7 +1129,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-5\/6 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 5/6 - 5px);
+  width: calc(99.9% * 5/6 - (30px - 5/6 * 30px));
 }
 
 .col-5\/6:nth-child(n) {
@@ -1144,7 +1144,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-9\/10 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 9/10 - 3px);
+  width: calc(99.9% * 9/10 - (30px - 9/10 * 30px));
 }
 
 .col-9\/10:nth-child(n) {
@@ -1159,7 +1159,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
 .col-11\/12 {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(99.9% * 11/12 - 2.5px);
+  width: calc(99.9% * 11/12 - (30px - 11/12 * 30px));
 }
 
 .col-11\/12:nth-child(n) {
@@ -1205,7 +1205,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/12 - 27.5px);
+    width: calc(99.9% * 1/12 - (30px - 1/12 * 30px));
   }
   .sm\:col-1\/12:nth-child(n) {
     margin-left: 0;
@@ -1217,7 +1217,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/10 - 27px);
+    width: calc(99.9% * 1/10 - (30px - 1/10 * 30px));
   }
   .sm\:col-1\/10:nth-child(n) {
     margin-left: 0;
@@ -1229,7 +1229,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/6 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/6 - 25px);
+    width: calc(99.9% * 1/6 - (30px - 1/6 * 30px));
   }
   .sm\:col-1\/6:nth-child(n) {
     margin-left: 0;
@@ -1241,7 +1241,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/5 - 24px);
+    width: calc(99.9% * 1/5 - (30px - 1/5 * 30px));
   }
   .sm\:col-1\/5:nth-child(n) {
     margin-left: 0;
@@ -1253,7 +1253,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/4 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/4 - 22.5px);
+    width: calc(99.9% * 1/4 - (30px - 1/4 * 30px));
   }
   .sm\:col-1\/4:nth-child(n) {
     margin-left: 0;
@@ -1265,7 +1265,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-3\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/10 - 21px);
+    width: calc(99.9% * 3/10 - (30px - 3/10 * 30px));
   }
   .sm\:col-3\/10:nth-child(n) {
     margin-left: 0;
@@ -1277,7 +1277,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/3 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/3 - 20px);
+    width: calc(99.9% * 1/3 - (30px - 1/3 * 30px));
   }
   .sm\:col-1\/3:nth-child(n) {
     margin-left: 0;
@@ -1289,7 +1289,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-2\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 2/5 - 18px);
+    width: calc(99.9% * 2/5 - (30px - 2/5 * 30px));
   }
   .sm\:col-2\/5:nth-child(n) {
     margin-left: 0;
@@ -1301,7 +1301,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-5\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 5/12 - 17.5px);
+    width: calc(99.9% * 5/12 - (30px - 5/12 * 30px));
   }
   .sm\:col-5\/12:nth-child(n) {
     margin-left: 0;
@@ -1313,7 +1313,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-1\/2 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/2 - 15px);
+    width: calc(99.9% * 1/2 - (30px - 1/2 * 30px));
   }
   .sm\:col-1\/2:nth-child(n) {
     margin-left: 0;
@@ -1325,7 +1325,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-7\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 7/12 - 12.5px);
+    width: calc(99.9% * 7/12 - (30px - 7/12 * 30px));
   }
   .sm\:col-7\/12:nth-child(n) {
     margin-left: 0;
@@ -1337,7 +1337,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-3\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/5 - 12px);
+    width: calc(99.9% * 3/5 - (30px - 3/5 * 30px));
   }
   .sm\:col-3\/5:nth-child(n) {
     margin-left: 0;
@@ -1349,7 +1349,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-2\/3 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 2/3 - 10px);
+    width: calc(99.9% * 2/3 - (30px - 2/3 * 30px));
   }
   .sm\:col-2\/3:nth-child(n) {
     margin-left: 0;
@@ -1361,7 +1361,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-7\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 7/10 - 9px);
+    width: calc(99.9% * 7/10 - (30px - 7/10 * 30px));
   }
   .sm\:col-7\/10:nth-child(n) {
     margin-left: 0;
@@ -1373,7 +1373,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-3\/4 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/4 - 7.5px);
+    width: calc(99.9% * 3/4 - (30px - 3/4 * 30px));
   }
   .sm\:col-3\/4:nth-child(n) {
     margin-left: 0;
@@ -1385,7 +1385,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-4\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 4/5 - 6px);
+    width: calc(99.9% * 4/5 - (30px - 4/5 * 30px));
   }
   .sm\:col-4\/5:nth-child(n) {
     margin-left: 0;
@@ -1397,7 +1397,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-5\/6 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 5/6 - 5px);
+    width: calc(99.9% * 5/6 - (30px - 5/6 * 30px));
   }
   .sm\:col-5\/6:nth-child(n) {
     margin-left: 0;
@@ -1409,7 +1409,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-9\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 9/10 - 3px);
+    width: calc(99.9% * 9/10 - (30px - 9/10 * 30px));
   }
   .sm\:col-9\/10:nth-child(n) {
     margin-left: 0;
@@ -1421,7 +1421,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .sm\:col-11\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 11/12 - 2.5px);
+    width: calc(99.9% * 11/12 - (30px - 11/12 * 30px));
   }
   .sm\:col-11\/12:nth-child(n) {
     margin-left: 0;
@@ -1463,7 +1463,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/12 - 27.5px);
+    width: calc(99.9% * 1/12 - (30px - 1/12 * 30px));
   }
   .md\:col-1\/12:nth-child(n) {
     margin-left: 0;
@@ -1475,7 +1475,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/10 - 27px);
+    width: calc(99.9% * 1/10 - (30px - 1/10 * 30px));
   }
   .md\:col-1\/10:nth-child(n) {
     margin-left: 0;
@@ -1487,7 +1487,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/6 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/6 - 25px);
+    width: calc(99.9% * 1/6 - (30px - 1/6 * 30px));
   }
   .md\:col-1\/6:nth-child(n) {
     margin-left: 0;
@@ -1499,7 +1499,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/5 - 24px);
+    width: calc(99.9% * 1/5 - (30px - 1/5 * 30px));
   }
   .md\:col-1\/5:nth-child(n) {
     margin-left: 0;
@@ -1511,7 +1511,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/4 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/4 - 22.5px);
+    width: calc(99.9% * 1/4 - (30px - 1/4 * 30px));
   }
   .md\:col-1\/4:nth-child(n) {
     margin-left: 0;
@@ -1523,7 +1523,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-3\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/10 - 21px);
+    width: calc(99.9% * 3/10 - (30px - 3/10 * 30px));
   }
   .md\:col-3\/10:nth-child(n) {
     margin-left: 0;
@@ -1535,7 +1535,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/3 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/3 - 20px);
+    width: calc(99.9% * 1/3 - (30px - 1/3 * 30px));
   }
   .md\:col-1\/3:nth-child(n) {
     margin-left: 0;
@@ -1547,7 +1547,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-2\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 2/5 - 18px);
+    width: calc(99.9% * 2/5 - (30px - 2/5 * 30px));
   }
   .md\:col-2\/5:nth-child(n) {
     margin-left: 0;
@@ -1559,7 +1559,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-5\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 5/12 - 17.5px);
+    width: calc(99.9% * 5/12 - (30px - 5/12 * 30px));
   }
   .md\:col-5\/12:nth-child(n) {
     margin-left: 0;
@@ -1571,7 +1571,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-1\/2 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/2 - 15px);
+    width: calc(99.9% * 1/2 - (30px - 1/2 * 30px));
   }
   .md\:col-1\/2:nth-child(n) {
     margin-left: 0;
@@ -1583,7 +1583,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-7\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 7/12 - 12.5px);
+    width: calc(99.9% * 7/12 - (30px - 7/12 * 30px));
   }
   .md\:col-7\/12:nth-child(n) {
     margin-left: 0;
@@ -1595,7 +1595,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-3\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/5 - 12px);
+    width: calc(99.9% * 3/5 - (30px - 3/5 * 30px));
   }
   .md\:col-3\/5:nth-child(n) {
     margin-left: 0;
@@ -1607,7 +1607,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-2\/3 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 2/3 - 10px);
+    width: calc(99.9% * 2/3 - (30px - 2/3 * 30px));
   }
   .md\:col-2\/3:nth-child(n) {
     margin-left: 0;
@@ -1619,7 +1619,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-7\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 7/10 - 9px);
+    width: calc(99.9% * 7/10 - (30px - 7/10 * 30px));
   }
   .md\:col-7\/10:nth-child(n) {
     margin-left: 0;
@@ -1631,7 +1631,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-3\/4 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/4 - 7.5px);
+    width: calc(99.9% * 3/4 - (30px - 3/4 * 30px));
   }
   .md\:col-3\/4:nth-child(n) {
     margin-left: 0;
@@ -1643,7 +1643,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-4\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 4/5 - 6px);
+    width: calc(99.9% * 4/5 - (30px - 4/5 * 30px));
   }
   .md\:col-4\/5:nth-child(n) {
     margin-left: 0;
@@ -1655,7 +1655,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-5\/6 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 5/6 - 5px);
+    width: calc(99.9% * 5/6 - (30px - 5/6 * 30px));
   }
   .md\:col-5\/6:nth-child(n) {
     margin-left: 0;
@@ -1667,7 +1667,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-9\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 9/10 - 3px);
+    width: calc(99.9% * 9/10 - (30px - 9/10 * 30px));
   }
   .md\:col-9\/10:nth-child(n) {
     margin-left: 0;
@@ -1679,7 +1679,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .md\:col-11\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 11/12 - 2.5px);
+    width: calc(99.9% * 11/12 - (30px - 11/12 * 30px));
   }
   .md\:col-11\/12:nth-child(n) {
     margin-left: 0;
@@ -1721,7 +1721,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/12 - 27.5px);
+    width: calc(99.9% * 1/12 - (30px - 1/12 * 30px));
   }
   .lg\:col-1\/12:nth-child(n) {
     margin-left: 0;
@@ -1733,7 +1733,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/10 - 27px);
+    width: calc(99.9% * 1/10 - (30px - 1/10 * 30px));
   }
   .lg\:col-1\/10:nth-child(n) {
     margin-left: 0;
@@ -1745,7 +1745,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/6 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/6 - 25px);
+    width: calc(99.9% * 1/6 - (30px - 1/6 * 30px));
   }
   .lg\:col-1\/6:nth-child(n) {
     margin-left: 0;
@@ -1757,7 +1757,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/5 - 24px);
+    width: calc(99.9% * 1/5 - (30px - 1/5 * 30px));
   }
   .lg\:col-1\/5:nth-child(n) {
     margin-left: 0;
@@ -1769,7 +1769,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/4 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/4 - 22.5px);
+    width: calc(99.9% * 1/4 - (30px - 1/4 * 30px));
   }
   .lg\:col-1\/4:nth-child(n) {
     margin-left: 0;
@@ -1781,7 +1781,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-3\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/10 - 21px);
+    width: calc(99.9% * 3/10 - (30px - 3/10 * 30px));
   }
   .lg\:col-3\/10:nth-child(n) {
     margin-left: 0;
@@ -1793,7 +1793,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/3 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/3 - 20px);
+    width: calc(99.9% * 1/3 - (30px - 1/3 * 30px));
   }
   .lg\:col-1\/3:nth-child(n) {
     margin-left: 0;
@@ -1805,7 +1805,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-2\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 2/5 - 18px);
+    width: calc(99.9% * 2/5 - (30px - 2/5 * 30px));
   }
   .lg\:col-2\/5:nth-child(n) {
     margin-left: 0;
@@ -1817,7 +1817,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-5\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 5/12 - 17.5px);
+    width: calc(99.9% * 5/12 - (30px - 5/12 * 30px));
   }
   .lg\:col-5\/12:nth-child(n) {
     margin-left: 0;
@@ -1829,7 +1829,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-1\/2 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 1/2 - 15px);
+    width: calc(99.9% * 1/2 - (30px - 1/2 * 30px));
   }
   .lg\:col-1\/2:nth-child(n) {
     margin-left: 0;
@@ -1841,7 +1841,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-7\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 7/12 - 12.5px);
+    width: calc(99.9% * 7/12 - (30px - 7/12 * 30px));
   }
   .lg\:col-7\/12:nth-child(n) {
     margin-left: 0;
@@ -1853,7 +1853,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-3\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/5 - 12px);
+    width: calc(99.9% * 3/5 - (30px - 3/5 * 30px));
   }
   .lg\:col-3\/5:nth-child(n) {
     margin-left: 0;
@@ -1865,7 +1865,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-2\/3 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 2/3 - 10px);
+    width: calc(99.9% * 2/3 - (30px - 2/3 * 30px));
   }
   .lg\:col-2\/3:nth-child(n) {
     margin-left: 0;
@@ -1877,7 +1877,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-7\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 7/10 - 9px);
+    width: calc(99.9% * 7/10 - (30px - 7/10 * 30px));
   }
   .lg\:col-7\/10:nth-child(n) {
     margin-left: 0;
@@ -1889,7 +1889,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-3\/4 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 3/4 - 7.5px);
+    width: calc(99.9% * 3/4 - (30px - 3/4 * 30px));
   }
   .lg\:col-3\/4:nth-child(n) {
     margin-left: 0;
@@ -1901,7 +1901,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-4\/5 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 4/5 - 6px);
+    width: calc(99.9% * 4/5 - (30px - 4/5 * 30px));
   }
   .lg\:col-4\/5:nth-child(n) {
     margin-left: 0;
@@ -1913,7 +1913,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-5\/6 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 5/6 - 5px);
+    width: calc(99.9% * 5/6 - (30px - 5/6 * 30px));
   }
   .lg\:col-5\/6:nth-child(n) {
     margin-left: 0;
@@ -1925,7 +1925,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-9\/10 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 9/10 - 3px);
+    width: calc(99.9% * 9/10 - (30px - 9/10 * 30px));
   }
   .lg\:col-9\/10:nth-child(n) {
     margin-left: 0;
@@ -1937,7 +1937,7 @@ The grid system is based on LostGrid (http://lostgrid.org).
   .lg\:col-11\/12 {
     flex-grow: 0;
     flex-shrink: 0;
-    width: calc(99.9% * 11/12 - 2.5px);
+    width: calc(99.9% * 11/12 - (30px - 11/12 * 30px));
   }
   .lg\:col-11\/12:nth-child(n) {
     margin-left: 0;
@@ -1971,79 +1971,79 @@ The offset object allows you to move grid columns to the right.
 }
 
 :root .offset-1\/12 {
-  margin-left: calc(99.9% * 1/12 - 27.5px + 30px);
+  margin-left: calc(99.9% * 1/12 + 1/12 * 30px);
 }
 
 :root .offset-1\/10 {
-  margin-left: calc(99.9% * 1/10 - 27px + 30px);
+  margin-left: calc(99.9% * 1/10 + 1/10 * 30px);
 }
 
 :root .offset-1\/6 {
-  margin-left: calc(99.9% * 1/6 - 25px + 30px);
+  margin-left: calc(99.9% * 1/6 + 1/6 * 30px);
 }
 
 :root .offset-1\/5 {
-  margin-left: calc(99.9% * 1/5 - 24px + 30px);
+  margin-left: calc(99.9% * 1/5 + 1/5 * 30px);
 }
 
 :root .offset-1\/4 {
-  margin-left: calc(99.9% * 1/4 - 22.5px + 30px);
+  margin-left: calc(99.9% * 1/4 + 1/4 * 30px);
 }
 
 :root .offset-3\/10 {
-  margin-left: calc(99.9% * 3/10 - 21px + 30px);
+  margin-left: calc(99.9% * 3/10 + 3/10 * 30px);
 }
 
 :root .offset-1\/3 {
-  margin-left: calc(99.9% * 1/3 - 20px + 30px);
+  margin-left: calc(99.9% * 1/3 + 1/3 * 30px);
 }
 
 :root .offset-2\/5 {
-  margin-left: calc(99.9% * 2/5 - 18px + 30px);
+  margin-left: calc(99.9% * 2/5 + 2/5 * 30px);
 }
 
 :root .offset-5\/12 {
-  margin-left: calc(99.9% * 5/12 - 17.5px + 30px);
+  margin-left: calc(99.9% * 5/12 + 5/12 * 30px);
 }
 
 :root .offset-1\/2 {
-  margin-left: calc(99.9% * 1/2 - 15px + 30px);
+  margin-left: calc(99.9% * 1/2 + 1/2 * 30px);
 }
 
 :root .offset-7\/12 {
-  margin-left: calc(99.9% * 7/12 - 12.5px + 30px);
+  margin-left: calc(99.9% * 7/12 + 7/12 * 30px);
 }
 
 :root .offset-3\/5 {
-  margin-left: calc(99.9% * 3/5 - 12px + 30px);
+  margin-left: calc(99.9% * 3/5 + 3/5 * 30px);
 }
 
 :root .offset-2\/3 {
-  margin-left: calc(99.9% * 2/3 - 10px + 30px);
+  margin-left: calc(99.9% * 2/3 + 2/3 * 30px);
 }
 
 :root .offset-7\/10 {
-  margin-left: calc(99.9% * 7/10 - 9px + 30px);
+  margin-left: calc(99.9% * 7/10 + 7/10 * 30px);
 }
 
 :root .offset-3\/4 {
-  margin-left: calc(99.9% * 3/4 - 7.5px + 30px);
+  margin-left: calc(99.9% * 3/4 + 3/4 * 30px);
 }
 
 :root .offset-4\/5 {
-  margin-left: calc(99.9% * 4/5 - 6px + 30px);
+  margin-left: calc(99.9% * 4/5 + 4/5 * 30px);
 }
 
 :root .offset-5\/6 {
-  margin-left: calc(99.9% * 5/6 - 5px + 30px);
+  margin-left: calc(99.9% * 5/6 + 5/6 * 30px);
 }
 
 :root .offset-9\/10 {
-  margin-left: calc(99.9% * 9/10 - 3px + 30px);
+  margin-left: calc(99.9% * 9/10 + 9/10 * 30px);
 }
 
 :root .offset-11\/12 {
-  margin-left: calc(99.9% * 11/12 - 2.5px + 30px);
+  margin-left: calc(99.9% * 11/12 + 11/12 * 30px);
 }
 
 @media (min-width: 37.5em) {
@@ -2051,61 +2051,61 @@ The offset object allows you to move grid columns to the right.
     margin-left: 0;
   }
   :root .sm\:offset-1\/12 {
-    margin-left: calc(99.9% * 1/12 - 27.5px + 30px);
+    margin-left: calc(99.9% * 1/12 + 1/12 * 30px);
   }
   :root .sm\:offset-1\/10 {
-    margin-left: calc(99.9% * 1/10 - 27px + 30px);
+    margin-left: calc(99.9% * 1/10 + 1/10 * 30px);
   }
   :root .sm\:offset-1\/6 {
-    margin-left: calc(99.9% * 1/6 - 25px + 30px);
+    margin-left: calc(99.9% * 1/6 + 1/6 * 30px);
   }
   :root .sm\:offset-1\/5 {
-    margin-left: calc(99.9% * 1/5 - 24px + 30px);
+    margin-left: calc(99.9% * 1/5 + 1/5 * 30px);
   }
   :root .sm\:offset-1\/4 {
-    margin-left: calc(99.9% * 1/4 - 22.5px + 30px);
+    margin-left: calc(99.9% * 1/4 + 1/4 * 30px);
   }
   :root .sm\:offset-3\/10 {
-    margin-left: calc(99.9% * 3/10 - 21px + 30px);
+    margin-left: calc(99.9% * 3/10 + 3/10 * 30px);
   }
   :root .sm\:offset-1\/3 {
-    margin-left: calc(99.9% * 1/3 - 20px + 30px);
+    margin-left: calc(99.9% * 1/3 + 1/3 * 30px);
   }
   :root .sm\:offset-2\/5 {
-    margin-left: calc(99.9% * 2/5 - 18px + 30px);
+    margin-left: calc(99.9% * 2/5 + 2/5 * 30px);
   }
   :root .sm\:offset-5\/12 {
-    margin-left: calc(99.9% * 5/12 - 17.5px + 30px);
+    margin-left: calc(99.9% * 5/12 + 5/12 * 30px);
   }
   :root .sm\:offset-1\/2 {
-    margin-left: calc(99.9% * 1/2 - 15px + 30px);
+    margin-left: calc(99.9% * 1/2 + 1/2 * 30px);
   }
   :root .sm\:offset-7\/12 {
-    margin-left: calc(99.9% * 7/12 - 12.5px + 30px);
+    margin-left: calc(99.9% * 7/12 + 7/12 * 30px);
   }
   :root .sm\:offset-3\/5 {
-    margin-left: calc(99.9% * 3/5 - 12px + 30px);
+    margin-left: calc(99.9% * 3/5 + 3/5 * 30px);
   }
   :root .sm\:offset-2\/3 {
-    margin-left: calc(99.9% * 2/3 - 10px + 30px);
+    margin-left: calc(99.9% * 2/3 + 2/3 * 30px);
   }
   :root .sm\:offset-7\/10 {
-    margin-left: calc(99.9% * 7/10 - 9px + 30px);
+    margin-left: calc(99.9% * 7/10 + 7/10 * 30px);
   }
   :root .sm\:offset-3\/4 {
-    margin-left: calc(99.9% * 3/4 - 7.5px + 30px);
+    margin-left: calc(99.9% * 3/4 + 3/4 * 30px);
   }
   :root .sm\:offset-4\/5 {
-    margin-left: calc(99.9% * 4/5 - 6px + 30px);
+    margin-left: calc(99.9% * 4/5 + 4/5 * 30px);
   }
   :root .sm\:offset-5\/6 {
-    margin-left: calc(99.9% * 5/6 - 5px + 30px);
+    margin-left: calc(99.9% * 5/6 + 5/6 * 30px);
   }
   :root .sm\:offset-9\/10 {
-    margin-left: calc(99.9% * 9/10 - 3px + 30px);
+    margin-left: calc(99.9% * 9/10 + 9/10 * 30px);
   }
   :root .sm\:offset-11\/12 {
-    margin-left: calc(99.9% * 11/12 - 2.5px + 30px);
+    margin-left: calc(99.9% * 11/12 + 11/12 * 30px);
   }
 }
 
@@ -2114,61 +2114,61 @@ The offset object allows you to move grid columns to the right.
     margin-left: 0;
   }
   :root .md\:offset-1\/12 {
-    margin-left: calc(99.9% * 1/12 - 27.5px + 30px);
+    margin-left: calc(99.9% * 1/12 + 1/12 * 30px);
   }
   :root .md\:offset-1\/10 {
-    margin-left: calc(99.9% * 1/10 - 27px + 30px);
+    margin-left: calc(99.9% * 1/10 + 1/10 * 30px);
   }
   :root .md\:offset-1\/6 {
-    margin-left: calc(99.9% * 1/6 - 25px + 30px);
+    margin-left: calc(99.9% * 1/6 + 1/6 * 30px);
   }
   :root .md\:offset-1\/5 {
-    margin-left: calc(99.9% * 1/5 - 24px + 30px);
+    margin-left: calc(99.9% * 1/5 + 1/5 * 30px);
   }
   :root .md\:offset-1\/4 {
-    margin-left: calc(99.9% * 1/4 - 22.5px + 30px);
+    margin-left: calc(99.9% * 1/4 + 1/4 * 30px);
   }
   :root .md\:offset-3\/10 {
-    margin-left: calc(99.9% * 3/10 - 21px + 30px);
+    margin-left: calc(99.9% * 3/10 + 3/10 * 30px);
   }
   :root .md\:offset-1\/3 {
-    margin-left: calc(99.9% * 1/3 - 20px + 30px);
+    margin-left: calc(99.9% * 1/3 + 1/3 * 30px);
   }
   :root .md\:offset-2\/5 {
-    margin-left: calc(99.9% * 2/5 - 18px + 30px);
+    margin-left: calc(99.9% * 2/5 + 2/5 * 30px);
   }
   :root .md\:offset-5\/12 {
-    margin-left: calc(99.9% * 5/12 - 17.5px + 30px);
+    margin-left: calc(99.9% * 5/12 + 5/12 * 30px);
   }
   :root .md\:offset-1\/2 {
-    margin-left: calc(99.9% * 1/2 - 15px + 30px);
+    margin-left: calc(99.9% * 1/2 + 1/2 * 30px);
   }
   :root .md\:offset-7\/12 {
-    margin-left: calc(99.9% * 7/12 - 12.5px + 30px);
+    margin-left: calc(99.9% * 7/12 + 7/12 * 30px);
   }
   :root .md\:offset-3\/5 {
-    margin-left: calc(99.9% * 3/5 - 12px + 30px);
+    margin-left: calc(99.9% * 3/5 + 3/5 * 30px);
   }
   :root .md\:offset-2\/3 {
-    margin-left: calc(99.9% * 2/3 - 10px + 30px);
+    margin-left: calc(99.9% * 2/3 + 2/3 * 30px);
   }
   :root .md\:offset-7\/10 {
-    margin-left: calc(99.9% * 7/10 - 9px + 30px);
+    margin-left: calc(99.9% * 7/10 + 7/10 * 30px);
   }
   :root .md\:offset-3\/4 {
-    margin-left: calc(99.9% * 3/4 - 7.5px + 30px);
+    margin-left: calc(99.9% * 3/4 + 3/4 * 30px);
   }
   :root .md\:offset-4\/5 {
-    margin-left: calc(99.9% * 4/5 - 6px + 30px);
+    margin-left: calc(99.9% * 4/5 + 4/5 * 30px);
   }
   :root .md\:offset-5\/6 {
-    margin-left: calc(99.9% * 5/6 - 5px + 30px);
+    margin-left: calc(99.9% * 5/6 + 5/6 * 30px);
   }
   :root .md\:offset-9\/10 {
-    margin-left: calc(99.9% * 9/10 - 3px + 30px);
+    margin-left: calc(99.9% * 9/10 + 9/10 * 30px);
   }
   :root .md\:offset-11\/12 {
-    margin-left: calc(99.9% * 11/12 - 2.5px + 30px);
+    margin-left: calc(99.9% * 11/12 + 11/12 * 30px);
   }
 }
 
@@ -2177,61 +2177,61 @@ The offset object allows you to move grid columns to the right.
     margin-left: 0;
   }
   :root .lg\:offset-1\/12 {
-    margin-left: calc(99.9% * 1/12 - 27.5px + 30px);
+    margin-left: calc(99.9% * 1/12 + 1/12 * 30px);
   }
   :root .lg\:offset-1\/10 {
-    margin-left: calc(99.9% * 1/10 - 27px + 30px);
+    margin-left: calc(99.9% * 1/10 + 1/10 * 30px);
   }
   :root .lg\:offset-1\/6 {
-    margin-left: calc(99.9% * 1/6 - 25px + 30px);
+    margin-left: calc(99.9% * 1/6 + 1/6 * 30px);
   }
   :root .lg\:offset-1\/5 {
-    margin-left: calc(99.9% * 1/5 - 24px + 30px);
+    margin-left: calc(99.9% * 1/5 + 1/5 * 30px);
   }
   :root .lg\:offset-1\/4 {
-    margin-left: calc(99.9% * 1/4 - 22.5px + 30px);
+    margin-left: calc(99.9% * 1/4 + 1/4 * 30px);
   }
   :root .lg\:offset-3\/10 {
-    margin-left: calc(99.9% * 3/10 - 21px + 30px);
+    margin-left: calc(99.9% * 3/10 + 3/10 * 30px);
   }
   :root .lg\:offset-1\/3 {
-    margin-left: calc(99.9% * 1/3 - 20px + 30px);
+    margin-left: calc(99.9% * 1/3 + 1/3 * 30px);
   }
   :root .lg\:offset-2\/5 {
-    margin-left: calc(99.9% * 2/5 - 18px + 30px);
+    margin-left: calc(99.9% * 2/5 + 2/5 * 30px);
   }
   :root .lg\:offset-5\/12 {
-    margin-left: calc(99.9% * 5/12 - 17.5px + 30px);
+    margin-left: calc(99.9% * 5/12 + 5/12 * 30px);
   }
   :root .lg\:offset-1\/2 {
-    margin-left: calc(99.9% * 1/2 - 15px + 30px);
+    margin-left: calc(99.9% * 1/2 + 1/2 * 30px);
   }
   :root .lg\:offset-7\/12 {
-    margin-left: calc(99.9% * 7/12 - 12.5px + 30px);
+    margin-left: calc(99.9% * 7/12 + 7/12 * 30px);
   }
   :root .lg\:offset-3\/5 {
-    margin-left: calc(99.9% * 3/5 - 12px + 30px);
+    margin-left: calc(99.9% * 3/5 + 3/5 * 30px);
   }
   :root .lg\:offset-2\/3 {
-    margin-left: calc(99.9% * 2/3 - 10px + 30px);
+    margin-left: calc(99.9% * 2/3 + 2/3 * 30px);
   }
   :root .lg\:offset-7\/10 {
-    margin-left: calc(99.9% * 7/10 - 9px + 30px);
+    margin-left: calc(99.9% * 7/10 + 7/10 * 30px);
   }
   :root .lg\:offset-3\/4 {
-    margin-left: calc(99.9% * 3/4 - 7.5px + 30px);
+    margin-left: calc(99.9% * 3/4 + 3/4 * 30px);
   }
   :root .lg\:offset-4\/5 {
-    margin-left: calc(99.9% * 4/5 - 6px + 30px);
+    margin-left: calc(99.9% * 4/5 + 4/5 * 30px);
   }
   :root .lg\:offset-5\/6 {
-    margin-left: calc(99.9% * 5/6 - 5px + 30px);
+    margin-left: calc(99.9% * 5/6 + 5/6 * 30px);
   }
   :root .lg\:offset-9\/10 {
-    margin-left: calc(99.9% * 9/10 - 3px + 30px);
+    margin-left: calc(99.9% * 9/10 + 9/10 * 30px);
   }
   :root .lg\:offset-11\/12 {
-    margin-left: calc(99.9% * 11/12 - 2.5px + 30px);
+    margin-left: calc(99.9% * 11/12 + 11/12 * 30px);
   }
 }
 
