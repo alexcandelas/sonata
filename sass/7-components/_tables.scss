@@ -135,7 +135,7 @@ $table-padding-y: 0.6em !default;
                 color: nth($color, 2);
             } @else {
                 background-color: $color;
-                color: contrast-color($color);
+                color: best-color-contrast($color);
             }
         }
     }

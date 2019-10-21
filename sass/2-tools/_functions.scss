@@ -3,19 +3,35 @@
 // =============================================================================
 
 
-// Return the option that provides more contrast for the given base color.
+// Pick the color with the best contrast for the given base.
 //
+// Credit: https://github.com/voxpelli/sass-color-helpers
+//
+// @author Pelle Wessman
 // @param {color} $base
-// @param {color} $dark-option [$color-text]
-// @param {color} $light-option [#fff]
+// @param {list} $colors
+// @param {boolean} $ignore-warning
 // @return {color}
 
-@function contrast-color($base, $dark-option: $color-text, $light-option: #fff) {
-    @if contrast-ratio($dark-option, $base) > contrast-ratio($light-option, $base) {
-        @return $dark-option;
+@function best-color-contrast($base, $colors: ($color-text, #fff), $ignore-warning: false) {
+    $best: nth($colors, 1);
+    $contrast: contrast-ratio($base, $best);
+
+    @for $i from 2 through length($colors) {
+        $current-color: nth($colors, $i);
+        $current-contrast: contrast-ratio($base, $current-color);
+
+        @if $current-contrast - $contrast > 0 {
+            $best: $current-color;
+            $contrast: $current-contrast;
+        }
     }
 
-    @return $light-option;
+    @if ($contrast < 3 and not $ignore-warning) {
+        @warn "Contrast ratio of #{$best} on #{$base} is pretty bad, just #{$contrast}";
+    }
+
+    @return $best;
 }
 
 
@@ -32,8 +48,9 @@
 @function contrast-ratio($color-1, $color-2) {
     $luminance-1: luminance($color-1) + 0.05;
     $luminance-2: luminance($color-2) + 0.05;
+    $ratio: max($luminance-1, $luminance-2) / min($luminance-1, $luminance-2);
 
-    @return max($luminance-1, $luminance-2) / min($luminance-1, $luminance-2);
+    @return round($ratio * 100) / 100;
 }
 
 
@@ -51,7 +68,7 @@
 
     @for $i from 1 through 3 {
         $value: nth($rgb, $i) / 255;
-        $new-color: if($value <= 0.03928, $value / 12.92, pow(($value + 0.055)/1.055, 2.4));
+        $new-color: if($value <= 0.03928, $value / 12.92, pow(($value + 0.055)/1.055, 2.4, 16));
 
         $rgb: set-nth($rgb, $i, $new-color);
     }
@@ -187,24 +204,73 @@
 // =============================================================================
 
 
-// Return the base number raised to the power of given exponent.
+// Finds the greatest common divisor of two integers.
 //
-// Credit: https://css-tricks.com/snippets/sass/power-function/
+// Credit:
+// https://github.com/voxpelli/sass-color-helpers
+// http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
 //
-// @author Hugo Giraudel
-// @param {number} $base
-// @param {number} $exponent - Must be an integer
+// @param {number} $a
+// @param {number} $b
 // @return {number}
 
-@function pow($base, $exponent) {
-    $value: 1;
+@function gcd($a, $b) {
+    @if ($b != 0) {
+        @return gcd($b, $a % $b);
+    } @else {
+        @return abs($a);
+    }
+}
 
-    @if $exponent > 0 {
-        @for $i from 1 through $exponent {
+
+// Return the n:nth root of a number.
+//
+// Credit:
+// https://github.com/voxpelli/sass-color-helpers
+// http://rosettacode.org/wiki/Nth_root#JavaScript
+//
+// @param {number} $num
+// @param {number} $n
+// @param {number} $prec
+
+@function nth-root($num, $n: 2, $prec: 12) {
+    $x: 1;
+
+    @for $i from 0 through $prec {
+        $x: 1 / $n * (($n - 1) * $x + ($num / pow($x, $n - 1)));
+    }
+
+    @return $x;
+}
+
+
+// Return the base number raised to the power of given exponent.
+//
+// Credit: https://github.com/voxpelli/sass-color-helpers
+//
+// @author Pelle Wessman
+// @param {number} $base
+// @param {number} $exponent
+// @param {number} $prec
+// @return {number}
+
+@function pow($base, $exponent, $prec: 12) {
+    @if (floor($exponent) != $exponent) {
+        $prec2: pow(10, $prec);
+        $exponent: round($exponent * $prec2);
+        $denominator: gcd($exponent, $prec2);
+
+        @return nth-root(pow($base, $exponent / $denominator), $prec2 / $denominator, $prec);
+    }
+
+    $value: $base;
+
+    @if $exponent > 1 {
+        @for $i from 2 through $exponent {
             $value: $value * $base;
         }
-    } @else if $exponent < 0 {
-        @for $i from 1 through -$exponent {
+    } @else if $exponent < 1 {
+        @for $i from 0 through -$exponent {
             $value: $value / $base;
         }
     }

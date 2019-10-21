@@ -56,7 +56,8 @@ Sonata takes ideas or inspiration from other projects made by awesome people:
 - [HTML5 boilerplate](https://html5boilerplate.com/): base and print styles, clearfix, visibility classes.
 - [LostGrid](http://lostgrid.org/), an amazing PostCSS grid system: the `column` mixin is based on LostGrid system.
 - [TailwindCSS](https://tailwindcss.com/), a utility-first framework: some flex and svg utility classes, and the idea of using increments of a quarter for generating the margin and padding utilities.
-- Math and string functions by [Hugo Giraudel](https://hugogiraudel.com/).
+- String functions by [Hugo Giraudel](https://hugogiraudel.com/).
+- Color and math functions from [sass-color-helpers](https://github.com/voxpelli/sass-color-helpers) by Pelle Wessman.
 - [Suit CSS](https://github.com/suitcss/base): some base styles and flex utilities (order).
 - The `table-responsive` mixin is based on [this article](https://css-tricks.com/responsive-data-tables/) by [Chris Coyier](https://twitter.com/chriscoyier).
 - The `fluid` mixin is adapted from the work by [Luca Rosaldi](https://codepen.io/LucaRosaldi/pen/RgPbeR), based on the idea proposed by [David Bachmann](https://css-tricks.com/between-the-lines/).
