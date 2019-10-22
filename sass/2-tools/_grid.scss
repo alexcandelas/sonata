@@ -57,7 +57,7 @@
     @if $fraction == "1/1" {
         width: 100%;
     } @else {
-        width: calc(99.9% * #{$fraction} - (#{$gutter} - #{$fraction} * #{$gutter}));
+        width: calc(99.9% * #{unquote-fraction($fraction)} - (#{$gutter} - #{unquote-fraction($fraction)} * #{$gutter}));
     }
 
     &:nth-child(n) {
@@ -85,5 +85,5 @@
 //     or percentage. The global $gutter is used as default.
 
 @mixin offset($fraction, $gutter: $gutter) {
-    margin-left: calc(99.9% * #{$fraction} + #{$fraction} * #{$gutter});
+    margin-left: calc(99.9% * #{unquote-fraction($fraction)} + #{unquote-fraction($fraction)} * #{$gutter});
 }

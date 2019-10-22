@@ -104,7 +104,7 @@
 // @return {list}
 
 @function fraction-to-list($fraction) {
-    $fraction: quote($fraction);
+    $fraction: unquote-fraction($fraction);
     $bar-index: str-index($fraction, "/");
     $numerator: str-slice($fraction, 1, $bar-index - 1);
     $denominator: str-slice($fraction, $bar-index + 1);
@@ -122,6 +122,16 @@
     $list: fraction-to-list($fraction);
 
     @return nth($list, 2);
+}
+
+
+// Remove quotes from a fraction.
+//
+// @param {string} $fraction - String representation of a fraction
+// @return {string}
+
+@function unquote-fraction($fraction) {
+    @return str-replace($fraction, "\"");
 }
 
 
