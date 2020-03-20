@@ -78,8 +78,9 @@ $alert-icon-warning-strong: icon-warning($color-warning-text, 23) !default;
  * Alternatively, it can be applied to a div tag with any content you wish.
  */
 .alert {
-    background-color: $color-gray-lighten-4;
+    background-color: $color-gray-20;
     border-radius: $alert-radius;
+    color: $color-gray-70;
     font-size: rem($alert-font-size);
     margin-bottom: $spacer;
     padding: $alert-padding-y $alert-padding-x;
@@ -129,7 +130,7 @@ $alert-icon-warning-strong: icon-warning($color-warning-text, 23) !default;
  * Make one border stand out with color and size.
  */
 .alert--has-accent-border {
-    border-#{$alert-accent-border-side}: 4px solid $color-gray-darken-4;
+    border-#{$alert-accent-border-side}: 4px solid $color-gray-80;
 
     &.alert--info    { border-#{$alert-accent-border-side}-color: $color-info; }
     &.alert--danger  { border-#{$alert-accent-border-side}-color: $color-danger; }
@@ -145,7 +146,7 @@ $alert-icon-warning-strong: icon-warning($color-warning-text, 23) !default;
  * Use a stronger background color.
  */
 .alert--strong {
-    background-color: $color-gray-darken-4;
+    background-color: $color-gray-80;
     color: rgba(#fff, 0.95);
 
     &.alert--danger  { background-color: $color-danger; }

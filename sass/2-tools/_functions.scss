@@ -144,11 +144,11 @@
 
 // Return a caret icon.
 //
-// @param {color} $color [$color-gray-darken-3]
+// @param {color} $color [$color-gray-80]
 // @param {number (unitless)} $size [24] - Size in pixels
 // @return string
 
-@function icon-caret($color: $color-gray-darken-3, $size: 24) {
+@function icon-caret($color: $color-gray-80, $size: 24) {
     @return escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='#{$size}' height='#{$size}' viewBox='0 0 24 24'><path fill='#{$color}' d='M12 16l-6-6h12z'/></svg>");
 }
 
@@ -189,22 +189,22 @@
 
 // Return a warning icon with a solid background.
 //
-// @param {color} $color [lighten($color-warning, 10%)]
+// @param {color} $color [$color-warning]
 // @param {number (unitless)} $size [24] - Size in pixels
 // @return string
 
-@function icon-solid-warning($color: lighten($color-warning, 10%), $size: 24) {
+@function icon-solid-warning($color: $color-warning, $size: 24) {
     @return escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='#{$size}' height='#{$size}' viewBox='0 1 24 24' fill='#{$color}'><path d='M20.58 16.51l-6.5-11.25c-.51-.87-1.26-1.38-2.08-1.38s-1.57.5-2.08 1.38l-6.5 11.25c-.5.88-.56 1.79-.15 2.49.41.71 1.22 1.11 2.23 1.11h13c1.01 0 1.83-.41 2.23-1.11.41-.7.35-1.61-.15-2.49zM12 18.15c-.64 0-1.15-.51-1.15-1.15s.51-1.15 1.15-1.15 1.15.51 1.15 1.15-.51 1.15-1.15 1.15zm1-3.65h-2l-.3-6h2.5l-.2 6z'/></svg>");
 }
 
 
 // Return an outlined warning icon.
 //
-// @param {color} $color [lighten($color-warning, 10%)]
+// @param {color} $color [$color-warning]
 // @param {number (unitless)} $size [24] - Size in pixels
 // @return string
 
-@function icon-warning($color: lighten($color-warning, 10%), $size: 24) {
+@function icon-warning($color: $color-warning, $size: 24) {
     @return escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='#{$size}' height='#{$size}' viewBox='0 0 24 24' fill='#{$color}'><path fill='none' stroke='#{$color}' stroke-width='2' stroke-miterlimit='10' d='M4.98 19.79c-1.54 0-2.18-1.09-1.4-2.43L10.6 5.21c.77-1.34 2.03-1.34 2.81 0l7.02 12.15c.77 1.34.14 2.43-1.4 2.43H4.98z'/><circle cx='12' cy='16.5' r='1'/><path d='M12.7 14.5h-1.4l-.3-6h2z'/></svg>");
 }
 

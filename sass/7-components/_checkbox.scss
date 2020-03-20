@@ -23,7 +23,7 @@ $checkbox-radius: $radius-sm !default;
 
 // Color for when the component is checked.
 
-$checkbox-color: saturate($color-blue, 15%) !default;
+$checkbox-color: saturate($color-blue-50, 15%) !default;
 
 
 // Icon to display when the component is checked.
@@ -37,7 +37,7 @@ $checkbox-icon: icon-check(#fff, $checkbox-size, 3) !default;
 .checkbox {
     appearance: none;
     background-color: #fff;
-    border: 1px solid $color-gray;
+    border: 1px solid $color-gray-50;
     border-radius: $checkbox-radius;
     height: $checkbox-size;
     @include position(relative, 0.05em null null null);
@@ -50,8 +50,8 @@ $checkbox-icon: icon-check(#fff, $checkbox-size, 3) !default;
     }
 
     &:focus {
-        border-color: $color-blue;
-        box-shadow: 0 0 0 3px $color-blue-lighten-3;
+        border-color: $color-blue-50;
+        box-shadow: 0 0 0 3px $color-blue-20;
         outline: 0;
     }
 
@@ -70,5 +70,5 @@ $checkbox-icon: icon-check(#fff, $checkbox-size, 3) !default;
  */
 .checkbox--invalid {
     border-color: $color-danger;
-    box-shadow: 0 0 4px lighten($color-danger, 10%);
+    box-shadow: 0 0 4px scale-color($color-danger, $lightness: 20%);
 }

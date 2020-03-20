@@ -23,15 +23,15 @@ $table-font-size: $font-size !default;
 // containing both background and text colors. For example:
 //
 // $table-header-variants: (
-//     "blue": ($color-blue, #fff)
+//     "blue": ($color-blue-50, #fff)
 // )
 //
 // Where `$color-blue` would be the background, and `#fff` the text color.
 
 $table-header-variants: (
     "primary": $color-primary,
-    "light":   $color-gray-lighten-4,
-    "dark":    $color-gray-darken-5
+    "light":   $color-gray-20,
+    "dark":    $color-gray-90
 ) !default;
 
 
@@ -78,7 +78,7 @@ $table-padding-y: 0.6em !default;
     }
 
     thead tr {
-        border-bottom: 2px solid $color-gray-darken-3;
+        border-bottom: 2px solid $color-gray-80;
     }
 }
 
@@ -97,7 +97,7 @@ $table-padding-y: 0.6em !default;
         transition: background-color 150ms ease-out;
 
         &:hover {
-            background-color: $color-blue-lighten-5;
+            background-color: $color-blue-10;
         }
     }
 }

@@ -74,7 +74,7 @@ select.form-field {
  */
 .form-field--invalid {
     border-color: $color-danger;
-    box-shadow: 0 0 5px lighten($color-danger, 25%);
+    box-shadow: 0 0 6px $color-danger-border;
 
     @if $form-field-validation-icons {
         background-image: url($form-field-icon-invalid);
@@ -147,6 +147,6 @@ select.form-field {
  */
 .form-field:focus,
 .form-field--focus {
-    border-color: $color-blue-lighten-2;
-    box-shadow: 0 0 3px $color-blue-lighten-3;
+    border-color: $color-blue-30;
+    box-shadow: 0 0 3px $color-blue-20;
 }

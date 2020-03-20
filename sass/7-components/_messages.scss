@@ -53,7 +53,7 @@ $message-icon-warning: icon-warning($color-warning-text, 23) !default;
  * The `.message` class should be applied to a container element.
  */
 .message {
-    background-color: $color-gray-lighten-5;
+    background-color: $color-gray-10;
     border-radius: $message-radius;
     font-size: rem($message-font-size);
     margin-bottom: $spacer;
@@ -97,7 +97,7 @@ $message-icon-warning: icon-warning($color-warning-text, 23) !default;
  * The title class can be applied directly to a paragraph element.
  */
 .message__title {
-    background-color: $color-gray-darken-4;
+    background-color: $color-gray-80;
     border-radius: $message-radius $message-radius 0 0;
     color: #fff;
     line-height: 1.4;

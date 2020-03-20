@@ -18,7 +18,7 @@ $radio-size: 14px !default;
 
 // Color for when the component is checked.
 
-$radio-color: saturate($color-blue, 15%) !default;
+$radio-color: saturate($color-blue-50, 15%) !default;
 
 
 /*
@@ -27,7 +27,7 @@ $radio-color: saturate($color-blue, 15%) !default;
 .radio {
     appearance: none;
     background-color: #fff;
-    border: 1px solid $color-gray;
+    border: 1px solid $color-gray-50;
     border-radius: 50%;
     height: $radio-size;
     @include position(relative, 0.1em null null null);
@@ -40,8 +40,8 @@ $radio-color: saturate($color-blue, 15%) !default;
     }
 
     &:focus {
-        border-color: $color-blue;
-        box-shadow: 0 0 0 3px $color-blue-lighten-3;
+        border-color: $color-blue-50;
+        box-shadow: 0 0 0 3px $color-blue-20;
         outline: 0;
     }
 
@@ -59,5 +59,5 @@ $radio-color: saturate($color-blue, 15%) !default;
  */
 .radio--invalid {
     border-color: $color-danger;
-    box-shadow: 0 0 4px lighten($color-danger, 10%);
+    box-shadow: 0 0 4px scale-color($color-danger, $lightness: 20%);
 }

@@ -25,17 +25,15 @@ $color-primary: #502a7a !default;
 // the framework, so be careful when changing these values as they may
 // impact several classes.
 
-$color-gray:           #adb5bd !default;
-$color-gray-lighten-1: lighten($color-gray, 12%) !default;
-$color-gray-lighten-2: lighten($color-gray, 18%) !default;
-$color-gray-lighten-3: lighten($color-gray, 22%) !default;
-$color-gray-lighten-4: lighten($color-gray, 24%) !default;
-$color-gray-lighten-5: lighten($color-gray, 27%) !default;
-$color-gray-darken-1:  darken($color-gray, 10%) !default;
-$color-gray-darken-2:  darken($color-gray, 22%) !default;
-$color-gray-darken-3:  darken($color-gray, 36%) !default;
-$color-gray-darken-4:  darken($color-gray, 48%) !default;
-$color-gray-darken-5:  darken($color-gray, 57%) !default;
+$color-gray-10: #f9fafa !default;
+$color-gray-20: #f0f2f3 !default;
+$color-gray-30: #e7e9ec !default;
+$color-gray-40: #d6dadd !default;
+$color-gray-50: #adb5bd !default;
+$color-gray-60: #8a96a1 !default;
+$color-gray-70: #5f6b78 !default;
+$color-gray-80: #3a4148 !default;
+$color-gray-90: #202428 !default;
 
 
 // Blue.
@@ -44,17 +42,15 @@ $color-gray-darken-5:  darken($color-gray, 57%) !default;
 // so be careful when changing these values as they may impact several
 // classes. Creating a new palette instead is recommended.
 
-$color-blue:           #39c !default;
-$color-blue-lighten-1: lighten($color-blue, 10%) !default;
-$color-blue-lighten-2: lighten($color-blue, 20%) !default;
-$color-blue-lighten-3: lighten($color-blue, 30%) !default;
-$color-blue-lighten-4: lighten($color-blue, 40%) !default;
-$color-blue-lighten-5: lighten($color-blue, 45%) !default;
-$color-blue-darken-1:  darken($color-blue, 5%) !default;
-$color-blue-darken-2:  darken($color-blue, 10%) !default;
-$color-blue-darken-3:  darken($color-blue, 20%) !default;
-$color-blue-darken-4:  darken($color-blue, 30%) !default;
-$color-blue-darken-5:  darken($color-blue, 35%) !default;
+$color-blue-10: #ebf5fa !default;
+$color-blue-20: #d1e8f3 !default;
+$color-blue-30: #9acde6 !default;
+$color-blue-40: #67b3d9 !default;
+$color-blue-50: #39c !default;
+$color-blue-60: #2d86b3 !default;
+$color-blue-70: #246b8e !default;
+$color-blue-80: #154258 !default;
+$color-blue-90: #0f2e3d !default;
 
 
 // =============================================================================
@@ -65,12 +61,12 @@ $color-blue-darken-5:  darken($color-blue, 35%) !default;
 // A default global color for borders.
 // This is used for tables, border utility classes and components.
 
-$color-border: $color-gray-lighten-2 !default;
+$color-border: $color-gray-40 !default;
 
 
 // Default color for input and textarea borders.
 
-$color-border-input: $color-gray-lighten-1 !default;
+$color-border-input: $color-gray-40 !default;
 
 
 // =============================================================================
@@ -80,22 +76,22 @@ $color-border-input: $color-gray-lighten-1 !default;
 
 // Color for the body text.
 
-$color-text: $color-gray-darken-3 !default;
+$color-text: $color-gray-80 !default;
 
 
 // Color for your heading tags (h1, h2...).
 
-$color-headings: $color-gray-darken-4 !default;
+$color-headings: $color-gray-90 !default;
 
 
 // The default color for links.
 
-$color-link: $color-blue !default;
+$color-link: $color-blue-50 !default;
 
 
 // Color for focused and active links.
 
-$color-link-focus: $color-blue-darken-2 !default;
+$color-link-focus: $color-blue-70 !default;
 
 
 // =============================================================================
@@ -106,22 +102,22 @@ $color-link-focus: $color-blue-darken-2 !default;
 // and in some components (like buttons and alerts).
 
 
-$color-info:           $color-blue-darken-1 !default;
-$color-info-light:     $color-blue-lighten-4 !default;
-$color-info-text:      $color-blue-darken-3 !default;
-$color-info-border:    darken($color-info-light, 10%) !default;
+$color-info:           $color-blue-60 !default;
+$color-info-light:     $color-blue-20 !default;
+$color-info-text:      $color-blue-80 !default;
+$color-info-border:    $color-blue-30 !default;
 
 $color-success:        #20c372 !default;
-$color-success-light:  lighten($color-success, 40%) !default;
-$color-success-text:   darken($color-success, 20%) !default;
-$color-success-border: lighten($color-success, 20%) !default;
+$color-success-light:  scale-color($color-success, $lightness: 70%) !default;
+$color-success-text:   scale-color($color-success, $lightness: -45%) !default;
+$color-success-border: scale-color($color-success, $lightness: 30%) !default;
 
 $color-danger:         #d03a40 !default;
-$color-danger-light:   lighten($color-danger, 37%) !default;
-$color-danger-text:    darken($color-danger, 15%) !default;
-$color-danger-border:  lighten($color-danger, 30%) !default;
+$color-danger-light:   scale-color($color-danger, $lightness: 75%) !default;
+$color-danger-text:    scale-color($color-danger, $lightness: -25%) !default;
+$color-danger-border:  scale-color($color-danger, $lightness: 55%) !default;
 
-$color-warning:        #ffc31a !default;
-$color-warning-light:  lighten($color-warning, 34%) !default;
-$color-warning-text:   darken($color-warning, 34%) !default;
-$color-warning-border: lighten($color-warning, 18%) !default;
+$color-warning:        #ffca34 !default;
+$color-warning-light:  scale-color($color-warning, $lightness: 75%) !default;
+$color-warning-text:   scale-color($color-warning, $lightness: -60%) !default;
+$color-warning-border: scale-color($color-warning, $lightness: 35%) !default;

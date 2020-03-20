@@ -36,7 +36,7 @@ Descriptions
 }
 
 .description {
-    color: $color-gray;
+    color: $color-gray-60;
 
     label > & {
         margin-left: 0.3em;
@@ -67,7 +67,7 @@ Lead
  * paragraph of an article or page.
  */
 .lead {
-    color: $color-gray-darken-1;
+    color: $color-gray-60;
     font-size: rem($font-size-xl);
     font-weight: $font-weight-light;
 }

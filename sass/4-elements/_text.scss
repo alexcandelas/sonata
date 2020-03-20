@@ -56,15 +56,15 @@ a {
 }
 
 blockquote {
-    background-color: $color-gray-lighten-5;
-    border-left: 4px solid $color-gray-lighten-2;
+    background-color: $color-gray-10;
+    border-left: 4px solid $color-gray-30;
     margin-bottom: $spacer * 2;
     padding: 2em 2em 2em 4em;
     position: relative;
     quotes: "\201C" "\201D";
 
     &::before {
-        color: $color-gray-lighten-1;
+        color: $color-gray-40;
         content: open-quote;
         display: block;
         font: 3em/1 $font-family-primary;
@@ -73,7 +73,7 @@ blockquote {
 }
 
 figcaption {
-    color: $color-gray-darken-1;
+    color: $color-gray-60;
     font-size: rem($font-size-sm);
     padding-top: $spacer * 0.25;
 }
@@ -109,15 +109,15 @@ abbr[title] {
 }
 
 cite {
-    color: $color-gray-darken-1;
+    color: $color-gray-60;
 }
 
 code {
-    background-color: $color-gray-lighten-4;
+    background-color: $color-gray-20;
 }
 
 kbd {
-    border: 1px solid $color-gray-lighten-2;
+    border: 1px solid $color-gray-40;
     border-radius: $radius;
 }
 
