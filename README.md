@@ -38,14 +38,9 @@ Documentation is in the works.
 
 ## Browser support
 
-The latest versions of all major browsers are supported:
+- Last 3 versions of all major browsers (Chrome, Edge, Firefox, Opera, Safari).
+- Internet Explorer is not supported.
 
-- Chrome (last 3)
-- Firefox (last 3)
-- Internet Explorer 11
-- Microsoft Edge 12+
-- Opera (last 3)
-- Safari (last 3)
 
 ## Credits
 
