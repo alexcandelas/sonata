@@ -12,10 +12,6 @@
 // }
 //
 // @param {string} $fraction [1/1] - Column width expressed as a fraction.
-// @param {number} $cycle - Specify which iteration of the generated class
-//     will be treated as the last element of each row and pushed to the right.
-//     The denominator of the passed function is used as default.
-//     Use a value of 0 to ignore.
 // @param {number} $gutter [$gutter] - Gutter in pixels, rems or percentage.
 //     The global $gutter is used as default.
 
@@ -40,40 +36,21 @@
 
 
 // Return the styles for a flexbox column.
-// Based on LostGrid system (http://lostgrid.org).
 //
 // @param {string} $fraction [1/1] - Column width expressed as a fraction.
-// @param {number} $cycle - Specify which iteration of the generated class
-//     will be treated as the last element of each row and pushed to the right.
-//     The denominator of the passed function is used as default.
-//     Use a value of 0 to ignore.
 // @param {number} $gutter [$gutter] - Gutter in pixels, rems or percentage.
 //     The global $gutter is used as default.
 
-@mixin grid-column($fraction: "1/1", $cycle: get-denominator($fraction), $gutter: $gutter) {
+@mixin grid-column($fraction: "1/1", $gutter: $gutter) {
     flex-grow: 0;
     flex-shrink: 0;
+    margin-left: $gutter * 0.5;
+    margin-right: $gutter * 0.5;
 
     @if $fraction == "1/1" {
-        width: 100%;
+        width: calc(100% - #{$gutter});
     } @else {
-        width: calc(99.9% * #{unquote-fraction($fraction)} - (#{$gutter} - #{unquote-fraction($fraction)} * #{$gutter}));
-    }
-
-    &:nth-child(n) {
-        margin-left: 0;
-        margin-right: $gutter;
-    }
-
-    &:last-child {
-        margin-right: 0;
-    }
-
-    @if $cycle != 0 {
-        &:nth-child(#{$cycle}n) {
-            margin-left: auto;
-            margin-right: 0;
-        }
+        width: calc(100% * #{unquote-fraction($fraction)} - #{$gutter});
     }
 }
 
@@ -85,5 +62,5 @@
 //     or percentage. The global $gutter is used as default.
 
 @mixin offset($fraction, $gutter: $gutter) {
-    margin-left: calc(99.9% * #{unquote-fraction($fraction)} + #{unquote-fraction($fraction)} * #{$gutter});
+    margin-left: calc(100% * #{unquote-fraction($fraction)} + #{$gutter} * 0.5);
 }

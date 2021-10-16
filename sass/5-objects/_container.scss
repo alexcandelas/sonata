@@ -13,11 +13,9 @@ the `.container` is limited to the defined max-width.
 
 
 // The maximum width for the `.container` object.
-// A default of 1170 px is provided, which is the sum
-// of 12 columns of 70 px each, using the default gutter of 30 px.
 // Modify this value as you like.
 
-$container-max-width: 1170px !default;
+$container-max-width: 80rem !default;
 
 
 // Define if the `.container` object should be horizontally centered.
