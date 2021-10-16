@@ -7612,22 +7612,38 @@ Color
 
 /*
 ================================================================================
-Leading
+Line height
 ================================================================================
 */
-.leading-none {
-  line-height: 1 !important;
-}
-
-.leading-tight {
-  line-height: 1.2 !important;
-}
-
-.leading-normal {
+.lh-base {
   line-height: 1.6 !important;
 }
 
-.leading-loose {
+.lh-headings {
+  line-height: 1.2 !important;
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+.lh-2 {
+  line-height: 1.2 !important;
+}
+
+.lh-3 {
+  line-height: 1.4 !important;
+}
+
+.lh-4 {
+  line-height: 1.6 !important;
+}
+
+.lh-5 {
+  line-height: 1.8 !important;
+}
+
+.lh-6 {
   line-height: 2 !important;
 }
 

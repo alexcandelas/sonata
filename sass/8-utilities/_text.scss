@@ -53,17 +53,27 @@ $utility-text-colors: map-merge($utility-colors,
 
 /*
 ================================================================================
-Leading
+Line height
 ================================================================================
 */
 
-@each $affix, $min-width in utility-breakpoints("leading") {
+@each $affix, $min-width in utility-breakpoints("line-height") {
     @include media($min-width) {
 
-        #{set-affix("leading-none", $affix)}   { line-height: 1 !important; }
-        #{set-affix("leading-tight", $affix)}  { line-height: $line-height-tight !important; }
-        #{set-affix("leading-normal", $affix)} { line-height: $line-height !important; }
-        #{set-affix("leading-loose", $affix)}  { line-height: $line-height-loose !important; }
+        #{set-affix("lh-base", $affix)} {
+            line-height: $line-height-base !important;
+        }
+
+        #{set-affix("lh-headings", $affix)} {
+            line-height: $line-height-headings !important;
+        }
+
+        #{set-affix("lh-1", $affix)} { line-height: 1 !important; }
+        #{set-affix("lh-2", $affix)} { line-height: 1.2 !important; }
+        #{set-affix("lh-3", $affix)} { line-height: 1.4 !important; }
+        #{set-affix("lh-4", $affix)} { line-height: 1.6 !important; }
+        #{set-affix("lh-5", $affix)} { line-height: 1.8 !important; }
+        #{set-affix("lh-6", $affix)} { line-height: 2 !important; }
 
     }
 }

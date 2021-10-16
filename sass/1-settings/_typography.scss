@@ -72,16 +72,11 @@ $font-weight: $font-weight-normal !default;
 // =============================================================================
 
 
-// The line height for the body text.
+// Line height for body text.
 
-$line-height: 1.6 !default;
-
-
-// A tight line height value used for headings and utility classes.
-
-$line-height-tight: 1.2 !default;
+$line-height-base: 1.6 !default;
 
 
-// A more relaxed value. Used for utility classes.
+// A tight line height used for headings.
 
-$line-height-loose: 2 !default;
+$line-height-headings: 1.2 !default;
