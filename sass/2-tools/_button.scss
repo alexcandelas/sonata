@@ -38,19 +38,20 @@
             border-color-hover: map-get($options, border-color) or transparent,
             border-color-active: map-get($options, border-color) or transparent,
             text-color: best-color-contrast($bg-color, (#fff, rgba(#000, 0.7))),
-            text-color-hover: null
+            text-color-hover: best-color-contrast($bg-color-hover, (#fff, rgba(#000, 0.7)))
         ), $options
     );
 
+    --text-color: #{map-get($props, text-color)};
     background-color: map-get($props, background-color);
     border: 1px solid map-get($props, border-color);
-    color: map-get($props, text-color);
+    color: var(--text-color);
     transition: background-color 150ms ease-out, border-color 150ms ease-out, color 150ms ease-out;
 
     &:focus,
     &:hover,
     &:active {
-        color: map-get($props, text-color-hover) or map-get($props, text-color);
+        --text-color: #{map-get($props, text-color-hover)};
         text-decoration: none;
     }
 
@@ -68,14 +69,14 @@
     &:disabled:focus,
     &:disabled:hover,
     &:disabled:active {
+        --text-color: #{map-get($props, text-color)};
         background-color: map-get($props, background-color);
         border-color: map-get($props, border-color);
-        color: map-get($props, text-color);
     }
 
     &.btn--loading::after {
-        border-right-color: map-get($props, text-color);
-        border-top-color: map-get($props, text-color);
+        border-right-color: var(--text-color);
+        border-top-color: var(--text-color);
     }
 }
 

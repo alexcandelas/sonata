@@ -58,7 +58,8 @@ $button-padding-y: 0.75em !default;
 .btn--success {
     @include button((
         background-color: $color-success,
-        text-color: #fff
+        text-color: #fff,
+        text-color-hover: #fff
     ));
 }
 
