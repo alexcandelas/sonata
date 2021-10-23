@@ -765,37 +765,9 @@ the `.container` is limited to the defined max-width.
 */
 .container,
 .fluid-container {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: max(1rem, min(5vw, 2rem));
+  padding-right: max(1rem, min(5vw, 2rem));
   width: 100%;
-}
-
-@media (min-width: 20em) {
-  .container,
-  .fluid-container {
-    padding-left: calc(3.2px + 4vw);
-  }
-}
-
-@media (min-width: 45em) {
-  .container,
-  .fluid-container {
-    padding-left: 32px;
-  }
-}
-
-@media (min-width: 20em) {
-  .container,
-  .fluid-container {
-    padding-right: calc(3.2px + 4vw);
-  }
-}
-
-@media (min-width: 45em) {
-  .container,
-  .fluid-container {
-    padding-right: 32px;
-  }
 }
 
 .container {
