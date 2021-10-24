@@ -807,7 +807,7 @@ The row object is a flex container for grid columns.
   margin-right: -1rem;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:row {
     display: flex;
     flex-flow: row wrap;
@@ -816,7 +816,7 @@ The row object is a flex container for grid columns.
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:row {
     display: flex;
     flex-flow: row wrap;
@@ -825,8 +825,17 @@ The row object is a flex container for grid columns.
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:row {
     display: flex;
     flex-flow: row wrap;
     margin-left: -1rem;
@@ -1041,7 +1050,7 @@ or another flex container to display properly. Widths are set in percentages.
   width: auto;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:col {
     flex-grow: 0;
     flex-shrink: 0;
@@ -1218,7 +1227,7 @@ or another flex container to display properly. Widths are set in percentages.
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:col {
     flex-grow: 0;
     flex-shrink: 0;
@@ -1395,7 +1404,7 @@ or another flex container to display properly. Widths are set in percentages.
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:col {
     flex-grow: 0;
     flex-shrink: 0;
@@ -1572,6 +1581,183 @@ or another flex container to display properly. Widths are set in percentages.
   }
 }
 
+@media (min-width: 80em) {
+  .xl\:col {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+  }
+  .xl\:col-1\/12 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/12 - 2rem);
+  }
+  .xl\:col-1\/11 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/11 - 2rem);
+  }
+  .xl\:col-1\/10 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/10 - 2rem);
+  }
+  .xl\:col-1\/9 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/9 - 2rem);
+  }
+  .xl\:col-1\/8 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/8 - 2rem);
+  }
+  .xl\:col-1\/7 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/7 - 2rem);
+  }
+  .xl\:col-1\/6 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/6 - 2rem);
+  }
+  .xl\:col-1\/5 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/5 - 2rem);
+  }
+  .xl\:col-1\/4 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/4 - 2rem);
+  }
+  .xl\:col-3\/10 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 3/10 - 2rem);
+  }
+  .xl\:col-1\/3 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/3 - 2rem);
+  }
+  .xl\:col-2\/5 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 2/5 - 2rem);
+  }
+  .xl\:col-5\/12 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 5/12 - 2rem);
+  }
+  .xl\:col-1\/2 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 1/2 - 2rem);
+  }
+  .xl\:col-7\/12 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 7/12 - 2rem);
+  }
+  .xl\:col-3\/5 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 3/5 - 2rem);
+  }
+  .xl\:col-2\/3 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 2/3 - 2rem);
+  }
+  .xl\:col-7\/10 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 7/10 - 2rem);
+  }
+  .xl\:col-3\/4 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 3/4 - 2rem);
+  }
+  .xl\:col-4\/5 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 4/5 - 2rem);
+  }
+  .xl\:col-5\/6 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 5/6 - 2rem);
+  }
+  .xl\:col-9\/10 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 9/10 - 2rem);
+  }
+  .xl\:col-11\/12 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% * 11/12 - 2rem);
+  }
+  .xl\:col-auto {
+    flex: 1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: auto;
+  }
+}
+
 /*
 ================================================================================
 Offset
@@ -1675,7 +1861,7 @@ The offset object allows you to push grid columns to the right.
   margin-left: calc(100% * 11/12 + 2rem * 0.5);
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:offset-0 {
     margin-left: 1rem;
   }
@@ -1750,7 +1936,7 @@ The offset object allows you to push grid columns to the right.
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:offset-0 {
     margin-left: 1rem;
   }
@@ -1825,7 +2011,7 @@ The offset object allows you to push grid columns to the right.
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:offset-0 {
     margin-left: 1rem;
   }
@@ -1896,6 +2082,81 @@ The offset object allows you to push grid columns to the right.
     margin-left: calc(100% * 9/10 + 2rem * 0.5);
   }
   .lg\:offset-11\/12 {
+    margin-left: calc(100% * 11/12 + 2rem * 0.5);
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:offset-0 {
+    margin-left: 1rem;
+  }
+  .xl\:offset-1\/12 {
+    margin-left: calc(100% * 1/12 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/11 {
+    margin-left: calc(100% * 1/11 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/10 {
+    margin-left: calc(100% * 1/10 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/9 {
+    margin-left: calc(100% * 1/9 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/8 {
+    margin-left: calc(100% * 1/8 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/7 {
+    margin-left: calc(100% * 1/7 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/6 {
+    margin-left: calc(100% * 1/6 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/5 {
+    margin-left: calc(100% * 1/5 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/4 {
+    margin-left: calc(100% * 1/4 + 2rem * 0.5);
+  }
+  .xl\:offset-3\/10 {
+    margin-left: calc(100% * 3/10 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/3 {
+    margin-left: calc(100% * 1/3 + 2rem * 0.5);
+  }
+  .xl\:offset-2\/5 {
+    margin-left: calc(100% * 2/5 + 2rem * 0.5);
+  }
+  .xl\:offset-5\/12 {
+    margin-left: calc(100% * 5/12 + 2rem * 0.5);
+  }
+  .xl\:offset-1\/2 {
+    margin-left: calc(100% * 1/2 + 2rem * 0.5);
+  }
+  .xl\:offset-7\/12 {
+    margin-left: calc(100% * 7/12 + 2rem * 0.5);
+  }
+  .xl\:offset-3\/5 {
+    margin-left: calc(100% * 3/5 + 2rem * 0.5);
+  }
+  .xl\:offset-2\/3 {
+    margin-left: calc(100% * 2/3 + 2rem * 0.5);
+  }
+  .xl\:offset-7\/10 {
+    margin-left: calc(100% * 7/10 + 2rem * 0.5);
+  }
+  .xl\:offset-3\/4 {
+    margin-left: calc(100% * 3/4 + 2rem * 0.5);
+  }
+  .xl\:offset-4\/5 {
+    margin-left: calc(100% * 4/5 + 2rem * 0.5);
+  }
+  .xl\:offset-5\/6 {
+    margin-left: calc(100% * 5/6 + 2rem * 0.5);
+  }
+  .xl\:offset-9\/10 {
+    margin-left: calc(100% * 9/10 + 2rem * 0.5);
+  }
+  .xl\:offset-11\/12 {
     margin-left: calc(100% * 11/12 + 2rem * 0.5);
   }
 }
@@ -3301,7 +3562,7 @@ of a pure BEM approach to avoid unnecessary CSS classes.
  *
  * Credit: https://css-tricks.com/responsive-data-tables/
  */
-@media (max-width: 37.4375em) {
+@media (max-width: 39.9375em) {
   .sm\:table--responsive {
     display: inline-block;
   }
@@ -3346,7 +3607,7 @@ of a pure BEM approach to avoid unnecessary CSS classes.
   }
 }
 
-@media (max-width: 44.9375em) {
+@media (max-width: 49.9375em) {
   .md\:table--responsive {
     display: inline-block;
   }
@@ -3391,7 +3652,7 @@ of a pure BEM approach to avoid unnecessary CSS classes.
   }
 }
 
-@media (max-width: 59.9375em) {
+@media (max-width: 63.9375em) {
   .lg\:table--responsive {
     display: inline-block;
   }
@@ -3430,6 +3691,51 @@ of a pure BEM approach to avoid unnecessary CSS classes.
     width: 1px;
   }
   .lg\:table--responsive tr {
+    display: block;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+  }
+}
+
+@media (max-width: 79.9375em) {
+  .xl\:table--responsive {
+    display: inline-block;
+  }
+  .xl\:table--responsive tbody > :nth-child(even) {
+    background-color: #f9fafa;
+  }
+  .xl\:table--responsive tbody {
+    display: block;
+  }
+  .xl\:table--responsive td, .xl\:table--responsive th {
+    display: flex;
+  }
+  .xl\:table--responsive td {
+    border-bottom: 1px solid rgba(214, 218, 221, 0.5);
+    padding: 0.6em 0.8em;
+  }
+  .xl\:table--responsive td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-weight: 700;
+    margin-right: 0.8em;
+    width: calc(45% - 0.8em);
+  }
+  .xl\:table--responsive td:last-child {
+    border-bottom: 0;
+  }
+  .xl\:table--responsive thead {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  .xl\:table--responsive tr {
     display: block;
     padding-bottom: 0.5em;
     padding-top: 0.5em;
@@ -3752,7 +4058,7 @@ Border
   border-top: 4px solid #d6dadd !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:b-0 {
     border: 0 !important;
   }
@@ -3830,7 +4136,7 @@ Border
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:b-0 {
     border: 0 !important;
   }
@@ -3908,7 +4214,7 @@ Border
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:b-0 {
     border: 0 !important;
   }
@@ -3982,6 +4288,84 @@ Border
     border-right: 4px solid #d6dadd !important;
   }
   .lg\:bt-4 {
+    border-top: 4px solid #d6dadd !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:b-0 {
+    border: 0 !important;
+  }
+  .xl\:bb-0 {
+    border-bottom: 0 !important;
+  }
+  .xl\:bl-0 {
+    border-left: 0 !important;
+  }
+  .xl\:br-0 {
+    border-right: 0 !important;
+  }
+  .xl\:bt-0 {
+    border-top: 0 !important;
+  }
+  .xl\:b-1 {
+    border: 1px solid #d6dadd !important;
+  }
+  .xl\:bb-1 {
+    border-bottom: 1px solid #d6dadd !important;
+  }
+  .xl\:bl-1 {
+    border-left: 1px solid #d6dadd !important;
+  }
+  .xl\:br-1 {
+    border-right: 1px solid #d6dadd !important;
+  }
+  .xl\:bt-1 {
+    border-top: 1px solid #d6dadd !important;
+  }
+  .xl\:b-2 {
+    border: 2px solid #d6dadd !important;
+  }
+  .xl\:bb-2 {
+    border-bottom: 2px solid #d6dadd !important;
+  }
+  .xl\:bl-2 {
+    border-left: 2px solid #d6dadd !important;
+  }
+  .xl\:br-2 {
+    border-right: 2px solid #d6dadd !important;
+  }
+  .xl\:bt-2 {
+    border-top: 2px solid #d6dadd !important;
+  }
+  .xl\:b-3 {
+    border: 3px solid #d6dadd !important;
+  }
+  .xl\:bb-3 {
+    border-bottom: 3px solid #d6dadd !important;
+  }
+  .xl\:bl-3 {
+    border-left: 3px solid #d6dadd !important;
+  }
+  .xl\:br-3 {
+    border-right: 3px solid #d6dadd !important;
+  }
+  .xl\:bt-3 {
+    border-top: 3px solid #d6dadd !important;
+  }
+  .xl\:b-4 {
+    border: 4px solid #d6dadd !important;
+  }
+  .xl\:bb-4 {
+    border-bottom: 4px solid #d6dadd !important;
+  }
+  .xl\:bl-4 {
+    border-left: 4px solid #d6dadd !important;
+  }
+  .xl\:br-4 {
+    border-right: 4px solid #d6dadd !important;
+  }
+  .xl\:bt-4 {
     border-top: 4px solid #d6dadd !important;
   }
 }
@@ -4241,7 +4625,7 @@ Display
   display: none !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:d-block {
     display: block !important;
   }
@@ -4265,7 +4649,7 @@ Display
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:d-block {
     display: block !important;
   }
@@ -4289,7 +4673,7 @@ Display
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:d-block {
     display: block !important;
   }
@@ -4309,6 +4693,30 @@ Display
     display: table !important;
   }
   .lg\:hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:d-block {
+    display: block !important;
+  }
+  .xl\:d-inline {
+    display: inline !important;
+  }
+  .xl\:d-inline-block {
+    display: inline-block !important;
+  }
+  .xl\:d-flex {
+    display: flex !important;
+  }
+  .xl\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .xl\:d-table {
+    display: table !important;
+  }
+  .xl\:hidden {
     display: none !important;
   }
 }
@@ -4480,7 +4888,7 @@ Flex
   flex-wrap: wrap-reverse !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:flex-initial {
     flex: initial !important;
   }
@@ -4588,7 +4996,7 @@ Flex
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:flex-initial {
     flex: initial !important;
   }
@@ -4696,7 +5104,7 @@ Flex
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:flex-initial {
     flex: initial !important;
   }
@@ -4804,6 +5212,114 @@ Flex
   }
 }
 
+@media (min-width: 80em) {
+  .xl\:flex-initial {
+    flex: initial !important;
+  }
+  .xl\:flex-auto {
+    flex: auto !important;
+  }
+  .xl\:flex-none {
+    flex: none !important;
+  }
+  .xl\:flex-1 {
+    flex: 1 !important;
+  }
+  .xl\:content-start {
+    align-content: flex-start !important;
+  }
+  .xl\:content-center {
+    align-content: center !important;
+  }
+  .xl\:content-end {
+    align-content: flex-end !important;
+  }
+  .xl\:content-around {
+    align-content: space-around !important;
+  }
+  .xl\:content-between {
+    align-content: space-between !important;
+  }
+  .xl\:content-stretch {
+    align-content: stretch !important;
+  }
+  .xl\:items-start {
+    align-items: flex-start !important;
+  }
+  .xl\:items-center {
+    align-items: center !important;
+  }
+  .xl\:items-end {
+    align-items: flex-end !important;
+  }
+  .xl\:items-stretch {
+    align-items: stretch !important;
+  }
+  .xl\:self-auto {
+    align-self: auto !important;
+  }
+  .xl\:self-start {
+    align-self: flex-start !important;
+  }
+  .xl\:self-center {
+    align-self: center !important;
+  }
+  .xl\:self-end {
+    align-self: flex-end !important;
+  }
+  .xl\:self-stretch {
+    align-self: stretch !important;
+  }
+  .xl\:flex-col {
+    flex-direction: column !important;
+  }
+  .xl\:flex-col-reverse {
+    flex-direction: column-reverse !important;
+  }
+  .xl\:flex-row {
+    flex-direction: row !important;
+  }
+  .xl\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+  .xl\:justify-start {
+    justify-content: flex-start !important;
+  }
+  .xl\:justify-center {
+    justify-content: center !important;
+  }
+  .xl\:justify-end {
+    justify-content: flex-end !important;
+  }
+  .xl\:justify-around {
+    justify-content: space-around !important;
+  }
+  .xl\:justify-between {
+    justify-content: space-between !important;
+  }
+  .xl\:justify-evenly {
+    justify-content: space-evenly !important;
+  }
+  .xl\:order-first {
+    order: -1 !important;
+  }
+  .xl\:order-none {
+    order: 0 !important;
+  }
+  .xl\:order-last {
+    order: 1 !important;
+  }
+  .xl\:flex-nowrap {
+    flex-wrap: nowrap !important;
+  }
+  .xl\:flex-wrap {
+    flex-wrap: wrap !important;
+  }
+  .xl\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+}
+
 /*
 ================================================================================
 Float
@@ -4827,7 +5343,7 @@ Float
   float: right !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:clearfix::after {
     clear: both;
     content: "";
@@ -4844,7 +5360,7 @@ Float
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:clearfix::after {
     clear: both;
     content: "";
@@ -4861,7 +5377,7 @@ Float
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:clearfix::after {
     clear: both;
     content: "";
@@ -4874,6 +5390,23 @@ Float
     float: none !important;
   }
   .lg\:float-right {
+    float: right !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .xl\:float-left {
+    float: left !important;
+  }
+  .xl\:float-none {
+    float: none !important;
+  }
+  .xl\:float-right {
     float: right !important;
   }
 }
@@ -5153,7 +5686,7 @@ Margin
   margin-top: 4rem !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:m-auto {
     margin: auto !important;
   }
@@ -5363,7 +5896,7 @@ Margin
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:m-auto {
     margin: auto !important;
   }
@@ -5573,7 +6106,7 @@ Margin
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:m-auto {
     margin: auto !important;
   }
@@ -5783,6 +6316,216 @@ Margin
   }
 }
 
+@media (min-width: 80em) {
+  .xl\:m-auto {
+    margin: auto !important;
+  }
+  .xl\:mb-auto {
+    margin-bottom: auto !important;
+  }
+  .xl\:ml-auto {
+    margin-left: auto !important;
+  }
+  .xl\:mr-auto {
+    margin-right: auto !important;
+  }
+  .xl\:mt-auto {
+    margin-top: auto !important;
+  }
+  .xl\:mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .xl\:my-auto {
+    margin-bottom: auto !important;
+    margin-top: auto !important;
+  }
+  .xl\:m-0 {
+    margin: 0 !important;
+  }
+  .xl\:mb-0 {
+    margin-bottom: 0 !important;
+  }
+  .xl\:ml-0 {
+    margin-left: 0 !important;
+  }
+  .xl\:mr-0 {
+    margin-right: 0 !important;
+  }
+  .xl\:mt-0 {
+    margin-top: 0 !important;
+  }
+  .xl\:mx-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .xl\:my-0 {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+  .xl\:m-1 {
+    margin: 0.25rem !important;
+  }
+  .xl\:mb-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  .xl\:ml-1 {
+    margin-left: 0.25rem !important;
+  }
+  .xl\:mr-1 {
+    margin-right: 0.25rem !important;
+  }
+  .xl\:mt-1 {
+    margin-top: 0.25rem !important;
+  }
+  .xl\:mx-1 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+  .xl\:my-1 {
+    margin-bottom: 0.25rem !important;
+    margin-top: 0.25rem !important;
+  }
+  .xl\:m-2 {
+    margin: 0.5rem !important;
+  }
+  .xl\:mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  .xl\:ml-2 {
+    margin-left: 0.5rem !important;
+  }
+  .xl\:mr-2 {
+    margin-right: 0.5rem !important;
+  }
+  .xl\:mt-2 {
+    margin-top: 0.5rem !important;
+  }
+  .xl\:mx-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+  .xl\:my-2 {
+    margin-bottom: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  .xl\:m-4 {
+    margin: 1rem !important;
+  }
+  .xl\:mb-4 {
+    margin-bottom: 1rem !important;
+  }
+  .xl\:ml-4 {
+    margin-left: 1rem !important;
+  }
+  .xl\:mr-4 {
+    margin-right: 1rem !important;
+  }
+  .xl\:mt-4 {
+    margin-top: 1rem !important;
+  }
+  .xl\:mx-4 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  .xl\:my-4 {
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  .xl\:m-6 {
+    margin: 1.5rem !important;
+  }
+  .xl\:mb-6 {
+    margin-bottom: 1.5rem !important;
+  }
+  .xl\:ml-6 {
+    margin-left: 1.5rem !important;
+  }
+  .xl\:mr-6 {
+    margin-right: 1.5rem !important;
+  }
+  .xl\:mt-6 {
+    margin-top: 1.5rem !important;
+  }
+  .xl\:mx-6 {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+  .xl\:my-6 {
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  .xl\:m-8 {
+    margin: 2rem !important;
+  }
+  .xl\:mb-8 {
+    margin-bottom: 2rem !important;
+  }
+  .xl\:ml-8 {
+    margin-left: 2rem !important;
+  }
+  .xl\:mr-8 {
+    margin-right: 2rem !important;
+  }
+  .xl\:mt-8 {
+    margin-top: 2rem !important;
+  }
+  .xl\:mx-8 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+  }
+  .xl\:my-8 {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+  }
+  .xl\:m-12 {
+    margin: 3rem !important;
+  }
+  .xl\:mb-12 {
+    margin-bottom: 3rem !important;
+  }
+  .xl\:ml-12 {
+    margin-left: 3rem !important;
+  }
+  .xl\:mr-12 {
+    margin-right: 3rem !important;
+  }
+  .xl\:mt-12 {
+    margin-top: 3rem !important;
+  }
+  .xl\:mx-12 {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+  }
+  .xl\:my-12 {
+    margin-bottom: 3rem !important;
+    margin-top: 3rem !important;
+  }
+  .xl\:m-16 {
+    margin: 4rem !important;
+  }
+  .xl\:mb-16 {
+    margin-bottom: 4rem !important;
+  }
+  .xl\:ml-16 {
+    margin-left: 4rem !important;
+  }
+  .xl\:mr-16 {
+    margin-right: 4rem !important;
+  }
+  .xl\:mt-16 {
+    margin-top: 4rem !important;
+  }
+  .xl\:mx-16 {
+    margin-left: 4rem !important;
+    margin-right: 4rem !important;
+  }
+  .xl\:my-16 {
+    margin-bottom: 4rem !important;
+    margin-top: 4rem !important;
+  }
+}
+
 /*
 ================================================================================
 Max width
@@ -5796,7 +6539,7 @@ Max width
   max-width: 100% !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:max-w-none {
     max-width: none !important;
   }
@@ -5805,7 +6548,7 @@ Max width
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:max-w-none {
     max-width: none !important;
   }
@@ -5814,11 +6557,20 @@ Max width
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:max-w-none {
     max-width: none !important;
   }
   .lg\:max-w-full {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:max-w-none {
+    max-width: none !important;
+  }
+  .xl\:max-w-full {
     max-width: 100% !important;
   }
 }
@@ -6059,7 +6811,7 @@ Padding
   padding-top: 2rem !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:p-0 {
     padding: 0 !important;
   }
@@ -6223,7 +6975,7 @@ Padding
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:p-0 {
     padding: 0 !important;
   }
@@ -6387,7 +7139,7 @@ Padding
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:p-0 {
     padding: 0 !important;
   }
@@ -6551,6 +7303,170 @@ Padding
   }
 }
 
+@media (min-width: 80em) {
+  .xl\:p-0 {
+    padding: 0 !important;
+  }
+  .xl\:pb-0 {
+    padding-bottom: 0 !important;
+  }
+  .xl\:pl-0 {
+    padding-left: 0 !important;
+  }
+  .xl\:pr-0 {
+    padding-right: 0 !important;
+  }
+  .xl\:pt-0 {
+    padding-top: 0 !important;
+  }
+  .xl\:px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .xl\:py-0 {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+  .xl\:p-1 {
+    padding: 0.25rem !important;
+  }
+  .xl\:pb-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  .xl\:pl-1 {
+    padding-left: 0.25rem !important;
+  }
+  .xl\:pr-1 {
+    padding-right: 0.25rem !important;
+  }
+  .xl\:pt-1 {
+    padding-top: 0.25rem !important;
+  }
+  .xl\:px-1 {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+  .xl\:py-1 {
+    padding-bottom: 0.25rem !important;
+    padding-top: 0.25rem !important;
+  }
+  .xl\:p-2 {
+    padding: 0.5rem !important;
+  }
+  .xl\:pb-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  .xl\:pl-2 {
+    padding-left: 0.5rem !important;
+  }
+  .xl\:pr-2 {
+    padding-right: 0.5rem !important;
+  }
+  .xl\:pt-2 {
+    padding-top: 0.5rem !important;
+  }
+  .xl\:px-2 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .xl\:py-2 {
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+  .xl\:p-3 {
+    padding: 0.75rem !important;
+  }
+  .xl\:pb-3 {
+    padding-bottom: 0.75rem !important;
+  }
+  .xl\:pl-3 {
+    padding-left: 0.75rem !important;
+  }
+  .xl\:pr-3 {
+    padding-right: 0.75rem !important;
+  }
+  .xl\:pt-3 {
+    padding-top: 0.75rem !important;
+  }
+  .xl\:px-3 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .xl\:py-3 {
+    padding-bottom: 0.75rem !important;
+    padding-top: 0.75rem !important;
+  }
+  .xl\:p-4 {
+    padding: 1rem !important;
+  }
+  .xl\:pb-4 {
+    padding-bottom: 1rem !important;
+  }
+  .xl\:pl-4 {
+    padding-left: 1rem !important;
+  }
+  .xl\:pr-4 {
+    padding-right: 1rem !important;
+  }
+  .xl\:pt-4 {
+    padding-top: 1rem !important;
+  }
+  .xl\:px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .xl\:py-4 {
+    padding-bottom: 1rem !important;
+    padding-top: 1rem !important;
+  }
+  .xl\:p-6 {
+    padding: 1.5rem !important;
+  }
+  .xl\:pb-6 {
+    padding-bottom: 1.5rem !important;
+  }
+  .xl\:pl-6 {
+    padding-left: 1.5rem !important;
+  }
+  .xl\:pr-6 {
+    padding-right: 1.5rem !important;
+  }
+  .xl\:pt-6 {
+    padding-top: 1.5rem !important;
+  }
+  .xl\:px-6 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  .xl\:py-6 {
+    padding-bottom: 1.5rem !important;
+    padding-top: 1.5rem !important;
+  }
+  .xl\:p-8 {
+    padding: 2rem !important;
+  }
+  .xl\:pb-8 {
+    padding-bottom: 2rem !important;
+  }
+  .xl\:pl-8 {
+    padding-left: 2rem !important;
+  }
+  .xl\:pr-8 {
+    padding-right: 2rem !important;
+  }
+  .xl\:pt-8 {
+    padding-top: 2rem !important;
+  }
+  .xl\:px-8 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .xl\:py-8 {
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
+  }
+}
+
 /*
 ================================================================================
 Position
@@ -6609,7 +7525,7 @@ Position
   top: auto !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:absolute {
     position: absolute !important;
   }
@@ -6652,7 +7568,7 @@ Position
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:absolute {
     position: absolute !important;
   }
@@ -6695,7 +7611,7 @@ Position
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:absolute {
     position: absolute !important;
   }
@@ -6734,6 +7650,49 @@ Position
     top: 0 !important;
   }
   .lg\:top-auto {
+    top: auto !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:absolute {
+    position: absolute !important;
+  }
+  .xl\:fixed {
+    position: fixed !important;
+  }
+  .xl\:relative {
+    position: relative !important;
+  }
+  .xl\:static {
+    position: static !important;
+  }
+  .xl\:sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+  }
+  .xl\:bottom-0 {
+    bottom: 0 !important;
+  }
+  .xl\:bottom-auto {
+    bottom: auto !important;
+  }
+  .xl\:left-0 {
+    left: 0 !important;
+  }
+  .xl\:left-auto {
+    left: auto !important;
+  }
+  .xl\:right-0 {
+    right: 0 !important;
+  }
+  .xl\:right-auto {
+    right: auto !important;
+  }
+  .xl\:top-0 {
+    top: 0 !important;
+  }
+  .xl\:top-auto {
     top: auto !important;
   }
 }
@@ -6880,7 +7839,7 @@ Width
   width: 100% !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:w-auto {
     width: auto !important;
   }
@@ -6946,7 +7905,7 @@ Width
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:w-auto {
     width: auto !important;
   }
@@ -7012,7 +7971,7 @@ Width
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:w-auto {
     width: auto !important;
   }
@@ -7074,6 +8033,72 @@ Width
     width: 91.66667% !important;
   }
   .lg\:w-full {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:w-auto {
+    width: auto !important;
+  }
+  .xl\:w-1\/12 {
+    width: 8.33333% !important;
+  }
+  .xl\:w-1\/10 {
+    width: 10% !important;
+  }
+  .xl\:w-1\/6 {
+    width: 16.66667% !important;
+  }
+  .xl\:w-1\/5 {
+    width: 20% !important;
+  }
+  .xl\:w-1\/4 {
+    width: 25% !important;
+  }
+  .xl\:w-3\/10 {
+    width: 30% !important;
+  }
+  .xl\:w-1\/3 {
+    width: 33.33333% !important;
+  }
+  .xl\:w-2\/5 {
+    width: 40% !important;
+  }
+  .xl\:w-5\/12 {
+    width: 41.66667% !important;
+  }
+  .xl\:w-1\/2 {
+    width: 50% !important;
+  }
+  .xl\:w-7\/12 {
+    width: 58.33333% !important;
+  }
+  .xl\:w-3\/5 {
+    width: 60% !important;
+  }
+  .xl\:w-2\/3 {
+    width: 66.66667% !important;
+  }
+  .xl\:w-7\/10 {
+    width: 70% !important;
+  }
+  .xl\:w-3\/4 {
+    width: 75% !important;
+  }
+  .xl\:w-4\/5 {
+    width: 80% !important;
+  }
+  .xl\:w-5\/6 {
+    width: 83.33333% !important;
+  }
+  .xl\:w-9\/10 {
+    width: 90% !important;
+  }
+  .xl\:w-11\/12 {
+    width: 91.66667% !important;
+  }
+  .xl\:w-full {
     width: 100% !important;
   }
 }
@@ -7248,7 +8273,7 @@ Color
   color: #246b8e !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   .sm\:color-transparent {
     color: transparent !important;
   }
@@ -7362,7 +8387,7 @@ Color
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .md\:color-transparent {
     color: transparent !important;
   }
@@ -7476,7 +8501,7 @@ Color
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .lg\:color-transparent {
     color: transparent !important;
   }
@@ -7590,6 +8615,120 @@ Color
   }
 }
 
+@media (min-width: 80em) {
+  .xl\:color-transparent {
+    color: transparent !important;
+  }
+  .xl\:color-primary {
+    color: #502a7a !important;
+  }
+  .xl\:color-black {
+    color: #000 !important;
+  }
+  .xl\:color-white {
+    color: #fff !important;
+  }
+  .xl\:color-link {
+    color: #39c !important;
+  }
+  .xl\:color-gray-10 {
+    color: #f9fafa !important;
+  }
+  .xl\:color-gray-20 {
+    color: #f0f2f3 !important;
+  }
+  .xl\:color-gray-30 {
+    color: #e7e9ec !important;
+  }
+  .xl\:color-gray-40 {
+    color: #d6dadd !important;
+  }
+  .xl\:color-gray-50 {
+    color: #adb5bd !important;
+  }
+  .xl\:color-gray-60 {
+    color: #8a96a1 !important;
+  }
+  .xl\:color-gray-70 {
+    color: #5f6b78 !important;
+  }
+  .xl\:color-gray-80 {
+    color: #3a4148 !important;
+  }
+  .xl\:color-gray-90 {
+    color: #202428 !important;
+  }
+  .xl\:color-blue-10 {
+    color: #ebf5fa !important;
+  }
+  .xl\:color-blue-20 {
+    color: #d1e8f3 !important;
+  }
+  .xl\:color-blue-30 {
+    color: #9acde6 !important;
+  }
+  .xl\:color-blue-40 {
+    color: #67b3d9 !important;
+  }
+  .xl\:color-blue-50 {
+    color: #39c !important;
+  }
+  .xl\:color-blue-60 {
+    color: #2d86b3 !important;
+  }
+  .xl\:color-blue-70 {
+    color: #246b8e !important;
+  }
+  .xl\:color-blue-80 {
+    color: #154258 !important;
+  }
+  .xl\:color-blue-90 {
+    color: #0f2e3d !important;
+  }
+  .xl\:color-info {
+    color: #2d86b3 !important;
+  }
+  .xl\:color-info-light {
+    color: #d1e8f3 !important;
+  }
+  .xl\:color-info-text {
+    color: #154258 !important;
+  }
+  .xl\:color-success {
+    color: #20c372 !important;
+  }
+  .xl\:color-success-light {
+    color: #b6f3d5 !important;
+  }
+  .xl\:color-success-text {
+    color: #126b3f !important;
+  }
+  .xl\:color-danger {
+    color: #d03a40 !important;
+  }
+  .xl\:color-danger-light {
+    color: #f3cecf !important;
+  }
+  .xl\:color-danger-text {
+    color: #a1262b !important;
+  }
+  .xl\:color-warning {
+    color: #ffca34 !important;
+  }
+  .xl\:color-warning-light {
+    color: #fff2cc !important;
+  }
+  .xl\:color-warning-text {
+    color: #7b5b00 !important;
+  }
+  .xl\:color-text {
+    color: #3a4148 !important;
+  }
+  .xl\:color-link-focus {
+    color: #246b8e !important;
+  }
+}
+
 /*
 ================================================================================
 Line height
@@ -7683,7 +8822,7 @@ Ellipsis
   white-space: normal !important;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 40em) {
   /*
          * Truncate long text with an ellipsis.
          */
@@ -7702,7 +8841,7 @@ Ellipsis
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   /*
          * Truncate long text with an ellipsis.
          */
@@ -7721,7 +8860,7 @@ Ellipsis
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   /*
          * Truncate long text with an ellipsis.
          */
@@ -7734,6 +8873,25 @@ Ellipsis
          * Reset the properties of the `truncate` class to default values.
          */
   .lg\:truncate-none {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 80em) {
+  /*
+         * Truncate long text with an ellipsis.
+         */
+  .xl\:truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  /*
+         * Reset the properties of the `truncate` class to default values.
+         */
+  .xl\:truncate-none {
     overflow: visible !important;
     text-overflow: clip !important;
     white-space: normal !important;
