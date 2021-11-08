@@ -3104,7 +3104,7 @@ The structure looks like this:
     .form-file__text (text input)
     .form-file__btn (focusable button)
 
-Requires javascript for full functionality.
+Requires JavaScript for full functionality.
 */
 /*
  * 1. Prevents the contents of the component from appearing above
@@ -3177,6 +3177,144 @@ Requires javascript for full functionality.
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+/*
+================================================================================
+Form Switch
+================================================================================
+
+A checkbox styled as a toggle switch.
+
+The structure looks like this:
+
+.form-switch (wrapper)
+    .form-switch__input (hidden checkbox)
+    .form-switch__toggle
+        .form-switch__label.form-switch__label--on (optional)
+        .form-switch__toggle-btn
+        .form-switch__label.form-switch__label--off (optional)
+
+Requires JavaScript.
+*/
+.form-switch {
+  display: inline-block;
+  height: 26px;
+  position: relative;
+  vertical-align: middle;
+  width: 49.4px;
+}
+
+.form-switch__input {
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.form-switch__toggle {
+  background-color: #e7e9ec;
+  border-radius: 26px;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  transition: background-color 150ms ease-out;
+  width: 100%;
+}
+
+.form-switch__toggle--checked {
+  background-color: #20c372;
+}
+
+.form-switch__toggle-btn {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.16);
+  display: inline-block;
+  height: 20px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 150ms ease-out;
+  width: 20px;
+}
+
+.form-switch__toggle--checked .form-switch__toggle-btn {
+  transform: translateX(23.4px);
+}
+
+:focus-visible + .form-switch__toggle .form-switch__toggle-btn {
+  box-shadow: 0 0 0 2px #39c, 0 0 0 8px rgba(173, 181, 189, 0.2);
+}
+
+.form-switch__label {
+  align-items: center;
+  display: flex;
+  font-size: 0.6875rem;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  transition: color 150ms ease-out, opacity 150ms ease-out;
+  width: 60%;
+}
+
+.form-switch__label--off {
+  color: #8a96a1;
+  right: 0.05rem;
+}
+
+.form-switch__toggle--checked .form-switch__label--off {
+  opacity: 0;
+}
+
+.form-switch__label--on {
+  color: #fff;
+  left: 0.05rem;
+  opacity: 0;
+}
+
+.form-switch__toggle--checked .form-switch__label--on {
+  opacity: 1;
+}
+
+/* Animations
+============================================================================= */
+.form-switch__toggle--off {
+  animation: form-switch-on 150ms ease-out reverse;
+}
+
+.form-switch__toggle--on {
+  -webkit-animation: form-switch-on 150ms ease-out;
+          animation: form-switch-on 150ms ease-out;
+}
+
+@-webkit-keyframes form-switch-on {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(13px) scaleX(1.6);
+  }
+  100% {
+    transform: translateX(23.4px);
+  }
+}
+
+@keyframes form-switch-on {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(13px) scaleX(1.6);
+  }
+  100% {
+    transform: translateX(23.4px);
+  }
 }
 
 /*

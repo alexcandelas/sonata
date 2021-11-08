@@ -1,0 +1,127 @@
+/*
+================================================================================
+Form Switch
+================================================================================
+
+A checkbox styled as a toggle switch.
+
+The structure looks like this:
+
+.form-switch (wrapper)
+    .form-switch__input (hidden checkbox)
+    .form-switch__toggle
+        .form-switch__label.form-switch__label--on (optional)
+        .form-switch__toggle-btn
+        .form-switch__label.form-switch__label--off (optional)
+
+Requires JavaScript.
+*/
+
+
+// Color to be used on `checked` state.
+
+$form-switch-accent-color: $color-success !default;
+
+
+// Control height.
+
+$form-switch-height: 26px !default;
+
+
+.form-switch {
+    display: inline-block;
+    height: $form-switch-height;
+    position: relative;
+    vertical-align: middle;
+    width: $form-switch-height * 1.9;
+}
+
+.form-switch__input {
+    height: 100%;
+    opacity: 0;
+    @include position(absolute, 0 null null 0);
+    width: 100%;
+    z-index: 1;
+}
+
+.form-switch__toggle {
+    background-color: $color-gray-30;
+    border-radius: $form-switch-height;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    transition: background-color 150ms ease-out;
+    width: 100%;
+
+    &--checked {
+        background-color: $form-switch-accent-color;
+    }
+}
+
+.form-switch__toggle-btn {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.16);
+    display: inline-block;
+    height: $form-switch-height - 6px;
+    @include position(absolute, 3px null null 3px);
+    transition: transform 150ms ease-out;
+    width: $form-switch-height - 6px;
+
+    .form-switch__toggle--checked & {
+        transform: translateX($form-switch-height * 0.9);
+    }
+
+    :focus-visible + .form-switch__toggle & {
+        box-shadow: 0 0 0 2px $color-blue-50, 0 0 0 8px rgba($color-gray-50, 0.2);
+    }
+}
+
+.form-switch__label {
+    align-items: center;
+    display: flex;
+    font-size: rem(11);
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+    @include position(absolute, 0 null null null);
+    transition: color 150ms ease-out, opacity 150ms ease-out;
+    width: 60%;
+
+    &--off {
+        color: $color-gray-60;
+        right: 0.05rem;
+
+        .form-switch__toggle--checked & {
+            opacity: 0;
+        }
+    }
+
+    &--on {
+        color: #fff;
+        left: 0.05rem;
+        opacity: 0;
+
+        .form-switch__toggle--checked & {
+            opacity: 1;
+        }
+    }
+}
+
+
+/* Animations
+============================================================================= */
+
+.form-switch__toggle--off {
+    animation: form-switch-on 150ms ease-out reverse;
+}
+
+.form-switch__toggle--on {
+    animation: form-switch-on 150ms ease-out;
+}
+
+@keyframes form-switch-on {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(#{$form-switch-height / 2}) scaleX(1.6); }
+    100% {transform: translateX($form-switch-height * 0.9); }
+}
