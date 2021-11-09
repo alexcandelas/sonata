@@ -214,7 +214,7 @@ $table-padding-y: 0.6em !default;
  * Credit: https://css-tricks.com/responsive-data-tables/
  */
 @each $affix, $max-width in $breakpoints {
-    @include media-until($max-width) {
+    @include media-below($max-width) {
 
         #{set-affix("table--responsive", $affix)} {
             @include table-responsive($table-padding-x, $table-padding-y);

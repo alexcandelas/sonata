@@ -55,7 +55,7 @@
 // @param {number | string} $max-width - Accepts a key registered in the
 //     `$breakpoints` map or a value in ems or pixels.
 
-@mixin media-until($max-width) {
+@mixin media-below($max-width) {
     @include media(null, $max-width) {
         @content
     }
