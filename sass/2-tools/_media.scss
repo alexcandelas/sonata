@@ -20,23 +20,21 @@
 //     registered in the `$breakpoints` map or a value in ems or pixels.
 
 @mixin media($min-width, $max-width: null) {
-    $min-width: if(map-has-key($breakpoints, $min-width), bp($min-width, px), $min-width);
-    $min-width: if($min-width and $min-width <= 0, null, $min-width);
-
-    $max-width: if(map-has-key($breakpoints, $max-width), bp($max-width, px), $max-width);
-    $max-width: if($max-width and $max-width <= 0, null, $max-width);
-
-    @if ($max-width and unit($max-width) == "em") {
-        $max-width: px($max-width);
+    @if type-of($min-width) == "string" and str-slice($min-width, 1, 1) == "<" {
+        $max-width: str-slice($min-width, 2);
+        $min-width: null;
     }
 
-    @if not $min-width and not $max-width {
+    $min-width: parse-bp-value($min-width);
+    $max-width: parse-bp-value($max-width);
+
+    @if $min-width == 0 and $max-width == 0 {
         @content
-    } @else if $min-width and not $max-width {
+    } @else if $min-width > 0 and $max-width == 0 {
         @media (min-width: em($min-width)) {
             @content
         }
-    } @else if not $min-width and $max-width {
+    } @else if $min-width == 0 and $max-width > 0 {
         @media (max-width: em($max-width - 1)) {
             @content
         }
