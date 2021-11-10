@@ -451,7 +451,7 @@
 //
 // Credit: https://hugogiraudel.com/2014/01/13/sass-string-replacement-function/
 //
-// @author Hugo Giraudel
+// @author Kitty Giraudel
 // @param {string} $string - Initial string
 // @param {string} $search - Substring to replace
 // @param {string} $replace [""] - New value
@@ -472,8 +472,8 @@
 //
 // Credit: https://hugogiraudel.com/2014/01/15/sass-string-to-number/
 //
-// @author Hugo Giraudel
 // @param {string} $string
+// @author Kitty Giraudel
 // @return {number}
 
 @function str-to-number($string) {
