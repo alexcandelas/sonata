@@ -450,26 +450,6 @@
 }
 
 
-// Output a CSS calc function that constrains a value from
-// A to B over viewport-width A to viewport-width B.
-// Requires a media query to cap the value at B.
-//
-// Credit: https://css-tricks.com/between-the-lines/
-//
-// @author David Bachmann
-// @param {number} $from - Minimum value
-// @param {number} $to - Maximum value
-// @param {number} $from-width - Minimum viewport width in pixels
-// @param {number} $to-width - Maximum viewport width in pixels
-
-@function value-between($from, $to, $from-width, $to-width) {
-    $slope: strip-units($to - $from) / strip-units($to-width - $from-width);
-    $base: $from - $slope * strip-units($from-width);
-
-    @return calc(#{$base} + #{100vw * $slope});
-}
-
-
 // =============================================================================
 // Strings
 // =============================================================================

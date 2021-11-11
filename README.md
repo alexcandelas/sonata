@@ -55,7 +55,6 @@ Sonata takes ideas or inspiration from other projects made by awesome people:
 - Color and math functions from [sass-color-helpers](https://github.com/voxpelli/sass-color-helpers) by Pelle Wessman.
 - [Suit CSS](https://github.com/suitcss/base): some base styles and flex utilities (order).
 - The `table-responsive` mixin is based on [this article](https://css-tricks.com/responsive-data-tables/) by [Chris Coyier](https://twitter.com/chriscoyier).
-- The `fluid` mixin is adapted from the work by [Luca Rosaldi](https://codepen.io/LucaRosaldi/pen/RgPbeR), based on the idea proposed by [David Bachmann](https://css-tricks.com/between-the-lines/).
 - [Bourbon](https://www.bourbon.io/): the `position` mixin and a couple of internal functions.
 - [Bootstrap](https://getbootstrap.com/): Several class names.
 
