@@ -5,7 +5,7 @@ Sonata is a responsive CSS framework and UI toolkit based on [ITCSS](https://itc
 It includes:
 
 - A customizable fluid grid system.
-- Objects (layout abstractions).
+- Abstraction classes.
 - UI for common components (buttons, form elements, alerts).
 - Responsive utility classes.
 

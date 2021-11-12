@@ -12,8 +12,7 @@
 // Tools ......... Mixins and functions.
 // Generic ....... Resets and normalization.
 // Elements ...... Unclassed HTML elements.
-// Objects ....... Layout and design patterns (no cosmetics).
-// Support ....... Simple styled elements and global animations.
+// Abstractions .. Objects (layout abstractions) and design patterns.
 // Components .... Designed pieces of UI.
 // Utilities ..... Overrides and utility classes.
 
@@ -71,63 +70,57 @@
 
 
 
-// Objects
+// Abstractions
 // =============================================================================
 
-@import "5-objects/_container";
-@import "5-objects/_form-control";
-@import "5-objects/_grid";
-@import "5-objects/_list-bare";
-@import "5-objects/_list-inline";
-@import "5-objects/_list-spaced";
-@import "5-objects/_ratio";
-@import "5-objects/_table-scrollable";
-
-
-
-// Support
-// =============================================================================
-
-@import "6-support/_animations";
-@import "6-support/_text";
-@import "6-support/_validation-icons";
+@import "5-abstractions/_animations";
+@import "5-abstractions/_container";
+@import "5-abstractions/_form-control";
+@import "5-abstractions/_grid";
+@import "5-abstractions/_list-bare";
+@import "5-abstractions/_list-inline";
+@import "5-abstractions/_list-spaced";
+@import "5-abstractions/_ratio";
+@import "5-abstractions/_table-scrollable";
+@import "5-abstractions/_text";
+@import "5-abstractions/_validation-icons";
 
 
 
 // Components
 // =============================================================================
 
-@import "7-components/_alerts";
-@import "7-components/_buttons";
-@import "7-components/_checkbox";
-@import "7-components/_form-field";
-@import "7-components/_form-file";
-@import "7-components/_form-switch";
-@import "7-components/_messages";
-@import "7-components/_radio";
-@import "7-components/_section";
-@import "7-components/_tables";
+@import "6-components/_alerts";
+@import "6-components/_buttons";
+@import "6-components/_checkbox";
+@import "6-components/_form-field";
+@import "6-components/_form-file";
+@import "6-components/_form-switch";
+@import "6-components/_messages";
+@import "6-components/_radio";
+@import "6-components/_section";
+@import "6-components/_tables";
 
 
 
 // Utilities
 // =============================================================================
 
-@import "8-utilities/_print";
-@import "8-utilities/_background";
-@import "8-utilities/_border";
-@import "8-utilities/_display";
-@import "8-utilities/_flex";
-@import "8-utilities/_float";
-@import "8-utilities/_margin";
-@import "8-utilities/_max-width";
-@import "8-utilities/_overflow";
-@import "8-utilities/_padding";
-@import "8-utilities/_position";
-@import "8-utilities/_shadow";
-@import "8-utilities/_svg";
-@import "8-utilities/_table-layout";
-@import "8-utilities/_width";
-@import "8-utilities/_text";
-@import "8-utilities/_vertical-alignment";
-@import "8-utilities/_visibility";
+@import "7-utilities/_print";
+@import "7-utilities/_background";
+@import "7-utilities/_border";
+@import "7-utilities/_display";
+@import "7-utilities/_flex";
+@import "7-utilities/_float";
+@import "7-utilities/_margin";
+@import "7-utilities/_max-width";
+@import "7-utilities/_overflow";
+@import "7-utilities/_padding";
+@import "7-utilities/_position";
+@import "7-utilities/_shadow";
+@import "7-utilities/_svg";
+@import "7-utilities/_table-layout";
+@import "7-utilities/_width";
+@import "7-utilities/_text";
+@import "7-utilities/_vertical-alignment";
+@import "7-utilities/_visibility";

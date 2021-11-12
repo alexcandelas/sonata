@@ -717,6 +717,33 @@ sup {
 
 /*
 ================================================================================
+Spin
+================================================================================
+*/
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+/*
+================================================================================
 Container
 ================================================================================
 
@@ -3274,33 +3301,6 @@ when the table's width is large enough.
 
 .table-scrollable > table {
   margin-bottom: 0;
-}
-
-/*
-================================================================================
-Spin
-================================================================================
-*/
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.spin {
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
 }
 
 /*
