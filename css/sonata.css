@@ -717,42 +717,6 @@ sup {
 
 /*
 ================================================================================
-Box
-================================================================================
-
-The box object is just a container with some padding for breathing room.
-*/
-.box {
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
-.box > :last-child {
-  margin-bottom: 0;
-}
-
-.box--xs {
-  padding: 0.5rem;
-}
-
-.box--sm {
-  padding: 0.75rem;
-}
-
-.box--lg {
-  padding: 1.5rem;
-}
-
-.box--xl {
-  padding: 2rem;
-}
-
-.box--2xl {
-  padding: 3rem;
-}
-
-/*
-================================================================================
 Container
 ================================================================================
 
@@ -3384,33 +3348,6 @@ label > .description {
 
 .success {
   color: #20c372;
-}
-
-/*
-================================================================================
-Lead
-================================================================================
-*/
-/*
- * A class that makes text more noticeable. Useful for the opening
- * paragraph of an article or page.
- */
-.lead {
-  color: #8a96a1;
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-/*
-================================================================================
-Muted
-================================================================================
-*/
-/*
- * Reduce the importance of text by lowering its opacity.
- */
-.muted {
-  opacity: 0.55;
 }
 
 /*

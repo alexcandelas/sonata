@@ -54,34 +54,3 @@ Descriptions
 .success {
     color: $color-success;
 }
-
-
-/*
-================================================================================
-Lead
-================================================================================
-*/
-
-/*
- * A class that makes text more noticeable. Useful for the opening
- * paragraph of an article or page.
- */
-.lead {
-    color: $color-gray-60;
-    font-size: rem($font-size-xl);
-    font-weight: $font-weight-light;
-}
-
-
-/*
-================================================================================
-Muted
-================================================================================
-*/
-
-/*
- * Reduce the importance of text by lowering its opacity.
- */
-.muted {
-    opacity: 0.55;
-}
