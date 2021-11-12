@@ -45,6 +45,7 @@
   },
   "files": [
     "css/*.css",
+    "layers/*.scss",
     "sass/**/*.scss"
   ]
 }
