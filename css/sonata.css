@@ -3246,6 +3246,207 @@ to provide more breathing room.
 
 /*
 ================================================================================
+Media
+================================================================================
+
+The media object is a common layout pattern where an image is displayed
+side by side with text.
+
+Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+*/
+.media {
+  align-items: flex-start;
+  display: flex;
+}
+
+.media__body {
+  flex: 1;
+}
+
+.media__img {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+}
+
+.media--centered {
+  align-items: center;
+}
+
+.media--reverse .media__img {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+@media (max-width: 39.9375em) {
+  .\<sm\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .\<sm\:media__body {
+    flex: 1;
+  }
+  .\<sm\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .\<sm\:media--centered {
+    align-items: center;
+  }
+  .\<sm\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 40em) {
+  .sm\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .sm\:media__body {
+    flex: 1;
+  }
+  .sm\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .sm\:media--centered {
+    align-items: center;
+  }
+  .sm\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 49.9375em) {
+  .\<md\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .\<md\:media__body {
+    flex: 1;
+  }
+  .\<md\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .\<md\:media--centered {
+    align-items: center;
+  }
+  .\<md\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 50em) {
+  .md\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .md\:media__body {
+    flex: 1;
+  }
+  .md\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .md\:media--centered {
+    align-items: center;
+  }
+  .md\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .\<lg\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .\<lg\:media__body {
+    flex: 1;
+  }
+  .\<lg\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .\<lg\:media--centered {
+    align-items: center;
+  }
+  .\<lg\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 64em) {
+  .lg\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .lg\:media__body {
+    flex: 1;
+  }
+  .lg\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .lg\:media--centered {
+    align-items: center;
+  }
+  .lg\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 79.9375em) {
+  .\<xl\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .\<xl\:media__body {
+    flex: 1;
+  }
+  .\<xl\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .\<xl\:media--centered {
+    align-items: center;
+  }
+  .\<xl\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 80em) {
+  .xl\:media {
+    align-items: flex-start;
+    display: flex;
+  }
+  .xl\:media__body {
+    flex: 1;
+  }
+  .xl\:media__img {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+  .xl\:media--centered {
+    align-items: center;
+  }
+  .xl\:media--reverse .media__img {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+/*
+================================================================================
 Ratio
 ================================================================================
 

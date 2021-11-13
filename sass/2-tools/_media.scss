@@ -1,0 +1,36 @@
+// =============================================================================
+// Media
+// =============================================================================
+
+
+// Create a media object.
+//
+// @param {number} $gap [1rem]
+// @param {string} $align [flex-start]
+// @param {boolean} $reverse [false]
+
+@mixin media($gap: 1rem, $align: flex-start, $reverse: false) {
+    $align-alias: (
+        "end": flex-end,
+        "start": flex-start
+    );
+
+    & {
+        align-items: if(map-has-key($align-alias, $align), map-get($align-alias, $align), $align);
+        display: flex;
+    }
+
+    &__body {
+        flex: 1;
+    }
+
+    &__img {
+        flex: 0 0 auto;
+
+        @if $reverse {
+            margin-left: $gap;
+        } @else {
+            margin-right: $gap;
+        }
+    }
+}

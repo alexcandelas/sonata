@@ -1,0 +1,34 @@
+/*
+================================================================================
+Media
+================================================================================
+
+The media object is a common layout pattern where an image is displayed
+side by side with text.
+
+Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+*/
+
+// Width between image and body.
+
+$media-gap: 1rem !default;
+
+
+@each $affix, $min-width in breakpoints() {
+    @include screen($min-width) {
+
+        #{set-affix("media", $affix)} {
+            @include media($media-gap);
+        }
+
+        #{set-affix("media--centered", $affix)} {
+            align-items: center;
+        }
+
+        #{set-affix("media--reverse .media__img", $affix)} {
+            margin-left: $media-gap;
+            margin-right: 0;
+        }
+
+    }
+}
