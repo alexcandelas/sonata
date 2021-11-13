@@ -5,7 +5,7 @@ Table layout
 */
 
 @each $affix, $min-width in utility-breakpoints("table-layout") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("table-auto", $affix)}  { table-layout: auto !important; }
         #{set-affix("table-fixed", $affix)} { table-layout: fixed !important; }

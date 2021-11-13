@@ -5,7 +5,7 @@ Float
 */
 
 @each $affix, $min-width in utility-breakpoints("float") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("clearfix", $affix)} {
             @include clearfix;

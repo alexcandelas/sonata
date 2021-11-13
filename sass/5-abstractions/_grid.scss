@@ -11,7 +11,7 @@ The row object is a flex container for grid columns.
 // for each one of the registered breakpoints.
 
 @each $affix, $min-width in breakpoints() {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("row", $affix)} {
             display: flex;
@@ -42,7 +42,7 @@ or another flex container to display properly. Widths are set in percentages.
 // All of these classes are generated with their responsive variants.
 
 @each $affix, $min-width in breakpoints() {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("col", $affix)} {
             @include column;
@@ -79,7 +79,7 @@ The offset object allows you to push grid columns to the right.
 // responsive variants.
 
 @each $affix, $min-width in breakpoints() {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("offset-0", $affix)} {
             margin-left: $gutter * 0.5;

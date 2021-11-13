@@ -5,7 +5,7 @@ SVG
 */
 
 @each $affix, $min-width in utility-breakpoints("svg") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         /*
          * Combine with a text-color utility to set the fill color of an SVG.

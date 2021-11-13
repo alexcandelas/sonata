@@ -25,7 +25,7 @@ $utility-border-widths: (
 
 
 @each $affix, $min-width in utility-breakpoints("border") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-border-widths {
             #{set-affix("b-" + $name, $affix)}  {
@@ -72,7 +72,7 @@ $utility-border-colors: $utility-colors !default;
 
 
 @each $affix, $min-width in utility-breakpoints("border-color") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $color, $value in $utility-border-colors {
             #{set-affix("border-" + $color, $affix)} {
@@ -113,7 +113,7 @@ $utility-border-radiuses: (
 
 
 @each $affix, $min-width in utility-breakpoints("border-radius") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-border-radiuses {
             $name: if($name == "default", "", "-" + $name);

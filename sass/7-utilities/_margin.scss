@@ -33,7 +33,7 @@ $utility-margins: (
 
 
 @each $affix, $min-width in utility-breakpoints("margin") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-margins {
             #{set-affix("m-" + $name, $affix)}  { margin: $value !important; }

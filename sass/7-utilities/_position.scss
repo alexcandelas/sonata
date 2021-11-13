@@ -5,7 +5,7 @@ Position
 */
 
 @each $affix, $min-width in utility-breakpoints("position") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("absolute", $affix)} { position: absolute !important; }
         #{set-affix("fixed", $affix)}    { position: fixed !important; }

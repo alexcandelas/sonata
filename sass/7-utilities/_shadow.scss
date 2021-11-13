@@ -5,7 +5,7 @@ Shadow
 */
 
 @each $affix, $min-width in utility-breakpoints("shadow") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("shadow", $affix)} {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;

@@ -5,7 +5,7 @@ Alignment
 */
 
 @each $affix, $min-width in utility-breakpoints("text-alignment") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("text-center", $affix)} { text-align: center !important; }
         #{set-affix("text-left", $affix)}   { text-align: left !important; }
@@ -39,7 +39,7 @@ $utility-text-colors: map-merge($utility-colors,
 
 
 @each $affix, $min-width in utility-breakpoints("text-color") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-text-colors {
             #{set-affix("color-" + $name, $affix)} {
@@ -58,7 +58,7 @@ Line height
 */
 
 @each $affix, $min-width in utility-breakpoints("line-height") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("lh-base", $affix)} {
             line-height: $line-height-base !important;
@@ -86,7 +86,7 @@ Size
 */
 
 @each $affix, $min-width in utility-breakpoints("text-size") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("size-base", $affix)}    { font-size: $font-size !important; }
         #{set-affix("size-xs", $affix)}      { font-size: 65% !important; }
@@ -107,7 +107,7 @@ Ellipsis
 */
 
 @each $affix, $min-width in utility-breakpoints("text-ellipsis") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         /*
          * Truncate long text with an ellipsis.

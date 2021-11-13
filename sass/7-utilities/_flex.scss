@@ -10,7 +10,7 @@ Flex
  * https://github.com/suitcss/utils-flex (order utilities)
  */
 @each $affix, $min-width in utility-breakpoints("flex") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("flex-initial", $affix)} { flex: initial !important; }
         #{set-affix("flex-auto", $affix)}    { flex: auto !important; }

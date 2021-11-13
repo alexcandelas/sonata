@@ -5,7 +5,7 @@ Overflow
 */
 
 @each $affix, $min-width in utility-breakpoints("overflow") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("overflow-auto", $affix)}   { overflow: auto !important; }
         #{set-affix("overflow-hidden", $affix)} { overflow: hidden !important; }

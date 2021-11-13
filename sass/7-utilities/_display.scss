@@ -5,7 +5,7 @@ Display
 */
 
 @each $affix, $min-width in utility-breakpoints("display") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("d-block", $affix)}        { display: block !important; }
         #{set-affix("d-inline", $affix)}       { display: inline !important; }

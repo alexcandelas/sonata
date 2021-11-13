@@ -31,7 +31,7 @@ $utility-paddings: (
 
 
 @each $affix, $min-width in utility-breakpoints("padding") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-paddings {
             #{set-affix("p-" + $name, $affix)}  { padding: $value !important; }

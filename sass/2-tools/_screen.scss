@@ -1,5 +1,5 @@
 // =============================================================================
-// Media queries
+// Screen
 // =============================================================================
 
 
@@ -19,7 +19,7 @@
 // @param {number | string | null} $max-width [null] - Accepts a key
 //     registered in the `$breakpoints` map or a value in ems or pixels.
 
-@mixin media($min-width, $max-width: null) {
+@mixin screen($min-width, $max-width: null) {
     @if type-of($min-width) == "string" and str-slice($min-width, 1, 1) == "<" {
         $max-width: str-slice($min-width, 2);
         $min-width: null;
@@ -53,8 +53,8 @@
 // @param {number | string} $max-width - Accepts a key registered in the
 //     `$breakpoints` map or a value in ems or pixels.
 
-@mixin media-below($max-width) {
-    @include media(null, $max-width) {
+@mixin screen-below($max-width) {
+    @include screen(null, $max-width) {
         @content
     }
 }
@@ -69,8 +69,8 @@
 // @param {number | string} $max-width - Accepts a key registered in the
 //     `$breakpoints` map or a value in ems or pixels.
 
-@mixin media-between($min-width, $max-width) {
-    @include media($min-width, $max-width) {
+@mixin screen-between($min-width, $max-width) {
+    @include screen($min-width, $max-width) {
         @content
     }
 }

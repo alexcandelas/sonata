@@ -19,7 +19,7 @@ $utility-max-widths: (
 
 
 @each $affix, $min-width in utility-breakpoints("width") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-max-widths {
             #{set-affix(#{"max-w-" + fraction-to-class-name($name)}, $affix)} {

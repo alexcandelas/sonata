@@ -5,7 +5,7 @@ Visibility
 */
 
 @each $affix, $min-width in utility-breakpoints("visibility") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         /*
          * Hide visually and from screenreaders, but maintain layout.

@@ -40,7 +40,7 @@ $utility-widths: (
 
 
 @each $affix, $min-width in utility-breakpoints("width") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-widths {
             #{set-affix(#{"w-" + fraction-to-class-name($name)}, $affix)} {

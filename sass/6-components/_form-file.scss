@@ -63,7 +63,7 @@ $form-file-icon: escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/20
         color: transparent;
     }
 
-    @include media($form-file-breakpoint) {
+    @include screen($form-file-breakpoint) {
         background-image: none;
         color: $color-text;
         font-size: rem($font-size * 0.95);

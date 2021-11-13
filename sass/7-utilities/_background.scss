@@ -17,7 +17,7 @@ $utility-bg-colors: $utility-colors !default;
 
 
 @each $affix, $min-width in utility-breakpoints("bg-color") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         @each $name, $value in $utility-bg-colors {
             #{set-affix("bg-" + $name, $affix)}  {

@@ -5,7 +5,7 @@ Vertical alignment
 */
 
 @each $affix, $min-width in utility-breakpoints("vertical-alignment") {
-    @include media($min-width) {
+    @include screen($min-width) {
 
         #{set-affix("align-baseline", $affix)}    { vertical-align: baseline !important; }
         #{set-affix("align-bottom", $affix)}      { vertical-align: bottom !important; }
