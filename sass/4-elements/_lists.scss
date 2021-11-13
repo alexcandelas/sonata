@@ -5,7 +5,7 @@ Lists
 */
 
 dd {
-    margin-bottom: $spacer * 0.5;
+    margin-bottom: 0.5rem;
     margin-left: 0;
 }
 
@@ -14,7 +14,7 @@ dt {
 }
 
 ol, ul {
-    margin-left: $spacer * 1.2;
+    margin-left: 1.2rem;
     padding-left: 0;
 
     li > & {

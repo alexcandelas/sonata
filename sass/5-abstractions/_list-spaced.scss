@@ -9,14 +9,14 @@ to provide more breathing room.
 
 dd, li {
     .list-spaced > &:not(:last-child) {
-        margin-bottom: $spacer;
+        margin-bottom: 1rem;
     }
 
     .list-spaced--sm > &:not(:last-child) {
-        margin-bottom: $spacer * 0.5;
+        margin-bottom: 0.5rem;
     }
 
     .list-spaced--lg > &:not(:last-child) {
-        margin-bottom: $spacer * 1.5;
+        margin-bottom: 1.5rem;
     }
 }

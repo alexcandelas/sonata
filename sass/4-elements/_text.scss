@@ -58,7 +58,7 @@ a {
 blockquote {
     background-color: $color-gray-10;
     border-left: 4px solid $color-gray-30;
-    margin-bottom: $spacer * 2;
+    margin-bottom: 2rem;
     padding: 2em 2em 2em 4em;
     position: relative;
     quotes: "\201C" "\201D";
@@ -75,7 +75,7 @@ blockquote {
 figcaption {
     color: $color-gray-60;
     font-size: rem($font-size-sm);
-    padding-top: $spacer * 0.25;
+    padding-top: 0.25rem;
 }
 
 hr {
@@ -83,7 +83,7 @@ hr {
     border-top: 1px solid $color-border;
     display: block;
     height: 1px;
-    margin: $spacer 0;
+    margin: 1rem 0;
     padding: 0;
 }
 

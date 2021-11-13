@@ -82,7 +82,7 @@ $alert-icon-warning-strong: icon-warning($color-warning-text, 23) !default;
     border-radius: $alert-radius;
     color: $color-gray-70;
     font-size: rem($alert-font-size);
-    margin-bottom: $spacer;
+    margin-bottom: 1rem;
     padding: $alert-padding-y $alert-padding-x;
 
     &--info {

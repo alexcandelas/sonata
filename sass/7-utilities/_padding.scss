@@ -21,12 +21,12 @@ Padding
 
 $utility-paddings: (
     "0": 0,
-    "1": $spacer * 0.25,
-    "2": $spacer * 0.5,
-    "3": $spacer * 0.75,
-    "4": $spacer,
-    "6": $spacer * 1.5,
-    "8": $spacer * 2
+    "1": 0.25rem,
+    "2": 0.5rem,
+    "3": 0.75rem,
+    "4": 1rem,
+    "6": 1.5rem,
+    "8": 2rem
 ) !default;
 
 

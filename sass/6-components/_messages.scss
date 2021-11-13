@@ -56,7 +56,7 @@ $message-icon-warning: icon-warning($color-warning-text, 23) !default;
     background-color: $color-gray-10;
     border-radius: $message-radius;
     font-size: rem($message-font-size);
-    margin-bottom: $spacer;
+    margin-bottom: 1rem;
 
     &--info {
         background-color: $color-info-light;
