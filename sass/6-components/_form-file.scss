@@ -92,11 +92,13 @@ $form-file-icon: escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/20
 
 /*
  * 1. Prevent scrolling on small screens.
+ * 2. Fix height difference between inputs.
  */
 .form-file__upload {
     cursor: pointer;
     opacity: 0;
     overflow: hidden; /* 1 */
+    padding: 0.4em; /* 2 */
     @include position(absolute, 0 null null 0);
     z-index: 1;
 }
