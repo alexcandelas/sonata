@@ -748,10 +748,10 @@ Container
 ================================================================================
 
 The container object is widely used in a project to wrap the content and
-provide some padding between the elements and the edge of the window.
+provide some padding between the elements and the edge of the viewport.
 
 Two types of containers are provided: the `.fluid-container` will
-always stretch to fill the full width of the browser window, while
+always stretch to fill the full width of the viewport, while
 the `.container` is limited to the defined max-width.
 */
 .container,
@@ -4349,12 +4349,15 @@ Requires JavaScript for full functionality.
 
 /*
  * 1. Prevent scrolling on small screens.
+ * 2. Fix height difference between inputs.
  */
 .form-file__upload {
   cursor: pointer;
   opacity: 0;
   overflow: hidden;
   /* 1 */
+  padding: 0.4em;
+  /* 2 */
   position: absolute;
   top: 0;
   left: 0;
@@ -4497,141 +4500,6 @@ Requires JavaScript.
   100% {
     transform: translateX(23.4px);
   }
-}
-
-/*
-================================================================================
-Messages
-================================================================================
-
-A message displays information to users. It consists of a title
-and a section for the content.
-*/
-/*
- * The `.message` class should be applied to a container element.
- */
-.message {
-  background-color: #f9fafa;
-  border-radius: 3px;
-  font-size: 0.9375rem;
-  margin-bottom: 1rem;
-}
-
-.message--info {
-  background-color: #d1e8f3;
-  color: #154258;
-}
-
-.message--danger {
-  background-color: #f3cecf;
-  color: #a1262b;
-}
-
-.message--success {
-  background-color: #b6f3d5;
-  color: #126b3f;
-}
-
-.message--warning {
-  background-color: #fff2cc;
-  color: #7b5b00;
-}
-
-.message__body,
-.message__title {
-  padding: 0.75em 1em;
-}
-
-/*
- * For simple messages, you can add the body class directly
- * to a paragraph element. Alternatively, it can be applied
- * to a div tag with any content you wish.
- */
-.message__body {
-  border-radius: 0 0 3px 3px;
-}
-
-/*
- * The title class can be applied directly to a paragraph element.
- */
-.message__title {
-  background-color: #3a4148;
-  border-radius: 3px 3px 0 0;
-  color: #fff;
-  line-height: 1.4;
-  margin-bottom: 0;
-}
-
-.message--danger > .message__title {
-  background-color: #d03a40;
-}
-
-.message--info > .message__title {
-  background-color: #2d86b3;
-}
-
-.message--success > .message__title {
-  background-color: #20c372;
-}
-
-.message--warning > .message__title {
-  background-color: #ffca34;
-  color: #7b5b00;
-}
-
-/* Bordered body
-============================================================================= */
-/*
- * Add a thin border to the body element of the message component with
- * this modifier class to get a better contrast in certain backgrounds.
- */
-.message__body--bordered {
-  border-color: #d6dadd;
-  border-style: solid;
-  border-width: 0 1px 1px;
-}
-
-.message--info > .message__body--bordered {
-  border-color: #9acde6;
-}
-
-.message--danger > .message__body--bordered {
-  border-color: #eaa6a9;
-}
-
-.message--success > .message__body--bordered {
-  border-color: #55e39c;
-}
-
-.message--warning > .message__body--bordered {
-  border-color: #ffdd7b;
-}
-
-/* Title with icons
-============================================================================= */
-/*
- * Add a status icon to the title element.
- */
-.message__title--has-icon {
-  background-position: 1em 0.65em;
-  background-repeat: no-repeat;
-  padding-left: calc(1em + 35px);
-}
-
-.message--info .message__title--has-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 24 24' fill='%23fff'%3E%3Ccircle fill='none' stroke='%23fff' stroke-width='2' stroke-miterlimit='10' cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='16' r='1.25'/%3E%3Cpath d='M13 13.5h-2L10.5 6h3z'/%3E%3C/svg%3E");
-}
-
-.message--success .message__title--has-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-miterlimit='10'%3E%3Cpath d='M5.5 12.5L10 17 20 7'/%3E%3C/svg%3E");
-}
-
-.message--warning .message__title--has-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 24 24' fill='%237b5b00'%3E%3Cpath fill='none' stroke='%237b5b00' stroke-width='2' stroke-miterlimit='10' d='M4.98 19.79c-1.54 0-2.18-1.09-1.4-2.43L10.6 5.21c.77-1.34 2.03-1.34 2.81 0l7.02 12.15c.77 1.34.14 2.43-1.4 2.43H4.98z'/%3E%3Ccircle cx='12' cy='16.5' r='1'/%3E%3Cpath d='M12.7 14.5h-1.4l-.3-6h2z'/%3E%3C/svg%3E");
-}
-
-.message--danger .message__title--has-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-miterlimit='10'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M8 8l8 8m0-8l-8 8'/%3E%3C/svg%3E");
 }
 
 /*

@@ -172,7 +172,6 @@ Alternatively, if you need more control over which specific files you want to in
 @import "node_modules/sonatacss/sass/6-components/_form-field";
 @import "node_modules/sonatacss/sass/6-components/_form-file";
 @import "node_modules/sonatacss/sass/6-components/_form-switch";
-@import "node_modules/sonatacss/sass/6-components/_messages";
 @import "node_modules/sonatacss/sass/6-components/_radio";
 @import "node_modules/sonatacss/sass/6-components/_section";
 @import "node_modules/sonatacss/sass/6-components/_tables";
