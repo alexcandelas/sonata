@@ -34,7 +34,7 @@ npm install --save-dev sonatacss
 2. Create the primary Sass file for your project. You can copy this template for a quick start:
 ```scss
 /*
- * Sonata CSS Framework v0.3.0
+ * Sonata CSS Framework v0.3.1
  * https://github.com/alexcandelas/sonata
  * MIT License
  */
@@ -74,7 +74,7 @@ Each line is importing all the files for the corresponding layer.
 Alternatively, if you need more control over which specific files you want to include, you can use the following template, removing the lines that you don't need:
 ```scss
 /*
- * Sonata CSS Framework v0.3.0
+ * Sonata CSS Framework v0.3.1
  * https://github.com/alexcandelas/sonata
  * MIT License
  */
