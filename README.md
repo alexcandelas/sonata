@@ -54,19 +54,19 @@ npm install --save-dev sonatacss
 
 
 
-@import "node_modules/sonatacss/layers/settings";
+@import "node_modules/sonatacss/layers/_settings";
 
-@import "node_modules/sonatacss/layers/tools";
+@import "node_modules/sonatacss/layers/_tools";
 
-@import "node_modules/sonatacss/layers/generic";
+@import "node_modules/sonatacss/layers/_generic";
 
-@import "node_modules/sonatacss/layers/elements";
+@import "node_modules/sonatacss/layers/_elements";
 
-@import "node_modules/sonatacss/layers/abstractions";
+@import "node_modules/sonatacss/layers/_abstractions";
 
-@import "node_modules/sonatacss/layers/components";
+@import "node_modules/sonatacss/layers/_components";
 
-@import "node_modules/sonatacss/layers/utilities";
+@import "node_modules/sonatacss/layers/_utilities";
 
 ```
 Each line is importing all the files for the corresponding layer.
