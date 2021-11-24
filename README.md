@@ -47,8 +47,7 @@ npm install --save-dev sonatacss
 // Tools ......... Mixins and functions.
 // Generic ....... Resets and normalization.
 // Elements ...... Unclassed HTML elements.
-// Objects ....... Layout and design patterns (no cosmetics).
-// Support ....... Simple styled elements and global animations.
+// Abstractions .. Objects (layout abstractions) and design patterns.
 // Components .... Designed pieces of UI.
 // Utilities ..... Overrides and utility classes.
 
