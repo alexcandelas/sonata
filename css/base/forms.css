@@ -1,0 +1,29 @@
+/* Form elements
+============================================================================= */
+
+/*
+ * Provide a default appearance for textual input elements.
+ * Set a gray background when disabled.
+ */
+input:where(:not([type="button" i]):not([type="reset" i]):not([type="submit" i])),
+select,
+textarea {
+    background-color: var(--color-white, #fff);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+
+    &:where(:disabled) {
+        background-color: var(--color-gray-15, colorFallback('gray-15'));
+    }
+}
+
+/*
+ * Give a dimmed appearance to disabled controls.
+ */
+:is(button, input, select, textarea):where(:disabled) {
+    @copy .disabled;
+}
+
+label {
+    line-height: 1.4;
+}

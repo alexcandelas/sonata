@@ -1,0 +1,174 @@
+/*
+================================================================================
+Form switch
+================================================================================
+
+Component that makes checkboxes look like a toggle switch.
+Works by hiding a native `checkbox` type input while
+keeping it accessible to assistive technologies.
+
+Structure example:
+
+.form-switch (wrapper)
+    .form-switch__input (hidden checkbox)
+    .form-switch__icon-on (optional)
+    .form-switch__icon-off (optional)
+    .form-switch__label-on (optional)
+    .form-switch__label-off (optional)
+*/
+
+.form-switch {
+    --form-switch-height: 1.5em;
+    --form-switch-width: calc(var(--form-switch-height) * 1.75);
+    --form-switch-track-bg-off: var(--color-gray-20, colorFallback('gray-20'));
+    --form-switch-track-bg-on: var(--color-blue-45, colorFallback('blue-45'));
+    --form-switch-knob-bg-off: #fff;
+    --form-switch-knob-bg-on: #fff;
+    --form-switch-knob-size: calc(var(--form-switch-height) - 0.375em);
+    align-items: center;
+    background-color: var(--form-switch-track-bg-off);
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+    display: inline-flex;
+    height: var(--form-switch-height);
+    isolation: isolate;
+    justify-content: flex-start;
+    padding: 0.25em;
+    position: relative;
+    transition: background-color 150ms ease-out;
+    width: var(--form-switch-width);
+
+    &:has(:checked) {
+        background-color: var(--form-switch-track-bg-on);
+    }
+
+    &:has(:focus-visible) {
+        box-shadow: var(--offset-ring);
+    }
+
+    &:has(:disabled) {
+        @copy .disabled;
+    }
+
+    .choice-label > & {
+        top: 0.075em;
+    }
+}
+
+.form-switch::after {
+    background-color: var(--form-switch-knob-bg-off, #fff);
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    content: "";
+    display: grid;
+    flex-shrink: 0;
+    grid-template: 1fr / 1fr;
+    height: var(--form-switch-knob-size);
+    transition: background-color 150ms ease-out, transform 150ms ease-out;
+    width: var(--form-switch-knob-size);
+}
+
+.form-switch:where(:has(:checked))::after {
+    background-color: var(--form-switch-knob-bg-on, #fff);
+    transform: translateX(calc(var(--form-switch-width) - 100% - 0.5em));
+}
+
+/*
+ * A custom animation between states can be used with the help of JavaScript.
+ */
+.form-switch--off::after { animation: form-switch-on 150ms ease-out reverse }
+
+.form-switch--on::after { animation: form-switch-on 150ms ease-out }
+
+.form-switch__input {
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+
+/* Labels
+=============================================================================
+
+Optionally, a text or icon label can be displayed
+beside the knob for both states.
+*/
+
+.form-switch__label-on,
+.form-switch__label-off {
+    align-items: center;
+    display: flex;
+    font-size: 11px;
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    transition: color 150ms ease-out, opacity 150ms ease-out;
+    width: 60%;
+    z-index: 4;
+}
+
+.form-switch__label-off {
+    opacity: 1;
+    right: 0;
+
+    :where(.form-switch__input:checked) ~ & {
+        opacity: 0;
+    }
+}
+
+.form-switch__label-on {
+    left: 0;
+    opacity: 0;
+
+    :where(.form-switch__input:checked) ~ & {
+        opacity: 1;
+    }
+}
+
+
+/* Icons
+=============================================================================
+
+Optionally, icons for the `on` and `off` states
+can be displayed inside the knob.
+*/
+
+.form-switch__icon-on,
+.form-switch__icon-off {
+    align-self: center;
+    display: block;
+    justify-self: center;
+    max-height: var(--form-switch-knob-size);
+    max-width: var(--form-switch-knob-size);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms ease-out, transform 150ms ease-out;
+    z-index: 1;
+
+    .form-switch__input:checked ~ & {
+        transform: translateX(calc(var(--form-switch-width) - 100% - 0.5em));
+    }
+}
+
+:where(.form-switch__input:checked) ~ .form-switch__icon-on {
+    opacity: 1;
+}
+
+:where(.form-switch__input:not(:checked)) ~ .form-switch__icon-off {
+    opacity: 1;
+}
+
+
+/* Animations
+============================================================================= */
+
+@keyframes form-switch-on {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(calc(var(--form-switch-height) / 2)) scaleX(1.4); }
+    100% {transform: translateX(calc(var(--form-switch-width) - 100% - 0.5em)); }
+}

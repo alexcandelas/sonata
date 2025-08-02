@@ -1,0 +1,17 @@
+/*
+================================================================================
+Form control
+================================================================================
+
+Wrapper for form fields and all their related elements (e.g., label,
+help text or validation feedback).
+*/
+
+.form-control {
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

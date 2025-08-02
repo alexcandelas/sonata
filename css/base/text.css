@@ -1,0 +1,35 @@
+/* Body text
+============================================================================= */
+
+html {
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    font-size: 100%;
+    font-weight: var(--font-weight-normal, 400);
+    line-height: var(--line-height-base, 1.6);
+}
+
+body {
+    font-size: var(--font-size-base, 1rem);
+}
+
+
+/* Links
+============================================================================= */
+
+/*
+ * Set default appearance for links.
+ * About placeholder links (without `href`):
+ * https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element
+ * https://github.com/twbs/bootstrap/issues/19402
+ */
+a:where([href]) {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+a:where([href]:hover),
+a:where([href]:focus) {
+    color: var(--color-link-hover);
+    text-decoration: none;
+}

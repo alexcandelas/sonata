@@ -1,0 +1,413 @@
+/* Global
+============================================================================= */
+
+/*
+ * 1. Use border-box sizing by default.
+ * About not using `inherit`: https://github.com/jensimmons/cssremedy/issues/4
+ * 2. Set a default border style for border utilities.
+ */
+*,
+::before,
+::after {
+    box-sizing: border-box; /* 1 */
+    border: 0 solid var(--color-border, currentColor); /* 2 */
+}
+
+/*
+ * 1. Prevent overflow.
+ * 2. Set the width of tab characters to 4 spaces.
+ * 3. Prevent font size adjustments when orientation changes in iOS.
+ * 4. Remove the default tap highlight in iOS.
+ */
+:where(html) {
+    overflow-wrap: break-word; /* 1 */
+    tab-size: 4; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 3 */
+    -webkit-tap-highlight-color: transparent; /* 4 */
+}
+
+/*
+ * Remove margin.
+ */
+:where(body) {
+    margin: 0;
+}
+
+/*
+ * Set single-direction margins.
+ * https://csswizardry.com/2012/06/single-direction-margin-declarations/
+ */
+:where(address, blockquote, figure, h1, h2, h3, h4, h5, h6, dl, ol, ul, p, pre, form, table) {
+    margin-bottom: 1rem;
+    margin-top: 0;
+
+    &:where(:last-child) {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Text
+============================================================================= */
+
+/*
+ * Remove default styles from headings.
+ */
+:where(h1, h2, h3, h4, h5, h6) {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*
+ * 1. Add explicit cursor.
+ * 2. Add the correct text decoration in Safari.
+ */
+:where(abbr[title]) {
+    cursor: help; /* 1 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+/*
+ * Add the correct font weight in Edge and Safari.
+ */
+:where(b, strong) {
+    font-weight: bolder;
+}
+
+/*
+ * 1. Add the correct font size in all browsers.
+ */
+:where(code, kbd, pre, samp) {
+    font-family: var(--font-family-monospace);
+    font-size: 1em; /* 1 */
+}
+
+/*
+ * Prevent overflow of the container.
+ */
+:where(pre) {
+    overflow: auto;
+}
+
+/*
+ * Add the correct font size in all browsers.
+ */
+:where(small) {
+    font-size: 80%;
+}
+
+/*
+ * Prevent `sub` and `sup` elements from affecting the line height
+ * in all browsers.
+ */
+:where(sub, sup) {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+:where(sub) {
+    bottom: -0.25em;
+}
+
+:where(sup) {
+    top: -0.5em;
+}
+
+/*
+ * 1. Show the overflow in Edge.
+ */
+:where(hr) {
+    border-color: currentColor;
+    border-style: solid;
+    border-width: 1px 0 0;
+    color: var(--color-border, colorFallback('gray-30'));
+    height: 0;
+    margin: 1rem 0;
+    overflow: visible; /* 1 */
+}
+
+/*
+ * Add the correct display in Safari.
+ */
+:where(summary) {
+    display: list-item;
+}
+
+
+/* Lists
+============================================================================= */
+
+/*
+ * Set padding for lists.
+ */
+:where(ol, ul) {
+    padding-left: 1.5em;
+}
+
+/*
+ * Remove the margin on nested lists.
+ */
+:where(dl, ol, ul) :where(dl, ol, ul) {
+    margin: 0;
+}
+
+/*
+ * Use bold text for description terms.
+ */
+:where(dt) {
+    font-weight: var(--font-weight-bold, bolder);
+}
+
+/*
+ * 1. Undo default for all browsers.
+ */
+:where(dd) {
+    margin-bottom: 0.5rem;
+    margin-left: 0; /* 1 */
+}
+
+/*
+ * Remove the list style on navigation lists in all browsers.
+ */
+:where(nav) :where(ol, ul) {
+    list-style-type: none;
+    padding: 0;
+}
+
+/*
+ * Prevent VoiceOver from ignoring list semantics in Safari.
+ * https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
+ */
+:where(nav li)::before {
+    content: "\200B";
+    position: absolute;
+}
+
+
+/* Tables
+============================================================================= */
+
+/*
+ * 1. Collapse border spacing in all browsers.
+ * 2. Correct table border color in Chrome, Edge, and Safari.
+ * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+:where(table) {
+    border-collapse: collapse; /* 1 */
+    border-color: currentColor; /* 2 */
+    text-indent: 0; /* 3 */
+}
+
+/*
+ * 1. Set default table alignment.
+ * 2. Fix alignment for Safari.
+ */
+:where(th) {
+    font-weight: var(--font-weight-bold, bolder);
+    text-align: inherit; /* 1 */
+    text-align: -webkit-match-parent; /* 2 */
+}
+
+
+/* Forms
+============================================================================= */
+
+/*
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+:where(button, input, optgroup, select, textarea) {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: inherit; /* 1 */
+    margin: 0; /* 2 */
+}
+
+/*
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+:where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
+    -webkit-appearance: button;
+}
+
+/*
+ * Set the default cursor for non-disabled buttons.
+ */
+:where(
+    button:not(:disabled),
+    [type="button" i]:not(:disabled),
+    [type="reset" i]:not(:disabled),
+    [type="submit" i]:not(:disabled)
+) {
+    cursor: pointer;
+}
+
+/*
+ * Remove the inheritance of text transform in Edge and Firefox.
+ */
+:where(button, select) {
+    text-transform: none;
+}
+
+/*
+ * Prevent overflow.
+ */
+:where(select) {
+    max-width: 100%;
+}
+
+/*
+ * Explicitly remove focus outline in Chromium when it shouldn't be
+ * visible (e.g. as result of mouse click or touch tap).
+ */
+:where(button:focus:not(:focus-visible)) {
+    outline: 0;
+}
+
+/*
+ * 1. Correct the appearance in iOS and Safari on macOS.
+ * 2. Correct the outline style in Safari.
+ */
+:where([type="search" i]) {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/*
+ * Reset the default styles.
+ */
+:where(fieldset) {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow use of `margin`.
+ */
+:where(label) {
+    display: inline-block;
+}
+
+/*
+ * Remove padding and add some space between the `legend` and the next element.
+ */
+:where(legend) {
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+/*
+ * Add the correct vertical alignment in Chrome and Firefox.
+ */
+:where(progress) {
+    vertical-align: baseline;
+}
+
+/*
+ * Change the default resize direction.
+ */
+:where(textarea) {
+    resize: vertical;
+}
+
+/*
+ * Fix height of inputs with a type of datetime-local, date, month, week, or time.
+ * https://github.com/twbs/bootstrap/pull/30269
+ */
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+    padding: 0;
+}
+
+/*
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/*
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari and Chrome.
+ */
+::file-selector-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+/*
+ * Set the default placeholder color for all browsers.
+ */
+::placeholder {
+    color: inherit;
+    opacity: 0.5;
+}
+
+/*
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Remove the additional `:invalid` styles in Firefox.
+ * https://github.com/sindresorhus/modern-normalize/pull/40/files#r471096258
+ */
+:where(:-moz-ui-invalid) {
+    box-shadow: none;
+}
+
+
+/* Embedded content
+============================================================================= */
+
+/*
+ * 1. Prevent alignment issues in all browsers.
+ * 2. Limit the width of the elements to their container.
+ */
+:where(audio, canvas, embed, iframe, img, object, svg, video) {
+    vertical-align: middle; /* 1 */
+    max-width: 100%; /* 2 */
+}
+
+/*
+ * Maintain intrinsic aspect ratios with `max-width`.
+ */
+:where(canvas, img, svg, video) {
+    height: auto;
+}
+
+/*
+ * Remove border from iframe.
+ */
+:where(iframe) {
+    border: 0;
+}
+
+
+/* Accessibility
+============================================================================= */
+
+/*
+ * Change the cursor on disabled elements.
+ */
+:where([disabled]) {
+    cursor: not-allowed;
+}
+
+/*
+ * Hide elements with the `hidden` attribute.
+ */
+:where([hidden]) {
+    display: none;
+}

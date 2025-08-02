@@ -1,51 +1,59 @@
 {
-  "name": "sonatacss",
-  "version": "0.3.1",
-  "description": "A responsive CSS framework based on ITCSS architecture and BEM methodology.",
-  "main": "sass/sonata.scss",
-  "scripts": {
-    "build": "rimraf css/* && npm run css-compile && npm run css-prefix && npm run css-minify",
-    "css-compile": "node-sass --output-style expanded sass/sonata.scss css/sonata.css",
-    "css-minify": "cleancss css/sonata.css -o css/sonata.min.css",
-    "css-prefix": "postcss --no-map --use autoprefixer -r css/sonata.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexcandelas/sonata.git"
-  },
-  "keywords": [
-    "itcss",
-    "css",
-    "framework",
-    "bem",
-    "sass",
-    "ui",
-    "front-end"
-  ],
-  "author": "Alex Candelas <axcandelas@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alexcandelas/sonata/issues"
-  },
-  "homepage": "https://github.com/alexcandelas/sonata",
-  "browserslist": [
-    "> 0.5%",
-    "last 2 major versions",
-    "not dead",
-    "Firefox ESR",
-    "not Explorer <= 11",
-    "not OperaMini all"
-  ],
-  "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "clean-css-cli": "^5.4.1",
-    "node-sass": "^6.0.1",
-    "postcss-cli": "^9.0.1",
-    "rimraf": "^3.0.2"
-  },
-  "files": [
-    "css/*.css",
-    "layers/*.scss",
-    "sass/**/*.scss"
-  ]
+    "name": "sonatacss",
+    "version": "1.0.0-beta.1",
+    "description": "A responsive CSS framework with native CSS cascade layers and on-demand utility classes.",
+    "keywords": [
+        "css",
+        "framework",
+        "responsive",
+        "mobile-first",
+        "ui",
+        "front-end"
+    ],
+    "homepage": "https://github.com/alexcandelas/sonata",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexcandelas/sonata.git"
+    },
+    "bugs": {
+        "url": "https://github.com/alexcandelas/sonata/issues"
+    },
+    "license": "MIT",
+    "author": "Alex Candelas <axcandelas@gmail.com>",
+    "main": "index.js",
+    "exports": {
+        ".": {
+            "import": "./index.js"
+        },
+        "./abstractions/*.css": "./css/abstractions/*.css",
+        "./base/*.css": "./css/base/*.css",
+        "./components/*.css": "./css/components/*.css",
+        "./utilities/*.css": "./css/utilities/*.css",
+        "./print.css": "./css/print.css",
+        "./icons/*.svg": "./src/icons/*.svg",
+        "./palette.js": "./src/config/palette.js"
+    },
+    "type": "module",
+    "scripts": {
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "vitest": "^2.1.4"
+    },
+    "dependencies": {
+        "browserslist": "^4.24.4",
+        "browserslist-to-esbuild": "^2.1.1",
+        "lightningcss": "^1.30.1",
+        "@unocss/postcss": "^66.3.3",
+        "unocss": "^66.3.3",
+        "unocss-preset-sonatacss": "1.0.0-beta.2"
+    },
+    "peerDependencies": {
+        "vite": "^5.4.0 || ^6 || ^7"
+    },
+    "files": [
+        "css/",
+        "src/",
+        "index.js"
+    ]
 }

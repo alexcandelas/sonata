@@ -1,21 +1,17 @@
-# Common files
+*.log
 *~
-._*
 .DS_Store
 .Spotlight-V100
 .Trashes
+._*
+.cache
+.vite
 Desktop.ini
 Thumbs.db
-
-# IDEs
+coverage
+node_modules
 .idea
 .settings
 .sublime-*
-
-# Node
-/node_modules
-npm-debug.log
-
-# Sass/CSS
-.sass-cache
-*.css.map
+.vscode
+todo.md

@@ -1,0 +1,263 @@
+/*
+================================================================================
+Alert
+================================================================================
+
+Show feedback to users with a nicely styled message.
+*/
+
+/*
+ * The `alert` class can be applied directly to paragraph
+ * elements, or to their parent container (like a `div`).
+ */
+.alert {
+    background-color: var(--color-gray-5, colorFallback('gray-5'));
+    border-radius: 0.25rem;
+    color: var(--color-gray-70, colorFallback('gray-70'));
+    font-size: 15px;
+    padding: 0.75em 1em;
+}
+
+.alert--info {
+    background-color: var(--color-blue-10, colorFallback('blue-10'));
+    color: var(--color-blue-75, colorFallback('blue-75'));
+}
+
+.alert--danger {
+    background-color: var(--color-red-10, colorFallback('red-10'));
+    color: var(--color-red-70, colorFallback('red-70'));
+}
+
+.alert--success {
+    background-color: var(--color-green-10, colorFallback('green-10'));
+    color: var(--color-green-70, colorFallback('green-70'));
+}
+
+.alert--warning {
+    background-color: var(--color-yellow-5, colorFallback('yellow-5'));
+    color: var(--color-yellow-70, colorFallback('yellow-70'));
+}
+
+
+/* Outlined variants
+============================================================================= */
+
+.alert--outline {
+    background-color: #fff;
+    border: 1px solid var(--color-gray-35, colorFallback('gray-35'));
+    color: var(--color-gray-70, colorFallback('gray-70'));
+}
+
+.alert--outline-info {
+    background-color: #fff;
+    border: 1px solid var(--color-blue-35, colorFallback('blue-35'));
+    color: var(--color-blue-75, colorFallback('blue-75'));
+}
+
+.alert--outline-danger {
+    background-color: #fff;
+    border: 1px solid var(--color-red-35, colorFallback('red-35'));
+    color: var(--color-red-70, colorFallback('red-70'));
+}
+
+.alert--outline-success {
+    background-color: #fff;
+    border: 1px solid var(--color-green-35, colorFallback('green-35'));
+    color: var(--color-green-70, colorFallback('green-70'));
+}
+
+.alert--outline-warning {
+    background-color: #fff;
+    border: 1px solid var(--color-yellow-30, colorFallback('yellow-30'));
+    color: var(--color-yellow-70, colorFallback('yellow-70'));
+}
+
+
+/* Solid variants
+============================================================================= */
+
+.alert--solid {
+    background-color: var(--color-gray-60, colorFallback('gray-60'));
+    color: #fff;
+}
+
+.alert--solid-info {
+    background-color: var(--color-blue-50, colorFallback('blue-50'));
+    color: #fff;
+}
+
+.alert--solid-danger {
+    background-color: var(--color-red-50, colorFallback('red-50'));
+    color: #fff;
+}
+
+.alert--solid-success {
+    background-color: var(--color-green-45, colorFallback('green-45'));
+    color: #fff;
+}
+
+.alert--solid-warning {
+    background-color: var(--color-orange-35, colorFallback('orange-35'));
+    color: #fff;
+}
+
+
+/* Bordered
+============================================================================= */
+
+/*
+ * Add a thin border for a better contrast in certain backgrounds.
+ */
+.alert--bordered {
+    border: 1px solid var(--color-gray-20, colorFallback('gray-20'));
+
+    &:where(.alert--info)    { border-color: var(--color-blue-25, colorFallback('blue-25')); }
+    &:where(.alert--danger)  { border-color: var(--color-red-25, colorFallback('red-25')); }
+    &:where(.alert--success) { border-color: var(--color-green-30, colorFallback('green-30')); }
+    &:where(.alert--warning) { border-color: var(--color-yellow-20, colorFallback('yellow-20')); }
+}
+
+
+/* Accent
+============================================================================= */
+
+/*
+ * Make the alert stand out with a border accent.
+ */
+.alert--left-accent {
+    border-left: 4px solid var(--color-gray-30, colorFallback('gray-30'));
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+
+    &:where(.alert--info)    { border-left-color: var(--color-blue-30, colorFallback('blue-30')); }
+    &:where(.alert--danger)  { border-left-color: var(--color-red-35, colorFallback('red-35')); }
+    &:where(.alert--success) { border-left-color: var(--color-green-25, colorFallback('green-25')); }
+    &:where(.alert--warning) { border-left-color: var(--color-yellow-20, colorFallback('yellow-20')); }
+
+    &:where(.alert--outline)         { border-left-color: var(--color-gray-35, colorFallback('gray-35')); }
+    &:where(.alert--outline-info)    { border-left-color: var(--color-blue-35, colorFallback('blue-35')); }
+    &:where(.alert--outline-danger)  { border-left-color: var(--color-red-35, colorFallback('red-35')); }
+    &:where(.alert--outline-success) { border-left-color: var(--color-green-35, colorFallback('green-35')); }
+    &:where(.alert--outline-warning) { border-left-color: var(--color-yellow-30, , colorFallback('yellow-30')); }
+}
+
+.alert--top-accent {
+    border-top: 4px solid var(--color-gray-30, colorFallback('gray-30'));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &:where(.alert--info)    { border-top-color: var(--color-blue-30, colorFallback('blue-30')); }
+    &:where(.alert--danger)  { border-top-color: var(--color-red-35, colorFallback('red-35')); }
+    &:where(.alert--success) { border-top-color: var(--color-green-25, colorFallback('green-25')); }
+    &:where(.alert--warning) { border-top-color: var(--color-yellow-20, colorFallback('yellow-20')); }
+
+    &:where(.alert--outline)         { border-top-color: var(--color-gray-35, colorFallback('gray-35')); }
+    &:where(.alert--outline-info)    { border-top-color: var(--color-blue-35, colorFallback('blue-35')); }
+    &:where(.alert--outline-danger)  { border-top-color: var(--color-red-35, colorFallback('red-35')); }
+    &:where(.alert--outline-success) { border-top-color: var(--color-green-35, colorFallback('green-35')); }
+    &:where(.alert--outline-warning) { border-top-color: var(--color-yellow-30, colorFallback('yellow-30')); }
+}
+
+
+/* Icons
+============================================================================= */
+
+/*
+ * Emphasize the message with a status icon.
+ */
+.alert--has-icon,
+.alert--has-solid-icon {
+    background-origin: content-box;
+    background-position: -2.5em 0.05em;
+    background-repeat: no-repeat;
+    background-size: 1.5em;
+    padding-left: 3.5em;
+}
+
+.alert--has-icon {
+    background-image: inline-svg("sonatacss/src/icons/alert.svg", color: colorFallback('gray-35'));
+
+    &:where(.alert--info),
+    &:where(.alert--outline-info) {
+        background-image: inline-svg("sonatacss/src/icons/info.svg", color: colorFallback('blue-40'));
+    }
+
+    &:where(.alert--success),
+    &:where(.alert--outline-success) {
+        background-image: inline-svg("sonatacss/src/icons/success.svg", color: colorFallback('green-40'));
+    }
+
+    &:where(.alert--warning),
+    &:where(.alert--outline-warning) {
+        background-image: inline-svg("sonatacss/src/icons/warning.svg", color: colorFallback('yellow-30'));
+    }
+
+    &:where(.alert--danger),
+    &:where(.alert--outline-danger) {
+        background-image: inline-svg("sonatacss/src/icons/danger.svg", color: colorFallback('red-40'));
+    }
+
+    &:where(.alert--solid) {
+        background-image: inline-svg("sonatacss/src/icons/alert.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-info) {
+        background-image: inline-svg("sonatacss/src/icons/info.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-success) {
+        background-image: inline-svg("sonatacss/src/icons/success.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-warning) {
+        background-image: inline-svg("sonatacss/src/icons/warning.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-danger) {
+        background-image: inline-svg("sonatacss/src/icons/danger.svg", color: #fff);
+    }
+}
+
+.alert--has-solid-icon {
+    background-image: inline-svg("sonatacss/src/icons/alert-solid.svg", color: colorFallback('gray-35'));
+
+    &:where(.alert--info),
+    &:where(.alert--outline-info) {
+        background-image: inline-svg("sonatacss/src/icons/info-solid.svg", color: colorFallback('blue-40'));
+    }
+
+    &:where(.alert--success),
+    &:where(.alert--outline-success) {
+        background-image: inline-svg("sonatacss/src/icons/success-solid.svg", color: colorFallback('green-40'));
+    }
+
+    &:where(.alert--warning),
+    &:where(.alert--outline-warning) {
+        background-image: inline-svg("sonatacss/src/icons/warning-solid.svg", color: colorFallback('yellow-30'));
+    }
+
+    &:where(.alert--danger),
+    &:where(.alert--outline-danger) {
+        background-image: inline-svg("sonatacss/src/icons/danger-solid.svg", color: colorFallback('red-40'));
+    }
+
+    &:where(.alert--solid) {
+        background-image: inline-svg("sonatacss/src/icons/alert-solid.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-info) {
+        background-image: inline-svg("sonatacss/src/icons/info-solid.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-success) {
+        background-image: inline-svg("sonatacss/src/icons/success-solid.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-warning) {
+        background-image: inline-svg("sonatacss/src/icons/warning-solid.svg", color: #fff);
+    }
+
+    &:where(.alert--solid-danger) {
+        background-image: inline-svg("sonatacss/src/icons/danger-solid.svg", color: #fff);
+    }
+}

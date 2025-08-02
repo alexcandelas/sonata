@@ -1,0 +1,19 @@
+/*
+================================================================================
+Button reset
+================================================================================
+
+Remove all styles from a button, while preserving accessibility.
+*/
+
+.btn-reset {
+    all: unset;
+
+    &:where(:not(:disabled)) {
+        cursor: pointer;
+    }
+
+    &:focus-visible {
+        @copy .focused;
+    }
+}
