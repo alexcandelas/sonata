@@ -200,7 +200,7 @@ textarea.form-field--valid {
 /*
  * Show a "focus ring" when the element is focused.
  */
-.form-field:focus-visible,
+.form-field:focus,
 .form-field--focus {
     @copy .focused;
     border-color: var(--color-blue-30, colorFallback('blue-30'));
