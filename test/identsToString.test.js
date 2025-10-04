@@ -230,7 +230,7 @@ describe('Pseudo-classes', () => {
         expect(parseSelector(':nth-child(odd)')).toBe(':nth-child(2n+1)')
     });
 
-    it('supports input presudo-classes', () => {
+    it('supports input pseudo-classes', () => {
         parseAndCompare([
             ':enabled',
             ':disabled',
