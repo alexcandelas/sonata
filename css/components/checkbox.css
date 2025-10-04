@@ -13,7 +13,7 @@ and positioning of `checkbox` inputs.
     flex-shrink: 0;
     height: 1em;
     position: relative;
-    top: 0.25em;
+    top: 0.22em;
     transition: background-color 150ms ease-out;
     width: 1em;
 
