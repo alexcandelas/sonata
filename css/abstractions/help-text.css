@@ -20,7 +20,6 @@ Provide descriptive information or validation feedback.
     color: var(--color-gray-55, colorFallback('gray-55'));
 
     label > & {
-        margin-left: 0.25rem;
         margin-top: 0;
     }
 }
