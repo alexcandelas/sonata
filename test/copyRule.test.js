@@ -16,7 +16,7 @@ function runVisitor(code) {
     }).code.toString();
 }
 
-it('can copy rules from a class', () => {
+it('copies rules from a class', () => {
     const res = runVisitor(`
         .source {
             color: green;
@@ -93,6 +93,50 @@ it('can copy from a different layer', () => {
     
         @layer two {
             .copy { color: green }
+        }
+    `);
+});
+
+it('can copy from inside a media query', () => {
+    const res = runVisitor(`
+        .source { color: green }
+    
+        @media (width > 50em) {
+            .copy {
+                @copy .source;
+            }
+        }
+    `);
+
+    expect(res).toMatchCss(`
+        .source { color: green }
+    
+        @media (width > 50em) {
+            .copy { 
+                color: green
+            }
+        }
+    `);
+});
+
+it('can copy from inside a container query', () => {
+    const res = runVisitor(`
+        .source { color: green }
+    
+        @container (width > 50em) {
+            .copy {
+                @copy .source;
+            }
+        }
+    `);
+
+    expect(res).toMatchCss(`
+        .source { color: green }
+    
+        @container (width > 50em) {
+            .copy {
+                color: green
+            }
         }
     `);
 });
