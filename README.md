@@ -20,14 +20,14 @@ Sonata does not include any JavaScript for components.
 
 #### 1. Install Sonata
 ```bash
-npm install --save-dev sonatacss@1.0.0-beta.1
+npm install --save-dev sonatacss@1.0.0-beta.2
 ```
 
 #### 2. Register Sonata plugin
 Add `sonatacss` to Vite plugins.
 ```js
 import { defineConfig } from 'vite';
-import { sonatacss } from 'sonatacss';
+import sonatacss from 'sonatacss';
 
 export default defineConfig({
     plugins: [
