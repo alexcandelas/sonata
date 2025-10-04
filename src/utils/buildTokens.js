@@ -48,7 +48,7 @@ export default function buildTokens(tokenMap) {
     for (const key in tokenMap) {
         const propertyKey = Object.hasOwn(kebabCaseExceptions, key)
             ? kebabCaseExceptions[key]
-            : kebabCase(key);
+            : kebabCase(key, true);
 
         if (typeof tokenMap[key] === 'string' || typeof tokenMap[key] === 'number') {
             generatedTokens[propertyKey] = tokenMap[key].toString();
