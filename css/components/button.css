@@ -50,7 +50,7 @@ icon and loading variants available.
 /* Color variants
 ============================================================================= */
 
-.btn--light {
+.btn--neutral {
     --color-bg-focus: var(--color-gray-20, colorFallback('gray-20'));
     background-color: var(--color-gray-15, colorFallback('gray-15'));
     border-color: transparent;
