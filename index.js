@@ -4,6 +4,7 @@ import browserslistToEsbuild from 'browserslist-to-esbuild';
 import buildMediaQueriesMap from './src/utils/buildMediaQueriesMap.js';
 import buildTokens from './src/utils/buildTokens.js';
 import colorFallbackFunction from './src/visitors/colorFallbackFunction.js';
+import concatenateNestedClasses from './src/visitors/concatenateNestedClasses.js';
 import copyRule from './src/visitors/copyRule.js';
 import emMediaQueries from './src/visitors/emMediaQueries.js';
 import fontPxToRem from './src/visitors/fontPxToRem.js';
@@ -53,6 +54,7 @@ const visitors = [
         [responsiveRule, mediaQueriesMap],
         [inlineSvgFunction, id],
         [fontPxToRem],
+        [concatenateNestedClasses],
     ],
 
     () => [

@@ -5,9 +5,10 @@ export default {
     target: '> 0.5%, last 2 major versions, Firefox ESR, not dead',
     ignore: [],
     visitors: {
-        generateCustomProperties: true,
-        fontPxToRem: true,
+        concatenateNestedClasses: true,
         emMediaQueries: true,
+        fontPxToRem: true,
+        generateCustomProperties: true,
     },
     uno: {},
     tokens: {
