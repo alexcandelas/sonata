@@ -111,7 +111,7 @@ export default function inlineSvg(srcId) {
                     content = getContentFromFile(param, srcId);
                 }
 
-                content = replaceAttributes(content, fn.arguments.slice(1));
+                content = replaceAttributes(content.trim(), fn.arguments.slice(1));
 
                 return { raw: `url('${encodeSvg(content)}')` };
             }
