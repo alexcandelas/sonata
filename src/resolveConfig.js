@@ -94,7 +94,7 @@ function cleanConfig(object) {
 function flattenDeeplyNestedTokens(tokens) {
     for (const key in tokens) {
         if (isObject(tokens[key])) {
-            tokens[key] = buildTokens(tokens[key]);
+            tokens[key] = buildTokens(tokens[key], true);
         }
     }
 }

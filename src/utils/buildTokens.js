@@ -40,15 +40,20 @@ function flattenAndAppendTokens(key, object) {
  * Build a flattened object of tokens with their respective value.
  *
  * @param {Object} tokenMap
+ * @param {Boolean} isNestedToken
  * @returns {Object}
  */
-export default function buildTokens(tokenMap) {
+export default function buildTokens(tokenMap, isNestedToken = false) {
     generatedTokens = {};
 
     for (const key in tokenMap) {
-        const propertyKey = Object.hasOwn(kebabCaseExceptions, key)
-            ? kebabCaseExceptions[key]
-            : kebabCase(key, true);
+        let propertyKey = key;
+
+        if (! isNestedToken) {
+            propertyKey = Object.hasOwn(kebabCaseExceptions, key)
+                ? kebabCaseExceptions[key]
+                : kebabCase(key, false);
+        }
 
         if (typeof tokenMap[key] === 'string' || typeof tokenMap[key] === 'number') {
             generatedTokens[propertyKey] = tokenMap[key].toString();
