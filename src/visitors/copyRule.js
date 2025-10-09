@@ -2,23 +2,23 @@ import identsToString from '../utils/identsToString.js';
 import { merge } from '../utils/merge.js';
 import { transform } from 'lightningcss';
 
-let expectedClassNames, foundStyles;
+let requestedClassNames, foundStyles;
 
 /**
  * Return a list of classNames from the given `@copy` rule prelude.
  *
- * @param {Object} rulePrelude
+ * @param {Array} rulePrelude
  * @returns {Array}
  */
 function extractClassNames(rulePrelude) {
-    return identsToString(rulePrelude) // Restore rule prelude to a string
+    return identsToString(rulePrelude) // Restore the rule prelude to a string
         .split(',')
         .map(className => className.trim())
-        .filter(className => className); // Remove empty entries
+        .filter(Boolean); // Remove empty entries
 }
 
 /**
- * Register all CSS classes that will be needed for `@copy` rules.
+ * Register all CSS classes required by `@copy` rules.
  */
 function registerRequiredClasses(src, id, customAtRules) {
     transform({
@@ -31,7 +31,7 @@ function registerRequiredClasses(src, id, customAtRules) {
                 custom: {
                     copy(rule) {
                         extractClassNames(rule.prelude.value)
-                            .forEach(className => expectedClassNames.add(className));
+                            .forEach(className => requestedClassNames.add(className));
                     }
                 }
             }
@@ -40,7 +40,7 @@ function registerRequiredClasses(src, id, customAtRules) {
 }
 
 /**
- * Store the block content for each of the needed CSS classes.
+ * Store the style declarations for each of the necessary CSS classes.
  *
  * @param {Object} styles
  */
@@ -48,7 +48,7 @@ function searchClasses(styles) {
     for (let selector of styles.selectors) {
         selector = identsToString(selector);
 
-        if (expectedClassNames.has(selector)) {
+        if (requestedClassNames.has(selector)) {
             const storedDeclarations = foundStyles.get(selector);
 
             foundStyles.set(
@@ -75,7 +75,8 @@ function searchInsideResponsiveRule(rule) {
 }
 
 /**
- * Search for the requested classes in the source code.
+ * Search for the requested classes in the source code
+ * and store their declarations.
  */
 function storeContent(src, id, customAtRules) {
     transform({
@@ -110,49 +111,99 @@ function storeContent(src, id, customAtRules) {
 }
 
 /**
- * Copy the block content of the requested classes from the `@copy` rule.
+ * Fetch and return the styles that the `@copy` rule expects
+ * to be applied, based on the rule prelude.
+ *
+ * @param {Array} rulePrelude
+ * @returns {{declarations: [], importantDeclarations: []}}
+ */
+function resolveDeclarationsToCopy(rulePrelude) {
+    let declarationsToCopy = { declarations: [], importantDeclarations: [] };
+
+    extractClassNames(rulePrelude)
+        .forEach(className => {
+            if (foundStyles.has(className)) {
+                const found = foundStyles.get(className);
+
+                declarationsToCopy.declarations.push(...found.declarations);
+                declarationsToCopy.importantDeclarations.push(...found.importantDeclarations);
+            }
+        });
+
+    return declarationsToCopy;
+}
+
+/**
+ * Apply the copied styles to the given declaration block when the rule
+ * is a `@copy` rule. If the rule is a `@media` or `@container` rule,
+ * search its children for `@copy` rules to apply the styles.
+ *
+ * @param {Object} rule
+ * @param {Object|null} declarationBlock - The declaration block to add the copied styles to.
+ * @returns {Object}
+ */
+function applyCopiedStyles(rule, declarationBlock = null) {
+    // If the rule is a `@media` or `@container` rule,
+    // search its children for `@copy` rules instead
+    if (rule.type === 'media' || rule.type === 'container') {
+        const siblingDeclarationBlock = rule.value.rules.find(r => r.type === 'nested-declarations')?.value?.declarations;
+        rule.value.rules = rule.value.rules.map(childRule => applyCopiedStyles(childRule, siblingDeclarationBlock));
+
+        return rule;
+    }
+
+    if (rule.value.name !== 'copy') return rule;
+
+    const rulePrelude = rule.value.prelude.value;
+    const declarationsToCopy = resolveDeclarationsToCopy(rulePrelude);
+
+    // If this rule is inside a `@media` or `@container` rule, there is
+    // a possibility that there are no styles declared alongside
+    // the @copy rule. In that case, the current `@copy` rule
+    // is replaced by a new declaration block.
+    if (declarationBlock === null) {
+        return {
+            type: 'nested-declarations',
+            value: {
+                declarations: {
+                    importantDeclarations: declarationsToCopy.importantDeclarations,
+                    declarations: declarationsToCopy.declarations,
+                },
+                loc: rule.value.loc,
+            }
+        };
+    }
+
+    // Otherwise, the styles are merged into the existing declaration block
+    declarationBlock.declarations.unshift(...declarationsToCopy.declarations);
+    declarationBlock.importantDeclarations.unshift(...declarationsToCopy.importantDeclarations);
+
+    return {
+        type: 'ignored',
+        value: null
+    };
+}
+
+/**
+ * Copy the requested style declarations into the class
+ * that contains the `@copy` rule.
  *
  * @returns {Object}
  */
 export default function copyRule(src, id, customAtRules) {
-    expectedClassNames = new Set();
+    requestedClassNames = new Set();
     foundStyles = new Map();
 
     registerRequiredClasses(src, id, customAtRules);
 
-    if (! expectedClassNames.size) return;
+    if (! requestedClassNames.size) return;
 
     storeContent(src, id, customAtRules);
 
     return {
         Rule: {
             style(rule) {
-                rule.value.rules = rule.value.rules.map(child => {
-                    if (child.value.name !== 'copy') return child;
-
-                    let declarationsToCopy = {
-                        declarations: [],
-                        importantDeclarations: [],
-                    };
-
-                    extractClassNames(child.value.prelude.value)
-                        .forEach(className => {
-                            if (foundStyles.has(className)) {
-                                const found = foundStyles.get(className);
-
-                                declarationsToCopy.declarations.push(...found.declarations);
-                                declarationsToCopy.importantDeclarations.push(...found.importantDeclarations);
-                            }
-                        });
-
-                    rule.value.declarations.declarations.unshift(...declarationsToCopy.declarations);
-                    rule.value.declarations.importantDeclarations.unshift(...declarationsToCopy.importantDeclarations);
-
-                    return {
-                        type: 'ignored',
-                        value: null
-                    };
-                });
+                rule.value.rules = rule.value.rules.map(childRule => applyCopiedStyles(childRule, rule.value.declarations));
 
                 return rule;
             }

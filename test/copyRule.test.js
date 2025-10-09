@@ -23,14 +23,14 @@ it('copies rules from a class', () => {
             margin: 0;
         }
     
-        .copy {
+        .target {
             @copy .source;
         }
     `);
 
     expect(res).toMatchCss(`
         .source { color:green; margin:0 } 
-        .copy { color:green; margin:0; }
+        .target { color:green; margin:0; }
     `);
 });
 
@@ -40,7 +40,7 @@ it('does not replace an existing declaration', () => {
             color: green;
         }
     
-        .copy {
+        .target {
             @copy .source;
             color: red;
         }
@@ -48,15 +48,15 @@ it('does not replace an existing declaration', () => {
 
     expect(res).toMatchCss(`
         .source { color: green }
-        .copy { color: green; color: red; }
+        .target { color: green; color: red; }
     `);
 });
 
-it('does not remove other declarations', () => {
+it('does not remove existing declarations', () => {
     const res = runVisitor(`
         .source { color: green }
     
-        .copy {
+        .target {
             @copy .source;
             &:before { content: "" }
             @screen lg { width: 100px; }
@@ -65,7 +65,7 @@ it('does not remove other declarations', () => {
 
     expect(res).toMatchCss(`
         .source { color: green }
-        .copy {
+        .target {
             color: green;
             &:before { content: ""; }
             @screen lg { width: 100px; }
@@ -80,7 +80,7 @@ it('can copy from a different layer', () => {
         }
     
         @layer two {
-            .copy {
+            .target {
                 @copy .source;
             }
         }
@@ -92,7 +92,7 @@ it('can copy from a different layer', () => {
         }
     
         @layer two {
-            .copy { color: green }
+            .target { color: green }
         }
     `);
 });
@@ -102,7 +102,13 @@ it('can copy from inside a media query', () => {
         .source { color: green }
     
         @media (width > 50em) {
-            .copy {
+            .foo {
+                @copy .source;
+            }
+        }
+        
+        .bar {
+            @media (width > 50em) {
                 @copy .source;
             }
         }
@@ -112,7 +118,11 @@ it('can copy from inside a media query', () => {
         .source { color: green }
     
         @media (width > 50em) {
-            .copy { 
+            .foo { color: green }
+        }
+        
+        .bar {
+            @media (width > 50em) {
                 color: green
             }
         }
@@ -124,7 +134,13 @@ it('can copy from inside a container query', () => {
         .source { color: green }
     
         @container (width > 50em) {
-            .copy {
+            .foo {
+                @copy .source;
+            }
+        }
+        
+        .bar {
+            @container (width > 50em) {
                 @copy .source;
             }
         }
@@ -134,8 +150,60 @@ it('can copy from inside a container query', () => {
         .source { color: green }
     
         @container (width > 50em) {
-            .copy {
+            .foo { color: green }
+        }
+
+        .bar {
+            @container (width > 50em) {
                 color: green
+            }
+        }
+    `);
+});
+
+it('respects existing declarations inside a @media query', () => {
+    const res = runVisitor(`
+        .source { color: green }
+        
+        .target {
+            @media (width > 50em) {
+                @copy .source;
+                font-size: 14px;
+            }
+        }
+    `);
+
+    expect(res).toMatchCss(`
+        .source { color: green }
+    
+        .target {
+            @media (width > 50em) {
+                color: green;
+                font-size: 14px;
+            }
+        }
+    `);
+});
+
+it('respects existing declarations inside a @container query', () => {
+    const res = runVisitor(`
+        .source { color: green }
+        
+        .target {
+            @container (width > 50em) {
+                @copy .source;
+                font-size: 14px;
+            }
+        }
+    `);
+
+    expect(res).toMatchCss(`
+        .source { color: green }
+    
+        .target {
+            @container (width > 50em) {
+                color: green;
+                font-size: 14px;
             }
         }
     `);
