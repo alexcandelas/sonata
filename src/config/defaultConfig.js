@@ -10,7 +10,10 @@ export default {
         fontPxToRem: true,
         generateCustomProperties: true,
     },
-    uno: {},
+    uno: {
+        rules: [],
+        variants: [],
+    },
     tokens: {
         breakpoints: {
             'xs': 480,

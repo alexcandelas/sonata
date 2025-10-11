@@ -2,28 +2,47 @@ import sonataPreset from 'unocss-preset-sonatacss';
 import { defineConfig, definePreset } from 'unocss';
 import { merge } from '../utils/merge.js';
 
-const DEFAULT_CONTENT_PATH = '**/*.{html,blade.php,js,ts,jsx,tsx,vue,svelte,astro}';
+const DEFAULT_CONTENT_PATH = '**/*.{html,js,ts,jsx,tsx,astro,blade.php,svelte,vue}';
 
 /**
- * Create a new preset in Uno's configuration with all user's rules registered
- * in `sonataConfig.uno.rules`. User rules can return an array or a function.
- * Functions are injected with the registered design tokens.
+ * Normalize the registered rules or variants. Rules or variants registered
+ * as functions are executed with the provided design tokens.
+ *
+ * @param {Array} rulesOrVariants
+ * @param {Object} tokens
+ * @returns {Array}
+ */
+function resolveRulesOrVariants(rulesOrVariants, tokens) {
+    if (! Array.isArray(rulesOrVariants) || ! rulesOrVariants.length) {
+        return [];
+    }
+
+    return rulesOrVariants.map(
+        item => Array.isArray(item) ? item : item(tokens)
+    ).flat();
+}
+
+/**
+ * Create a new preset in Uno's configuration with the rules and variants
+ * registered by the user in `sonataConfig.uno.rules`. Both rules and
+ * variants can return an array or a function.
  *
  * @param {Object} sonataConfig
  */
-function injectUserRules(sonataConfig) {
-    const userPresets = sonataConfig.uno.configOrPath?.presets ?? [];
+function injectUserRulesAndVariants(sonataConfig) {
     sonataConfig.uno.configOrPath ??= {};
 
-    const rules = sonataConfig.uno.rules.map(
-        rule => Array.isArray(rule) ? rule : rule(sonataConfig.tokens)
-    ).flat();
+    const newPreset = definePreset(() => ({
+        rules: resolveRulesOrVariants(sonataConfig.uno.rules, sonataConfig.tokens),
+        variants: resolveRulesOrVariants(sonataConfig.uno.variants, sonataConfig.tokens),
+    }));
 
-    const preset = definePreset(() => ({ rules }));
-    userPresets.push(preset());
+    const userPresets = sonataConfig.uno.configOrPath.presets ?? [];
+    userPresets.push(newPreset());
     sonataConfig.uno.configOrPath.presets = userPresets;
 
     delete sonataConfig.uno.rules;
+    delete sonataConfig.uno.variants;
 }
 
 /**
@@ -52,9 +71,7 @@ function resolveContentPaths(registeredPaths) {
 }
 
 export default function (sonataConfig) {
-    if (Array.isArray(sonataConfig.uno?.rules)) {
-        injectUserRules(sonataConfig);
-    }
+    injectUserRulesAndVariants(sonataConfig);
 
     return defineConfig(merge(
         {
