@@ -1,5 +1,5 @@
 import palette from '../../src/config/palette.js';
-import flattenObject from '../../src/utils/flattenObject.js';
+import { flattenObject } from '../utils/flattenObject.js';
 
 function searchInResolvedConfig(_colorToken, resolvedTokens) {
     let colorToken = _colorToken;

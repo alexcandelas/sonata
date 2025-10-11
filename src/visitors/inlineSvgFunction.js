@@ -1,7 +1,7 @@
-import encodeSvg from '../utils/encodeSvg.js';
 import fs from 'fs';
-import identsToString from '../utils/identsToString.js';
 import { dirname, resolve } from 'path';
+import { encodeSvg } from '../utils/encodeSvg.js';
+import { identsToString } from '../utils/identsToString.js';
 
 /**
  * Return the svg content from the given path.

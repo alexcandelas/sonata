@@ -1,4 +1,4 @@
-export default function buildMediaQueriesMap(breakpoints) {
+export function buildMediaQueriesMap(breakpoints) {
     let map = [];
 
     for (const prefix in breakpoints) {
@@ -15,4 +15,4 @@ export default function buildMediaQueriesMap(breakpoints) {
     }
 
     return map;
-};
+}

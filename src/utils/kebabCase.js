@@ -1,4 +1,4 @@
-import unaccent from './unaccent.js';
+import { unaccent } from './unaccent.js';
 
 /**
  * Turns a string into kebab-case format, removing accents/diacritics.
@@ -12,7 +12,7 @@ import unaccent from './unaccent.js';
  * kebabCase('AdminUser123') // returns 'admin-user-123'
  * kebabCase('_FooBar_') // returns 'foo-bar'
  */
-export default function kebabCase(str, separateDigitsFromLetters = true) {
+export function kebabCase(str, separateDigitsFromLetters = true) {
     let result = unaccent(str)
         // Replace non-alphanumeric characters with hyphens
         .replace(/[^A-Za-z0-9]+/g, '-')

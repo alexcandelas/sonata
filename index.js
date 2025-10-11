@@ -1,8 +1,6 @@
 import UnoCSS from '@unocss/postcss';
 import bootSonata from './src/visitors/bootSonata.js';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
-import buildMediaQueriesMap from './src/utils/buildMediaQueriesMap.js';
-import buildTokens from './src/utils/buildTokens.js';
 import colorFallbackFunction from './src/visitors/colorFallbackFunction.js';
 import concatenateNestedClasses from './src/visitors/concatenateNestedClasses.js';
 import copyRule from './src/visitors/copyRule.js';
@@ -15,6 +13,8 @@ import screenRule from './src/visitors/screenRule.js';
 import tokenFunction from './src/visitors/tokenFunction.js';
 import unoConfig from './src/config/uno.js';
 import { Features, transform as lightningTransform } from 'lightningcss';
+import { buildMediaQueriesMap } from './src/utils/buildMediaQueriesMap.js';
+import { buildTokens } from './src/utils/buildTokens.js';
 import { merge } from './src/utils/merge.js';
 import { preprocessCSS } from 'vite';
 import { resolveConfig } from './src/resolveConfig.js';

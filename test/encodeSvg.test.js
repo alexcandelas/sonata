@@ -1,4 +1,4 @@
-import encodeSvg from '../src/utils/encodeSvg.js';
+import { encodeSvg } from '../src/utils/encodeSvg.js';
 import { expect, it } from "vitest";
 
 it('encodes SVG code for inline use', () => {

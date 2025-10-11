@@ -1,4 +1,4 @@
-import identsToString from '../utils/identsToString.js';
+import { identsToString } from '../utils/identsToString.js';
 import { merge } from '../utils/merge.js';
 import { transform } from 'lightningcss';
 

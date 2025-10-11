@@ -1,10 +1,10 @@
 import browserslist from 'browserslist';
-import buildTokens from './utils/buildTokens.js';
 import defaultConfig from './config/defaultConfig.js';
 import fs from 'fs';
-import isEmptyObject from './utils/isEmptyObject.js';
-import isObject from './utils/isObject.js';
 import path from 'path';
+import { buildTokens } from './utils/buildTokens.js';
+import { isEmptyObject } from './utils/isEmptyObject.js';
+import { isObject } from './utils/isObject.js';
 import { singleMerge } from './utils/merge.js';
 
 async function resolveUserConfig(config) {

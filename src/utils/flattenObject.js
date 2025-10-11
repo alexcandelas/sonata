@@ -1,4 +1,4 @@
-import isObject from './isObject.js';
+import { isObject } from './isObject.js';
 
 /**
  * Recursively flatten the given object.
@@ -7,7 +7,7 @@ import isObject from './isObject.js';
  * @param {string} separator
  * @returns {Object}
  */
-export default function flattenObject(object, separator = '-') {
+export function flattenObject(object, separator = '-') {
     if (! isObject(object)) return object;
 
     let result = {};

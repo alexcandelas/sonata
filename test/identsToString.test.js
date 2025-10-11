@@ -1,5 +1,5 @@
-import identsToString from "../src/utils/identsToString";
 import { describe, expect, it } from "vitest";
+import { identsToString } from '../src/utils/identsToString.js';
 import { transform } from "lightningcss";
 
 function parseSelector(code) {

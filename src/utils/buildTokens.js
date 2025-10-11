@@ -1,6 +1,6 @@
-import kebabCase from '../utils/kebabCase.js';
-import flattenObject from '../utils/flattenObject.js';
-import isObject from '../utils/isObject.js';
+import { flattenObject } from './flattenObject.js';
+import { isObject } from './isObject.js';
+import { kebabCase } from './kebabCase.js';
 
 const kebabCaseExceptions = {
     breakpoints: 'breakpoint',
@@ -43,7 +43,7 @@ function flattenAndAppendTokens(key, object) {
  * @param {Boolean} isNestedToken
  * @returns {Object}
  */
-export default function buildTokens(tokenMap, isNestedToken = false) {
+export function buildTokens(tokenMap, isNestedToken = false) {
     generatedTokens = {};
 
     for (const key in tokenMap) {

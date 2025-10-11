@@ -5,7 +5,7 @@
  * @param {string} svg
  * @returns {string}
  */
-export default function encodeSvg(svg) {
+export function encodeSvg(svg) {
     return svg
         .replace(/%/g, '%25')
         .replace(/</g, '%3C')

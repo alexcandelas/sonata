@@ -1,6 +1,6 @@
-import encodeSvg from '../src/utils/encodeSvg.js';
 import inlineSvgFunction from '../src/visitors/inlineSvgFunction.js';
 import tokenFunction from '../src/visitors/tokenFunction.js';
+import { encodeSvg } from '../src/utils/encodeSvg.js';
 import { expect, it } from "vitest";
 import { transform } from "lightningcss";
 

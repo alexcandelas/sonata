@@ -104,7 +104,7 @@ function handleColor(value) {
  * @param {boolean} insideFunction
  * @returns {string}
  */
-export default function identsToString(idents, insideFunction = false) {
+export function identsToString(idents, insideFunction = false) {
     const characters = {
         comma: insideFunction ? ',' : ', ',
         colon: ':',

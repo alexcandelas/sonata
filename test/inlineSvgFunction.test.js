@@ -1,6 +1,6 @@
-import encodeSvg from '../src/utils/encodeSvg.js';
 import inlineSvgFunction from '../src/visitors/inlineSvgFunction.js';
 import { describe, expect, it } from "vitest";
+import { encodeSvg } from '../src/utils/encodeSvg.js';
 import { transform } from "lightningcss";
 
 const encodedSuccessSvg = 'data:image/svg+xml;charset=utf-8,' + encodeForTest('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.2 12.3 2.9 2.9 6.6-6.6"/><circle cx="12" cy="12" r="9"/></svg>');

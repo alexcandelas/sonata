@@ -1,9 +1,9 @@
-import isObject from "./isObject.js";
+import { isObject } from "./isObject.js";
 
 /**
  * Check if the given object is an empty JS plain object.
  */
-export default function isEmptyObject(object) {
+export function isEmptyObject(object) {
     if (! isObject(object)) {
         return false;
     }
