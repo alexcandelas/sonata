@@ -19,7 +19,7 @@ import { merge } from './src/utils/merge.js';
 import { preprocessCSS } from 'vite';
 import { resolveConfig } from './src/resolveConfig.js';
 
-let userConfig, sonataResolvedConfig, tokens, mediaQueriesMap;
+let sonataResolvedConfig, tokens, mediaQueriesMap;
 
 const customAtRules = {
     apply: {
@@ -80,10 +80,9 @@ function getExtension(filename) {
     return matches ? matches[1] : null;
 }
 
-export default async function sonatacss(_userConfig = {}) {
+export default async function sonatacss(userConfig = {}) {
     let viteResolvedConfig;
-    userConfig = _userConfig;
-    sonataResolvedConfig = await resolveConfig(_userConfig);
+    sonataResolvedConfig = await resolveConfig(userConfig);
     tokens = buildTokens(sonataResolvedConfig.tokens);
     mediaQueriesMap = buildMediaQueriesMap(sonataResolvedConfig.tokens.breakpoints);
 
