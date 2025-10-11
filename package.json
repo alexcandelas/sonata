@@ -32,6 +32,7 @@
         "./print.css": "./css/print.css",
         "./icons/*.svg": "./src/icons/*.svg",
         "./palette.js": "./src/config/palette.js"
+        "./utils": "./src/utils/index.js"
     },
     "type": "module",
     "scripts": {
