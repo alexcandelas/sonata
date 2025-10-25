@@ -23,7 +23,7 @@ Provide descriptive information or validation feedback.
  * Show feedback for invalid fields. Can be used in paragraphs or lists.
  */
 .form-invalid {
-    @apply list-reset;
+    @copy .list-reset;
     color: var(--color-red-55, colorFallback('red-55'));
 }
 

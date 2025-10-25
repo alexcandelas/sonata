@@ -1,12 +1,10 @@
 export default {
     base: [
-        'custom-properties',
         'defaults',
         'text',
         'forms',
     ],
     abstractions: [
-        'uno-abstractions',
         'btn-reset',
         'disabled',
         'focused',
@@ -25,7 +23,4 @@ export default {
         'radio',
         'table',
     ],
-    utilities: [
-        'uno-utilities',
-    ]
 };

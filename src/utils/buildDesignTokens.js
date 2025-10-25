@@ -43,7 +43,7 @@ function flattenAndAppendTokens(key, object) {
  * @param {Boolean} isNestedToken
  * @returns {Object}
  */
-export function buildTokens(tokenMap, isNestedToken = false) {
+export function buildDesignTokens(tokenMap, isNestedToken = false) {
     generatedTokens = {};
 
     for (const key in tokenMap) {

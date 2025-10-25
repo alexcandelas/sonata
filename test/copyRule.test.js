@@ -1,4 +1,5 @@
 import copyRule from '../src/visitors/copyRule.js';
+import extractCopiedSelectors from '../src/utils/extractCopiedSelectors.js';
 import { expect, it } from "vitest";
 import { transform } from "lightningcss";
 
@@ -7,12 +8,14 @@ function runVisitor(code) {
         copy: { prelude: '*' },
     };
 
+    const copiedSelectors = extractCopiedSelectors(code);
+
     return transform({
         filename: 'test.css',
         minify: true,
         code: Buffer.from(code),
         customAtRules,
-        visitor: copyRule(code, 'test.css', customAtRules),
+        visitor: copyRule(code, 'test.css', customAtRules, copiedSelectors),
     }).code.toString();
 }
 

@@ -8,7 +8,6 @@ export default {
         concatenateNestedClasses: true,
         emMediaQueries: true,
         fontPxToRem: true,
-        generateCustomProperties: true,
     },
     uno: {
         rules: [],

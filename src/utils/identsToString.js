@@ -98,7 +98,7 @@ function handleColor(value) {
 }
 
 /**
- * Transform an array of custom CSS identifiers to a string.
+ * Transform an array of CSS identifiers to a string.
  *
  * @param {Array} idents
  * @param {boolean} insideFunction

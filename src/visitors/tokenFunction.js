@@ -1,7 +1,8 @@
 /**
  * Retrieve the given token value from the resolved configuration.
  *
- * @returns {string}
+ * @param {Object} tokens
+ * @returns {Object}
  */
 export default function token(tokens) {
     return {

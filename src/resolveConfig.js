@@ -2,7 +2,7 @@ import browserslist from 'browserslist';
 import defaultConfig from './config/defaultConfig.js';
 import fs from 'fs';
 import path from 'path';
-import { buildTokens } from './utils/buildTokens.js';
+import { buildDesignTokens } from './utils/buildDesignTokens.js';
 import { isEmptyObject } from './utils/isEmptyObject.js';
 import { isObject } from './utils/isObject.js';
 import { singleMerge } from './utils/merge.js';
@@ -94,7 +94,7 @@ function cleanConfig(object) {
 function flattenDeeplyNestedTokens(tokens) {
     for (const key in tokens) {
         if (isObject(tokens[key])) {
-            tokens[key] = buildTokens(tokens[key], true);
+            tokens[key] = buildDesignTokens(tokens[key], true);
         }
     }
 }

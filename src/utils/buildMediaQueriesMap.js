@@ -1,3 +1,10 @@
+/**
+ * Build a map of `max-width` and `min-width` media queries
+ * with the given breakpoints.
+ *
+ * @param {Object} breakpoints
+ * @returns {Array<{prefix:string,query:string}>}
+ */
 export function buildMediaQueriesMap(breakpoints) {
     let map = [];
 

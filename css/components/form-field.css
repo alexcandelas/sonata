@@ -55,7 +55,7 @@ select.form-field {
  * to indicate users that there is more text than currently visible.
  */
 .form-field option {
-    @apply truncate;
+    @copy .truncate;
 }
 
 /*

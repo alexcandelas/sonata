@@ -2,7 +2,7 @@ import { identsToString } from '../utils/identsToString.js';
 import { merge } from '../utils/merge.js';
 import { transform } from 'lightningcss';
 
-let requestedClassNames, foundStyles;
+let copiedSelectors, copiedStyles;
 
 /**
  * Return a list of classNames from the given `@copy` rule prelude.
@@ -18,28 +18,6 @@ function extractClassNames(rulePrelude) {
 }
 
 /**
- * Register all CSS classes required by `@copy` rules.
- */
-function registerRequiredClasses(src, id, customAtRules) {
-    transform({
-        filename: id,
-        minify: false,
-        customAtRules,
-        code: Buffer.from(src),
-        visitor: {
-            Rule: {
-                custom: {
-                    copy(rule) {
-                        extractClassNames(rule.prelude.value)
-                            .forEach(className => requestedClassNames.add(className));
-                    }
-                }
-            }
-        }
-    });
-}
-
-/**
  * Store the style declarations for each of the necessary CSS classes.
  *
  * @param {Object} styles
@@ -48,12 +26,12 @@ function searchClasses(styles) {
     for (let selector of styles.selectors) {
         selector = identsToString(selector);
 
-        if (requestedClassNames.has(selector)) {
-            const storedDeclarations = foundStyles.get(selector);
+        if (copiedSelectors.has(selector)) {
+            const storedDeclarations = copiedStyles.get(selector) || {};
 
-            foundStyles.set(
+            copiedStyles.set(
                 selector,
-                merge({}, storedDeclarations || {}, styles.declarations)
+                merge({}, storedDeclarations, styles.declarations)
             );
         }
     }
@@ -122,8 +100,8 @@ function resolveDeclarationsToCopy(rulePrelude) {
 
     extractClassNames(rulePrelude)
         .forEach(className => {
-            if (foundStyles.has(className)) {
-                const found = foundStyles.get(className);
+            if (copiedStyles.has(className)) {
+                const found = copiedStyles.get(className);
 
                 declarationsToCopy.declarations.push(...found.declarations);
                 declarationsToCopy.importantDeclarations.push(...found.importantDeclarations);
@@ -158,8 +136,8 @@ function applyCopiedStyles(rule, declarationBlock = null) {
     const declarationsToCopy = resolveDeclarationsToCopy(rulePrelude);
 
     // If this rule is inside a `@media` or `@container` rule, there is
-    // a possibility that there are no styles declared alongside
-    // the @copy rule. In that case, the current `@copy` rule
+    // a possibility that the only content in the block is the
+    // @copy rule. In that case, the current `@copy` rule
     // is replaced by a new declaration block.
     if (declarationBlock === null) {
         return {
@@ -185,25 +163,29 @@ function applyCopiedStyles(rule, declarationBlock = null) {
 }
 
 /**
- * Copy the requested style declarations into the class
+ * Apply the requested styles into the class
  * that contains the `@copy` rule.
  *
+ * @param {string} src
+ * @param {string} id
+ * @param {Object} customAtRules
+ * @param {Set} _copiedSelectors
  * @returns {Object}
  */
-export default function copyRule(src, id, customAtRules) {
-    requestedClassNames = new Set();
-    foundStyles = new Map();
+export default function copyRule(src, id, customAtRules, _copiedSelectors) {
+    if (! _copiedSelectors.size) return;
 
-    registerRequiredClasses(src, id, customAtRules);
-
-    if (! requestedClassNames.size) return;
+    copiedSelectors = _copiedSelectors;
+    copiedStyles = new Map();
 
     storeContent(src, id, customAtRules);
 
     return {
         Rule: {
             style(rule) {
-                rule.value.rules = rule.value.rules.map(childRule => applyCopiedStyles(childRule, rule.value.declarations));
+                rule.value.rules = rule.value.rules.map(
+                    childRule => applyCopiedStyles(childRule, rule.value.declarations)
+                );
 
                 return rule;
             }

@@ -1,25 +1,25 @@
-import UnoCSS from '@unocss/postcss';
-import bootSonata from './src/visitors/bootSonata.js';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
 import colorFallbackFunction from './src/visitors/colorFallbackFunction.js';
 import concatenateNestedClasses from './src/visitors/concatenateNestedClasses.js';
 import copyRule from './src/visitors/copyRule.js';
 import emMediaQueries from './src/visitors/emMediaQueries.js';
+import extractCopiedSelectors from './src/utils/extractCopiedSelectors.js';
 import fontPxToRem from './src/visitors/fontPxToRem.js';
-import generateCustomProperties from './src/visitors/generateCustomProperties.js';
+import generateCustomProperties from './src/generateCustomProperties.js';
+import injectImports from './src/injectImports.js';
 import inlineSvgFunction from './src/visitors/inlineSvgFunction.js';
+import path from 'node:path';
 import responsiveRule from './src/visitors/responsiveRule.js';
 import screenRule from './src/visitors/screenRule.js';
 import tokenFunction from './src/visitors/tokenFunction.js';
-import unoConfig from './src/config/uno.js';
+import { ClassExtractor } from './src/ClassExtractor.js';
 import { Features, transform as lightningTransform } from 'lightningcss';
+import { buildDesignTokens } from './src/utils/buildDesignTokens.js';
 import { buildMediaQueriesMap } from './src/utils/buildMediaQueriesMap.js';
-import { buildTokens } from './src/utils/buildTokens.js';
 import { merge } from './src/utils/merge.js';
-import { preprocessCSS } from 'vite';
 import { resolveConfig } from './src/resolveConfig.js';
 
-let sonataResolvedConfig, tokens, mediaQueriesMap;
+let copiedSelectors, sonataResolvedConfig, tokens, mediaQueriesMap;
 
 const customAtRules = {
     apply: {
@@ -32,21 +32,20 @@ const customAtRules = {
         prelude: '*',
         body: 'style-block'
     },
-    'sonata-custom-properties': {},
     responsive: {
         body: 'rule-list'
     },
-    unocss: {
-        prelude: '*'
+    'sonata-custom-properties': {},
+    'sonata-generated': {
+        prelude: '*',
     },
 };
 
 const visitors = [
     (src, id) => [
-        [generateCustomProperties, tokens],
         [tokenFunction, tokens],
         [colorFallbackFunction, tokens],
-        [copyRule, src, id, customAtRules],
+        [copyRule, src, id, customAtRules, copiedSelectors],
     ],
 
     (src, id) => [
@@ -83,8 +82,12 @@ function getExtension(filename) {
 export default async function sonatacss(userConfig = {}) {
     let viteResolvedConfig;
     sonataResolvedConfig = await resolveConfig(userConfig);
-    tokens = buildTokens(sonataResolvedConfig.tokens);
+    tokens = buildDesignTokens(sonataResolvedConfig.tokens);
     mediaQueriesMap = buildMediaQueriesMap(sonataResolvedConfig.tokens.breakpoints);
+    let cssInputs;
+
+    let extractor;
+    let generatedCSS;
 
     return [
         // Boot framework
@@ -96,26 +99,73 @@ export default async function sonatacss(userConfig = {}) {
                     cssTarget: browserslistToEsbuild(sonataResolvedConfig.target)
                 },
                 css: {
-                    transformer: 'postcss',
                     lightningcss: {
                         customAtRules,
                     },
-                    postcss: {
-                        plugins: [
-                            UnoCSS(unoConfig(sonataResolvedConfig))
-                        ],
-                    },
                 }
             }),
-            transform: function (src, id) {
+            configResolved(config) {
+                viteResolvedConfig = config;
+                const input = config.build.rollupOptions.input;
+
+                cssInputs = (Array.isArray(input) ? input : [input])
+                    .filter(i => i.endsWith('.css'))
+                    .map(i => ({
+                        path: i,
+                        absolutePath: path.resolve(i),
+                    }));
+            },
+            async handleHotUpdate({ file, server }) {
+                if (! extractor || ! extractor.matchesContentPatterns(file)) return;
+
+                await extractor.watchFile(file);
+
+                cssInputs.forEach(cssInput => {
+                    const mods = server.moduleGraph.getModulesByFile(cssInput.absolutePath);
+
+                    if (! mods?.size) return;
+
+                    for (const mod of mods) {
+                        server.moduleGraph.invalidateModule(mod)
+                    }
+
+                    server.ws.send({
+                        type: 'update',
+                        updates: [
+                            {
+                                type: 'css-update',
+                                path: cssInput.path,
+                                timestamp: Date.now(),
+                            },
+                        ],
+                    });
+                });
+            },
+
+            transform: async function (src, id) {
                 if (getExtension(id) !== 'css') return;
 
-                return lightningTransform({
-                    filename: id,
-                    customAtRules,
-                    code: Buffer.from(src),
-                    visitor: bootSonata(sonataResolvedConfig),
-                }).code.toString();
+                // Inject all Sonata @imports
+                return injectImports(src, sonataResolvedConfig.ignore);
+            }
+        },
+        {
+            transform: async function (src, id) {
+                if (getExtension(id) !== 'css') return;
+
+                // Store all selectors needed for @copy rules
+                copiedSelectors = extractCopiedSelectors(src);
+
+                // Inject custom properties and dynamically generated styles
+                const customProperties = generateCustomProperties(tokens);
+                extractor ??= await ClassExtractor(sonataResolvedConfig, copiedSelectors);
+                generatedCSS = await extractor.generateCSS();
+
+                // Replace copied selectors with the new set including
+                // selectors extracted from generated @copy rules
+                copiedSelectors = extractor.getCopiedSelectors();
+
+                return src.replace(/@sonatacss-generated-styles[\s;]/, `${customProperties} ${generatedCSS}\n`);
             }
         },
         // Run visitors
@@ -141,22 +191,5 @@ export default async function sonatacss(userConfig = {}) {
                 };
             },
         })),
-        // Lightning CSS transformer for build command
-        {
-            enforce: 'post',
-            apply: 'build',
-            configResolved(config) {
-                viteResolvedConfig = config;
-            },
-            async transform(src, id) {
-                if (getExtension(id) !== 'css') return;
-
-                viteResolvedConfig.css.transformer = 'lightningcss';
-
-                return {
-                    code: (await preprocessCSS(src, id, viteResolvedConfig)).code,
-                };
-            }
-        },
     ];
 }

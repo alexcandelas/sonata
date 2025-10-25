@@ -2,8 +2,6 @@ import sonataPreset from 'unocss-preset-sonatacss';
 import { defineConfig, definePreset } from 'unocss';
 import { merge } from '../utils/merge.js';
 
-const DEFAULT_CONTENT_PATH = '**/*.{html,js,ts,jsx,tsx,astro,blade.php,svelte,vue}';
-
 /**
  * Normalize the registered rules or variants. Rules or variants registered
  * as functions are executed with the provided design tokens.
@@ -30,66 +28,34 @@ function resolveRulesOrVariants(rulesOrVariants, tokens) {
  * @param {Object} sonataConfig
  */
 function injectUserRulesAndVariants(sonataConfig) {
-    sonataConfig.uno.configOrPath ??= {};
+    sonataConfig.uno ??= {};
 
     const newPreset = definePreset(() => ({
         rules: resolveRulesOrVariants(sonataConfig.uno.rules, sonataConfig.tokens),
         variants: resolveRulesOrVariants(sonataConfig.uno.variants, sonataConfig.tokens),
     }));
 
-    const userPresets = sonataConfig.uno.configOrPath.presets ?? [];
+    const userPresets = sonataConfig.uno.presets ?? [];
     userPresets.push(newPreset());
-    sonataConfig.uno.configOrPath.presets = userPresets;
+    sonataConfig.uno.presets = userPresets;
 
     delete sonataConfig.uno.rules;
     delete sonataConfig.uno.variants;
 }
 
-/**
- * Return the content paths that UnoCSS will scan for utility classes.
- * If no paths are registered by the user, it falls back to a
- * default path. The `vendor` directory is always ignored.
- *
- * @param {array|string} registeredPaths
- * @returns {array}
- */
-function resolveContentPaths(registeredPaths) {
-    let paths;
-
-    if (Array.isArray(registeredPaths) && registeredPaths.length) {
-        paths = registeredPaths;
-    } else if (typeof registeredPaths === 'string' && registeredPaths.trim()) {
-        paths = [registeredPaths.trim()];
-    } else {
-        paths = [DEFAULT_CONTENT_PATH];
-    }
-
-    return [
-        ...paths,
-        '!vendor/**',
-    ];
-}
-
-export default function (sonataConfig) {
+export default function (sonataConfig, safelist = []) {
     injectUserRulesAndVariants(sonataConfig);
 
     return defineConfig(merge(
         {
-            directiveMap: {
-                screen: false,
-                theme: false,
+            enforce: 'post',
+            safelist,
+            outputToCssLayers: {
+                cssLayerName: (layer) => layer === 'default' ? 'utilities' : layer,
             },
-            configOrPath: {
-                content: {
-                    filesystem: resolveContentPaths(sonataConfig.content),
-                },
-                outputToCssLayers: {
-                    cssLayerName: (layer) => layer === 'default' ? 'utilities' : layer
-                },
-                presets: [
-                    sonataPreset(sonataConfig.tokens, sonataConfig.ignore),
-                ],
-            }
+            presets: [
+                sonataPreset(sonataConfig.tokens, sonataConfig.ignore),
+            ],
         },
         sonataConfig.uno,
     ))

@@ -135,7 +135,7 @@ Provide default styles with variants for any table.
         width: 100%;
 
         :where(thead) {
-            @apply visually-hidden;
+            @copy .visually-hidden;
         }
 
         :where(tr) {
