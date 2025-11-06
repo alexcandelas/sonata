@@ -211,3 +211,36 @@ it('respects existing declarations inside a @container query', () => {
         }
     `);
 });
+
+it('can apply styles from a chain of copied selectors', () => {
+    const res = runVisitor(`
+        .target {
+            @copy .source-one;
+            display: block;
+        }
+
+        .source-one {
+            @copy .source-two;
+            width: 100px;
+        }
+
+        .source-two { @copy .source-three; }
+        .source-three { color: green; }
+    `);
+
+    expect(res).toMatchCss(`
+        .target { 
+            color: green;
+            width: 100px;
+            display: block;
+        }
+        
+        .source-one {
+            color: green;
+            width: 100px;
+        }
+        
+        .source-two { color: green; }
+        .source-three { color: green; }
+    `);
+});

@@ -14,11 +14,10 @@ const IGNORED_PATHS = [
 
 /**
  * @param {Object} sonataConfig
- * @param {Set} copiedSelectors
  * @returns {Promise<{generateCSS: function, matchesContentPatterns: function, watchFile: function}>}
  * @constructor
  */
-export async function ClassExtractor(sonataConfig, copiedSelectors) {
+export async function ClassExtractor(sonataConfig) {
     const patterns = [
         ...IGNORED_PATHS,
         ...sonataConfig.content,
@@ -28,6 +27,7 @@ export async function ClassExtractor(sonataConfig, copiedSelectors) {
     let watchedPaths = await fg(patterns);
     let scannedFiles = new Map();
     let classCandidates = new Set();
+    let copiedSelectors = new Set();
 
     for (const path of watchedPaths) {
         await watchFile(path);
@@ -142,5 +142,18 @@ export async function ClassExtractor(sonataConfig, copiedSelectors) {
         return copiedSelectors;
     }
 
-    return { generateCSS, getCopiedSelectors, matchesContentPatterns, watchFile }
+    /**
+     * @param {Set} _copiedSelectors
+     */
+    function setCopiedSelectors(_copiedSelectors) {
+        copiedSelectors = _copiedSelectors;
+    }
+
+    return {
+        generateCSS,
+        getCopiedSelectors,
+        setCopiedSelectors,
+        matchesContentPatterns,
+        watchFile,
+    };
 }

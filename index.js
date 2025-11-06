@@ -147,7 +147,8 @@ export default async function sonatacss(userConfig = {}) {
 
                 // Inject custom properties and dynamically generated styles
                 const customProperties = generateCustomProperties(tokens);
-                extractor ??= await ClassExtractor(sonataResolvedConfig, copiedSelectors);
+                extractor ??= await ClassExtractor(sonataResolvedConfig);
+                extractor.setCopiedSelectors(copiedSelectors);
                 generatedCSS = await extractor.generateCSS();
 
                 // Replace copied selectors with the new set including
