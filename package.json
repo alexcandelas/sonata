@@ -8,7 +8,8 @@
         "responsive",
         "mobile-first",
         "ui",
-        "front-end"
+        "front-end",
+        "unocss"
     ],
     "homepage": "https://github.com/alexcandelas/sonata",
     "repository": {
@@ -25,13 +26,18 @@
         ".": {
             "import": "./index.js"
         },
-        "./abstractions/*.css": "./css/abstractions/*.css",
-        "./base/*.css": "./css/base/*.css",
-        "./components/*.css": "./css/components/*.css",
-        "./utilities/*.css": "./css/utilities/*.css",
-        "./generated-styles.css": "./css/generated-styles.css",
-        "./print.css": "./css/print.css",
+        "./abstractions/*.css": "./src/css/abstractions/*.css",
+        "./abstractions/*.js": "./src/css/abstractions/*.js",
+        "./base/*.css": "./src/css/base/*.css",
+        "./components/*.css": "./src/css/components/*.css",
+        "./components/*.js": "./src/css/components/*.js",
+        "./utilities/*.css": "./src/css/utilities/*.css",
+        "./utilities/*.js": "./src/css/utilities/*.js",
+        "./generated-styles.css": "./src/css/generated-styles.css",
+        "./print.css": "./src/css/print.css",
         "./icons/*.svg": "./src/icons/*.svg",
+        "./lengthUnits": "./src/config/lengthUnits.js",
+        "./lengthUnits.js": "./src/config/lengthUnits.js",
         "./palette": "./src/config/palette.js",
         "./palette.js": "./src/config/palette.js",
         "./utils": "./src/utils/index.js"
@@ -49,14 +55,12 @@
         "fast-glob": "3.3.3",
         "lightningcss": "1.30.1",
         "micromatch": "4.0.8",
-        "unocss": "66.5.2",
-        "unocss-preset-sonatacss": "^1.0.0-beta.3"
+        "unocss": "66.5.2"
     },
     "peerDependencies": {
         "vite": "^5.4.0 || ^6 || ^7"
     },
     "files": [
-        "css/",
         "src/",
         "index.js"
     ]

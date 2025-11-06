@@ -4,13 +4,6 @@ export default {
         'text',
         'forms',
     ],
-    abstractions: [
-        'btn-reset',
-        'disabled',
-        'focused',
-        'help-text',
-        'link',
-    ],
     components: [
         'alert',
         'button',

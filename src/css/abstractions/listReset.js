@@ -1,0 +1,6 @@
+export const listReset = [
+    ['list-reset', {
+        'list-style': 'none',
+        'padding-left': 0,
+    }],
+];

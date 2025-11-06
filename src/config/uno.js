@@ -1,4 +1,4 @@
-import sonataPreset from 'unocss-preset-sonatacss';
+import UnoPreset from '../UnoPreset.js';
 import { defineConfig, definePreset } from 'unocss';
 import { merge } from '../utils/merge.js';
 
@@ -54,7 +54,7 @@ export default function (sonataConfig, safelist = []) {
                 cssLayerName: (layer) => layer === 'default' ? 'utilities' : layer,
             },
             presets: [
-                sonataPreset(sonataConfig.tokens, sonataConfig.ignore),
+                UnoPreset(sonataConfig.tokens, sonataConfig.ignore),
             ],
         },
         sonataConfig.uno,

@@ -13,13 +13,12 @@ import responsiveRule from './src/visitors/responsiveRule.js';
 import screenRule from './src/visitors/screenRule.js';
 import tokenFunction from './src/visitors/tokenFunction.js';
 import { ClassExtractor } from './src/ClassExtractor.js';
-import { Features, transform as lightningTransform } from 'lightningcss';
+import { composeVisitors, Features, transform as lightningTransform } from 'lightningcss';
 import { buildDesignTokens } from './src/utils/buildDesignTokens.js';
 import { buildMediaQueriesMap } from './src/utils/buildMediaQueriesMap.js';
-import { merge } from './src/utils/merge.js';
 import { resolveConfig } from './src/resolveConfig.js';
 
-let copiedSelectors, sonataResolvedConfig, tokens, mediaQueriesMap;
+let copiedSelectors, disabledVisitors, mediaQueriesMap, sonataResolvedConfig, tokens;
 
 const customAtRules = {
     apply: {
@@ -46,28 +45,20 @@ const visitors = [
         [tokenFunction, tokens],
         [colorFallbackFunction, tokens],
         [copyRule, src, id, customAtRules, copiedSelectors],
-    ],
-
-    (src, id) => [
         [screenRule, sonataResolvedConfig.tokens.breakpoints],
+    ],
+    (src, id) => [
         [responsiveRule, mediaQueriesMap],
         [inlineSvgFunction, id],
         [fontPxToRem],
         [concatenateNestedClasses],
     ],
-
     () => [
         [emMediaQueries],
-    ]
+    ],
 ];
 
-let disabledVisitors;
-
 function getEnabledVisitor([visitor, ...params]) {
-    disabledVisitors ??= Object.entries(sonataResolvedConfig.visitors)
-        .map(v => v[1] === false ? v[0] : null)
-        .filter(Boolean);
-
     if (! disabledVisitors.includes(visitor.name)) {
         return visitor(...params);
     }
@@ -80,14 +71,13 @@ function getExtension(filename) {
 }
 
 export default async function sonatacss(userConfig = {}) {
-    let viteResolvedConfig;
+    let cssInputs, extractor, generatedCSS;
     sonataResolvedConfig = await resolveConfig(userConfig);
     tokens = buildDesignTokens(sonataResolvedConfig.tokens);
     mediaQueriesMap = buildMediaQueriesMap(sonataResolvedConfig.tokens.breakpoints);
-    let cssInputs;
-
-    let extractor;
-    let generatedCSS;
+    disabledVisitors = Object.entries(sonataResolvedConfig.visitors)
+        .map(v => v[1] === false ? v[0] : null)
+        .filter(Boolean);
 
     return [
         // Boot framework
@@ -105,7 +95,6 @@ export default async function sonatacss(userConfig = {}) {
                 }
             }),
             configResolved(config) {
-                viteResolvedConfig = config;
                 const input = config.build.rollupOptions.input;
 
                 cssInputs = (Array.isArray(input) ? input : [input])
@@ -182,7 +171,7 @@ export default async function sonatacss(userConfig = {}) {
                         filename: id,
                         customAtRules,
                         code: Buffer.from(src),
-                        visitor: merge(...enabledVisitors),
+                        visitor: composeVisitors(enabledVisitors),
                         exclude: Features.DirSelector | Features.LightDark | Features.FontFamilySystemUi,
                         nonStandard: {
                             deepSelectorCombinator: true,

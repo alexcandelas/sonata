@@ -6,3 +6,8 @@ export { isObject } from './isObject.js';
 export { kebabCase } from './kebabCase.js';
 export { singleMerge, merge } from './merge.js';
 export { unaccent } from './unaccent.js';
+export { breakpointOrNumeric } from './generated-styles/breakpointOrNumeric.js';
+export { buildWidthMediaQuery } from './generated-styles/buildMediaQueries.js';
+export { directionalDeclaration, numericDeclaration, tokenDeclaration } from './generated-styles/buildUtilityDeclarations.js';
+export { directionsMap } from './generated-styles/directionsMap.js';
+export { resolveNumericValue } from './generated-styles/resolveNumericValue.js';
