@@ -43,6 +43,7 @@ import { overflow } from './css/utilities/overflowRules.js';
 import { pointerEvents } from './css/utilities/pointerEventsRules.js';
 import { radio } from './css/components/radio.js';
 import { ratio } from './css/utilities/aspectRatioRules.js';
+import { ring } from './css/utilities/ringRules.js';
 import { table } from './css/components/table.js';
 import { transition, transitionDelay, transitionDuration, transitionTiming } from './css/utilities/transitionRules.js';
 import { translate } from './css/utilities/translateRules.js';
@@ -122,6 +123,7 @@ export default definePreset(async (tokens, _ignoreList = []) => {
         ...position,
         ...radius(tokens?.radius),
         ...ratio,
+        ...ring,
         ...space,
         ...stroke(tokens?.colors),
         ...strokeWidth,

@@ -35,8 +35,7 @@ export const checkbox = [
      * Validation.
      */
     ['checkbox--invalid', {
-        'border-color': 'var(--color-red-50, colorFallback("red-50"))',
-        'box-shadow': '0 0 0.25rem var(--color-red-55, colorFallback("red-55"))',
+        [symbols.body]: '@copy .ring-invalid',
     }],
     ['checkbox--valid', {
         'border-color': 'var(--color-green-40, colorFallback("green-40"))',
