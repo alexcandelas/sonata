@@ -1,5 +1,7 @@
+import { symbols } from 'unocss';
+
 export const motionPreferenceRules = [
-    [/^motion-reduce:all$/, ([], { symbols }) => ({
+    ['motion-reduce:all', {
         [symbols.parent]: '@media (prefers-reduced-motion: reduce)',
         'animation-delay': '-1ms',
         'animation-duration': '1ms',
@@ -8,5 +10,5 @@ export const motionPreferenceRules = [
         'scroll-behavior': 'auto',
         'transition-delay': '0s',
         'transition-duration': '0s',
-    })],
+    }],
 ];

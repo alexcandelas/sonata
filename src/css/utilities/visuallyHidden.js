@@ -1,3 +1,5 @@
+import { symbols } from 'unocss';
+
 const visuallyHiddenProps = {
     'border': '0',
     'clip': 'rect(0, 0, 0, 0)',
@@ -12,10 +14,10 @@ const visuallyHiddenProps = {
 
 export const visuallyHidden = [
     ['visually-hidden', visuallyHiddenProps],
-    [/^visually-hidden-focusable$/, ([], { symbols }) => ({
+    ['visually-hidden-focusable', {
         [symbols.selector]: selector => `${selector}:where(:not(:active):not(:focus):not(:focus-within))`,
         ...visuallyHiddenProps,
-    })],
+    }],
     ['not-visually-hidden', {
         'clip': 'auto',
         'height': 'auto',
