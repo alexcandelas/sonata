@@ -13,8 +13,8 @@ import { identsToString } from '../utils/identsToString.js';
 function getContentFromFile(path, srcId) {
     let resolvedPath;
 
-    if (path.startsWith('sonatacss/')) {
-        resolvedPath = resolve('node_modules', path);
+    if (path.startsWith('sonatacss/icons')) {
+        resolvedPath = resolve('node_modules', path.replace('sonatacss/icons', 'sonatacss/src/icons'));
     } else {
         resolvedPath = resolve(dirname(srcId), path);
     }
