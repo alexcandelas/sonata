@@ -8,11 +8,15 @@ import pseudoClasses from './css/variants/pseudoClasses.js';
 import pseudoElements from './css/variants/pseudoElements.js';
 import theme from './css/variants/theme.js';
 import { definePreset } from 'unocss';
+import { alert } from './css/components/alert.js';
 import { align, inset, justify, place, position } from './css/utilities/positionRules.js';
 import { backgroundColor, color } from './css/utilities/colorRules.js';
 import { borderColor, borderWidth, radius } from './css/utilities/borderRules.js';
 import { boxShadow, insetBoxShadow } from './css/utilities/boxShadowRules.js';
 import { breaks } from './css/utilities/breakRules.js';
+import { button } from './css/components/button.js';
+import { checkbox } from './css/components/checkbox.js';
+import { choiceLabel } from './css/components/choiceLabel.js';
 import { clear, float } from './css/utilities/floatRules.js';
 import { columns } from './css/utilities/columnsRules.js';
 import { container } from './css/utilities/responsiveRules.js';
@@ -21,8 +25,12 @@ import { display } from './css/utilities/displayRules.js';
 import { fill, stroke, strokeWidth } from './css/utilities/svgRules.js';
 import { flex, flexBasis, flexDirection, flexGrow, flexShrink, flexWrap } from './css/utilities/flexRules.js';
 import { fontFamily, fontSize, fontWeight } from './css/utilities/fontRules.js';
+import { formControl } from './css/components/formControl.js';
+import { formField } from './css/components/formField.js';
+import { formSwitch } from './css/components/formSwitch.js';
 import { gap } from './css/utilities/gapRules.js';
 import { gridAuto, gridSize, gridTemplate } from './css/utilities/gridRules.js';
+import { headings } from './css/components/headings.js';
 import { height, width } from './css/utilities/sizeRules.js';
 import { isolation, zIndex } from './css/utilities/stackingRules.js';
 import { letterSpacing, lineHeight, textAlign, textTransform, verticalAlign, whiteSpace } from './css/utilities/textRules.js';
@@ -33,7 +41,9 @@ import { opacity } from './css/utilities/opacityRules.js';
 import { order } from './css/utilities/orderRules.js';
 import { overflow } from './css/utilities/overflowRules.js';
 import { pointerEvents } from './css/utilities/pointerEventsRules.js';
+import { radio } from './css/components/radio.js';
 import { ratio } from './css/utilities/aspectRatioRules.js';
+import { table } from './css/components/table.js';
 import { transition, transitionDelay, transitionDuration, transitionTiming } from './css/utilities/transitionRules.js';
 import { translate } from './css/utilities/translateRules.js';
 import { visibility } from './css/utilities/visibilityRules.js';
@@ -150,6 +160,18 @@ export default definePreset(async (tokens, _ignoreList = []) => {
             ...await importRule('media', 'abstractions'),
             ...await importRule('tableScroll', 'abstractions'),
             ...await importRule('truncate', 'abstractions'),
+
+            // Components
+            ...await importRule('alert', 'components'),
+            ...await importRule('button', 'components'),
+            ...await importRule('checkbox', 'components'),
+            ...await importRule('choiceLabel', 'components'),
+            ...await importRule('formControl', 'components'),
+            ...await importRule('formField', 'components'),
+            ...await importRule('formSwitch', 'components'),
+            ...await importRule('headings', 'components'),
+            ...await importRule('radio', 'components'),
+            ...await importRule('table', 'components'),
 
             ...utilities,
         ],
