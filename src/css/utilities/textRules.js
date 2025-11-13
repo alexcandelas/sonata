@@ -46,10 +46,10 @@ export const verticalAlign = [
 ];
 
 export const whiteSpace = [
-    ['whitespace-normal', { 'whitespace': 'normal' }],
-    ['whitespace-pre', { 'whitespace': 'pre' }],
-    ['whitespace-pre-wrap', { 'whitespace': 'pre-wrap' }],
-    ['whitespace-pre-line', { 'whitespace': 'pre-line' }],
-    ['whitespace-nowrap', { 'whitespace': 'nowrap' }],
-    ['whitespace-break-spaces', { 'whitespace': 'break-spaces' }],
+    ['whitespace-normal', { 'white-space': 'normal' }],
+    ['whitespace-pre', { 'white-space': 'pre' }],
+    ['whitespace-pre-wrap', { 'white-space': 'pre-wrap' }],
+    ['whitespace-pre-line', { 'white-space': 'pre-line' }],
+    ['whitespace-nowrap', { 'white-space': 'nowrap' }],
+    ['whitespace-break-spaces', { 'white-space': 'break-spaces' }],
 ];
