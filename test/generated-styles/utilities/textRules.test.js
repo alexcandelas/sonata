@@ -2,6 +2,9 @@ import testUtility from '../../utils/testUtility.js';
 import { it } from "vitest";
 
 const config = {
+    colors: {
+        'red-50': '#f62025',
+    },
     letterSpacing: {
         0: '0',
         1: '0.025em',
@@ -54,11 +57,44 @@ it.each([
 );
 
 it.each([
+    ['underline', '.underline { text-decoration-line: underline; }'],
+    ['overline', '.overline { text-decoration-line: overline; }'],
+    ['line-through', '.line-through { text-decoration-line: line-through; }'],
+    ['decoration-none', '.decoration-none { text-decoration-line: none; }'],
+    ['decoration-current', '.decoration-current { text-decoration-color: currentColor; }'],
+    ['decoration-inherit', '.decoration-inherit { text-decoration-color: inherit; }'],
+    ['decoration-transparent', '.decoration-transparent { text-decoration-color: transparent; }'],
+    ['decoration-red-50', '.decoration-red-50 { text-decoration-color: var(--color-red-50); }'],
+    ['decoration-solid', '.decoration-solid { text-decoration-style: solid; }'],
+    ['decoration-double', '.decoration-double { text-decoration-style: double; }'],
+    ['decoration-dotted', '.decoration-dotted { text-decoration-style: dotted; }'],
+    ['decoration-dashed', '.decoration-dashed { text-decoration-style: dashed; }'],
+    ['decoration-wavy', '.decoration-wavy { text-decoration-style: wavy; }'],
+    ['decoration-auto', '.decoration-auto { text-decoration-thickness: auto; }'],
+    ['decoration-from-font', '.decoration-from-font { text-decoration-thickness: from-font; }'],
+    ['decoration-0', '.decoration-0 { text-decoration-thickness: 0; }'],
+    ['decoration-2', '.decoration-2 { text-decoration-thickness: 2px; }'],
+])('generates text-decoration utilities (%s)',
+    (source, expected) => testUtility(source, expected, config)
+);
+
+it.each([
     ['normal-case', '.normal-case { text-transform: none; }'],
     ['capitalize', '.capitalize { text-transform: capitalize; }'],
     ['uppercase', '.uppercase { text-transform: uppercase; }'],
     ['lowercase', '.lowercase { text-transform: lowercase; }'],
 ])('generates text-transform utilities (%s)',
+    (source, expected) => testUtility(source, expected)
+);
+
+it.each([
+    ['underline-offset-auto', '.underline-offset-auto { text-underline-offset: auto; }'],
+    ['underline-offset-0', '.underline-offset-0 { text-underline-offset: 0; }'],
+    ['underline-offset-2', '.underline-offset-2 { text-underline-offset: 2px; }'],
+    ['underline-offset-10%', '.underline-offset-10\\% { text-underline-offset: 10%; }'],
+    ['underline-offset-1rem', '.underline-offset-1rem { text-underline-offset: 1rem; }'],
+    ['-underline-offset-0.5em', '.-underline-offset-0\\.5em { text-underline-offset: -0.5em; }'],
+])('generates text-underline-offset utilities (%s)',
     (source, expected) => testUtility(source, expected)
 );
 

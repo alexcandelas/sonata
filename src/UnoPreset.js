@@ -33,7 +33,16 @@ import { gridAuto, gridSize, gridTemplate } from './css/utilities/gridRules.js';
 import { headings } from './css/components/headings.js';
 import { height, width } from './css/utilities/sizeRules.js';
 import { isolation, zIndex } from './css/utilities/stackingRules.js';
-import { letterSpacing, lineHeight, textAlign, textTransform, verticalAlign, whiteSpace } from './css/utilities/textRules.js';
+import {
+    letterSpacing,
+    lineHeight,
+    textAlign,
+    textDecoration,
+    textTransform,
+    textUnderlineOffset,
+    verticalAlign,
+    whiteSpace
+} from './css/utilities/textRules.js';
 import { margin, padding, space } from './css/utilities/spacingRules.js';
 import { motionPreferenceRules } from './css/utilities/motionPreferenceRules.js';
 import { objectFit, objectPosition } from './css/utilities/objectRules.js';
@@ -130,7 +139,9 @@ export default definePreset(async (tokens, _ignoreList = []) => {
         ...stroke(tokens?.colors),
         ...strokeWidth,
         ...textAlign,
+        ...textDecoration(tokens?.colors),
         ...textTransform,
+        ...textUnderlineOffset,
         ...transition,
         ...transitionDelay,
         ...transitionDuration,

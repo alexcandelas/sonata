@@ -1,3 +1,4 @@
+import lengthUnits from '../../config/lengthUnits.js';
 import { directionalDeclaration, numericDeclaration, tokenDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
 
 export function letterSpacing(tokens) {
@@ -27,11 +28,48 @@ export const textAlign = [
     ['text-justify', { 'text-align': 'justify' }],
 ];
 
+export function textDecoration(tokens) {
+    return [
+        [/^decoration-([\w-]+)$/, tokenDeclaration('text-decoration-color', { tokens, cssVariable: 'color' })],
+        ['decoration-current', { 'text-decoration-color': 'currentColor' }],
+        ['decoration-inherit', { 'text-decoration-color': 'inherit' }],
+        ['decoration-transparent', { 'text-decoration-color': 'transparent' }],
+        ['underline', { 'text-decoration-line': 'underline' }],
+        ['overline', { 'text-decoration-line': 'overline' }],
+        ['line-through', { 'text-decoration-line': 'line-through' }],
+        ['line-through', { 'text-decoration-line': 'line-through' }],
+        ['decoration-none', { 'text-decoration-line': 'none' }],
+        ['decoration-solid', { 'text-decoration-style': 'solid' }],
+        ['decoration-double', { 'text-decoration-style': 'double' }],
+        ['decoration-dotted', { 'text-decoration-style': 'dotted' }],
+        ['decoration-dashed', { 'text-decoration-style': 'dashed' }],
+        ['decoration-wavy', { 'text-decoration-style': 'wavy' }],
+        ['decoration-auto', { 'text-decoration-thickness': 'auto' }],
+        ['decoration-from-font', { 'text-decoration-thickness': 'from-font' }],
+        [/^decoration-(\d+)$/, ([_, value]) => ({ 'text-decoration-thickness': value === '0' ? '0' : `${value}px` })],
+    ];
+}
+
 export const textTransform = [
     ['normal-case', { 'text-transform': 'none' }],
     ['capitalize', { 'text-transform': 'capitalize' }],
     ['uppercase', { 'text-transform': 'uppercase' }],
     ['lowercase', { 'text-transform': 'lowercase' }],
+];
+
+export const textUnderlineOffset = [
+    ['underline-offset-auto', { 'text-underline-offset': 'auto' }],
+    [/^(-?)underline-offset-(\d+(?:\.\d+)?)([a-z]+|%)?$/, ([_, negative = '', value, unit = '']) => {
+        value = Number(value);
+
+        if (value === 0) return { 'text-underline-offset': 0 };
+
+        if (unit === '') return { 'text-underline-offset': `${negative}${value}px` };
+
+        if (lengthUnits.includes(unit)) {
+            return { 'text-underline-offset': `${negative}${value}${unit}` };
+        }
+    }],
 ];
 
 export const verticalAlign = [
