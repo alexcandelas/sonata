@@ -1,32 +1,10 @@
 import { directionalDeclaration, numericDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
 import { resolveNumericValue } from '../../utils/generated-styles/resolveNumericValue.js';
 import { symbols } from 'unocss';
+import { directionsMap } from '../../utils/index.js';
 
-const marginDirections = {
-    t: ['margin-top'],
-    b: ['margin-bottom'],
-    l: ['margin-left'],
-    r: ['margin-right'],
-    x: ['margin-inline'],
-    y: ['margin-block'],
-    bs: ['margin-block-start'],
-    be: ['margin-block-end'],
-    is: ['margin-inline-start'],
-    ie: ['margin-inline-end'],
-};
-
-const paddingDirections = {
-    t: ['padding-top'],
-    b: ['padding-bottom'],
-    l: ['padding-left'],
-    r: ['padding-right'],
-    x: ['padding-inline'],
-    y: ['padding-block'],
-    bs: ['padding-block-start'],
-    be: ['padding-block-end'],
-    is: ['padding-inline-start'],
-    ie: ['padding-inline-end'],
-};
+const marginDirections = directionsMap('margin', '', true);
+const paddingDirections = directionsMap('padding', '', true);
 
 function buildSpaceDeclarations([_, negative, direction, size, unit = '']) {
     const value = resolveNumericValue(negative, size, unit);
