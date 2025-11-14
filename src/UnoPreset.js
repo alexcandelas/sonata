@@ -6,6 +6,7 @@ import motionPreference from './css/variants/motionPreference.js';
 import print from './css/variants/print.js';
 import pseudoClasses from './css/variants/pseudoClasses.js';
 import pseudoElements from './css/variants/pseudoElements.js';
+import root from './css/variants/root.js';
 import theme from './css/variants/theme.js';
 import { definePreset } from 'unocss';
 import { alert } from './css/components/alert.js';
@@ -201,6 +202,7 @@ export default definePreset(async (tokens, _ignoreList = []) => {
             print(),
             pseudoClasses(),
             pseudoElements(),
+            root(),
             theme(),
         ],
     };
