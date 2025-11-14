@@ -17,4 +17,11 @@ export const link = [
             [symbols.body]: '@copy a:where([href]:focus);',
         },
     ]],
+    ['link-hover-underline', [
+        { 'text-decoration': 'none' },
+        {
+            [symbols.selector]: selector => `${selector}:hover`,
+            'text-decoration': 'underline',
+        }
+    ]],
 ];
