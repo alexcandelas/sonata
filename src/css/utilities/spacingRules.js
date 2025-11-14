@@ -1,5 +1,6 @@
-import { resolveNumericValue } from '../../utils/generated-styles/resolveNumericValue.js';
 import { directionalDeclaration, numericDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
+import { resolveNumericValue } from '../../utils/generated-styles/resolveNumericValue.js';
+import { symbols } from 'unocss';
 
 const marginDirections = {
     t: ['margin-top'],
@@ -32,13 +33,13 @@ function buildSpaceDeclarations([_, negative, direction, size, unit = '']) {
 
     if (value === undefined) return;
 
-    if (direction === 'x') {
-        return { 'margin-inline-start': 0, 'margin-inline-end': value };
-    }
+    const property = direction === 'x' ? 'inline' : 'block';
 
-    if (direction === 'y') {
-        return { 'margin-block-start': 0, 'margin-block-end': value };
-    }
+    return {
+        [symbols.selector]: selector => `${selector} > :not(:last-child)`,
+        [`margin-${property}-start`]: 0,
+        [`margin-${property}-end`]: value,
+    };
 }
 
 function resolveContainerValue(negative) {
