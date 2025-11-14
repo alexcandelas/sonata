@@ -3,13 +3,14 @@
  *
  * @param {string?} prefix
  * @param {string?} suffix
- * @returns {{t: string[], r: string[], b: string[], l: string[], x: string[], y: string[]}}
+ * @param {Boolean?} includeLogicalProperties
+ * @returns {Object}
  */
-export function directionsMap(prefix = '', suffix = '') {
+export function directionsMap(prefix = '', suffix = '', includeLogicalProperties = false) {
     prefix = prefix ? prefix + '-' : '';
     suffix = suffix ? '-' + suffix : '';
 
-    return {
+    const directions = {
         t: [`${prefix}top${suffix}`],
         r: [`${prefix}right${suffix}`],
         b: [`${prefix}bottom${suffix}`],
@@ -17,4 +18,13 @@ export function directionsMap(prefix = '', suffix = '') {
         x: [`${prefix}inline${suffix}`],
         y: [`${prefix}block${suffix}`],
     };
-};
+
+    if (includeLogicalProperties) {
+        directions.bs = [`${prefix}block-start${suffix}`];
+        directions.be = [`${prefix}block-end${suffix}`];
+        directions.is = [`${prefix}inline-start${suffix}`];
+        directions.ie = [`${prefix}inline-end${suffix}`];
+    }
+
+    return directions;
+}
