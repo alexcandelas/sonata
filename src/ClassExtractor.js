@@ -14,7 +14,13 @@ const IGNORED_PATHS = [
 
 /**
  * @param {Object} sonataConfig
- * @returns {Promise<{generateCSS: function, matchesContentPatterns: function, watchFile: function}>}
+ * @returns {Promise<{
+ *   generateCSS: () => Promise<string>,
+ *   getCopiedSelectors: () => Set,
+ *   setCopiedSelectors: (Set) => void,
+ *   matchesContentPatterns: (string) => boolean,
+ *   watchFile: (string) => Promise<void>
+ * }>}
  * @constructor
  */
 export async function ClassExtractor(sonataConfig) {
