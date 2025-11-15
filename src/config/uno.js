@@ -22,8 +22,8 @@ function resolveRulesOrVariants(rulesOrVariants, tokens) {
 
 /**
  * Create a new preset in Uno's configuration with the rules and variants
- * registered by the user in `sonataConfig.uno.rules`. Both rules and
- * variants can return an array or a function.
+ * registered by the user in `sonataConfig.rules` and `sonataConfig.variants`.
+ * Both rules and variants can return an array or a function.
  *
  * @param {Object} sonataConfig
  */
@@ -31,16 +31,16 @@ function injectUserRulesAndVariants(sonataConfig) {
     sonataConfig.uno ??= {};
 
     const newPreset = definePreset(() => ({
-        rules: resolveRulesOrVariants(sonataConfig.uno.rules, sonataConfig.tokens),
-        variants: resolveRulesOrVariants(sonataConfig.uno.variants, sonataConfig.tokens),
+        rules: resolveRulesOrVariants(sonataConfig.rules, sonataConfig.tokens),
+        variants: resolveRulesOrVariants(sonataConfig.variants, sonataConfig.tokens),
     }));
 
     const userPresets = sonataConfig.uno.presets ?? [];
     userPresets.push(newPreset());
     sonataConfig.uno.presets = userPresets;
 
-    delete sonataConfig.uno.rules;
-    delete sonataConfig.uno.variants;
+    delete sonataConfig.rules;
+    delete sonataConfig.variants;
 }
 
 export default function (sonataConfig, safelist = []) {

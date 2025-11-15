@@ -9,10 +9,9 @@ export default {
         emMediaQueries: true,
         fontPxToRem: true,
     },
-    uno: {
-        rules: [],
-        variants: [],
-    },
+    rules: [],
+    variants: [],
+    uno: {},
     tokens: {
         breakpoints: {
             'xs': 480,
