@@ -18,7 +18,7 @@ import { buildDesignTokens } from './src/utils/buildDesignTokens.js';
 import { buildMediaQueriesMap } from './src/utils/buildMediaQueriesMap.js';
 import { resolveConfig } from './src/resolveConfig.js';
 
-let copiedSelectors, disabledVisitors, mediaQueriesMap, sonataResolvedConfig, tokens;
+let copiedSelectors, disabledVisitors, mediaQueriesMap, sonataResolvedConfig, configPath, tokens;
 
 const customAtRules = {
     apply: {
@@ -70,14 +70,42 @@ function getExtension(filename) {
     return matches ? matches[1] : null;
 }
 
-export default async function sonatacss(userConfig = {}) {
-    let cssInputs, extractor, generatedCSS;
-    sonataResolvedConfig = await resolveConfig(userConfig);
+function updateCssModules(cssInputs, server) {
+    cssInputs.forEach(cssInput => {
+        const mods = server.moduleGraph.getModulesByFile(cssInput.absolutePath);
+
+        if (! mods?.size) return;
+
+        for (const mod of mods) {
+            server.moduleGraph.invalidateModule(mod)
+        }
+
+        server.ws.send({
+            type: 'update',
+            updates: [
+                {
+                    type: 'css-update',
+                    path: cssInput.path,
+                    timestamp: Date.now(),
+                },
+            ],
+        });
+    });
+}
+
+async function loadConfig(userConfig) {
+    ({ sonataResolvedConfig, configPath } = await resolveConfig(userConfig));
     tokens = buildDesignTokens(sonataResolvedConfig.tokens);
     mediaQueriesMap = buildMediaQueriesMap(sonataResolvedConfig.tokens.breakpoints);
     disabledVisitors = Object.entries(sonataResolvedConfig.visitors)
         .map(v => v[1] === false ? v[0] : null)
         .filter(Boolean);
+}
+
+export default async function sonatacss(userConfig = {}) {
+    let cssInputs, extractor, generatedCSS;
+
+    await loadConfig(userConfig);
 
     return [
         // Boot framework
@@ -105,32 +133,17 @@ export default async function sonatacss(userConfig = {}) {
                     }));
             },
             async handleHotUpdate({ file, server }) {
+                if (file === configPath) {
+                    await loadConfig(userConfig);
+                    updateCssModules(cssInputs, server);
+                }
+
                 if (! extractor || ! extractor.matchesContentPatterns(file)) return;
 
                 await extractor.watchFile(file);
 
-                cssInputs.forEach(cssInput => {
-                    const mods = server.moduleGraph.getModulesByFile(cssInput.absolutePath);
-
-                    if (! mods?.size) return;
-
-                    for (const mod of mods) {
-                        server.moduleGraph.invalidateModule(mod)
-                    }
-
-                    server.ws.send({
-                        type: 'update',
-                        updates: [
-                            {
-                                type: 'css-update',
-                                path: cssInput.path,
-                                timestamp: Date.now(),
-                            },
-                        ],
-                    });
-                });
+                updateCssModules(cssInputs, server);
             },
-
             transform: async function (src, id) {
                 if (getExtension(id) !== 'css') return;
 

@@ -9,28 +9,43 @@ import { singleMerge } from './utils/merge.js';
 
 async function resolveUserConfig(config) {
     if (isObject(config) && ! isEmptyObject(config)) {
-        return config;
+        return { config, path: null };
     }
 
-    if (typeof config === 'string') {
-        let configFromPath;
+    let defaultPath = path.resolve('./sonata.config.js');
+    let customPath = typeof config === 'string' ? path.resolve(config) : null;
+    let customPathExists = customPath && fs.existsSync(customPath);
+    let resolvedPath;
 
-        try {
-            configFromPath = require(path.resolve(config));
-        } catch (e) {
-            throw new Error(e);
-        }
-
-        return configFromPath;
+    if (customPath && ! customPathExists) {
+        console.warn(`Warning: Sonata configuration file not found at ${customPath}.`);
     }
 
-    let projectConfig = path.resolve('./sonata.config.js');
-
-    if (fs.existsSync(projectConfig)) {
-        return (await import(projectConfig)).default;
+    if (customPath && customPathExists) {
+        resolvedPath = customPath;
+    } else if (fs.existsSync(defaultPath)) {
+        resolvedPath = defaultPath;
     }
 
-    return {};
+    if (! resolvedPath) {
+        console.warn('Warning: No Sonata configuration file found. Using default configuration.');
+
+        return { config: {}, path: null };
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+        const timestampedPath = `${resolvedPath}?t=${Date.now()}`;
+
+        return {
+            config: (await import(timestampedPath)).default,
+            path: resolvedPath,
+        };
+    }
+
+    return {
+        config: (await import(resolvedPath)).default,
+        path: resolvedPath,
+    };
 }
 
 function mergeConfig(target, source) {
@@ -113,11 +128,14 @@ export function resolveCallbacks(value, config = null) {
 }
 
 export async function resolveConfig(config) {
-    const userConfig = await resolveUserConfig(config);
+    const { config: userConfig, path: configPath } = await resolveUserConfig(config);
     let mergedConfig = mergeConfig(Object.assign({}, defaultConfig), userConfig);
     mergedConfig.target = resolveBrowsersTarget(userConfig) ?? mergedConfig.target;
     mergedConfig = resolveCallbacks(cleanConfig(mergedConfig));
     flattenDeeplyNestedTokens(mergedConfig.tokens);
 
-    return mergedConfig;
+    return {
+        sonataResolvedConfig: mergedConfig,
+        configPath,
+    };
 }
