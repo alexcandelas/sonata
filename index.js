@@ -9,13 +9,14 @@ import generateCustomProperties from './src/generateCustomProperties.js';
 import injectImports from './src/injectImports.js';
 import inlineSvgFunction from './src/visitors/inlineSvgFunction.js';
 import path from 'node:path';
+import registrableVisitors from './src/config/registrableVisitors.js';
 import responsiveRule from './src/visitors/responsiveRule.js';
 import screenRule from './src/visitors/screenRule.js';
 import tokenFunction from './src/visitors/tokenFunction.js';
 import { ClassExtractor } from './src/ClassExtractor.js';
-import { composeVisitors, Features, transform as lightningTransform } from 'lightningcss';
 import { buildDesignTokens } from './src/utils/buildDesignTokens.js';
 import { buildMediaQueriesMap } from './src/utils/buildMediaQueriesMap.js';
+import { composeVisitors, Features, transform as lightningTransform } from 'lightningcss';
 import { resolveConfig } from './src/resolveConfig.js';
 
 let copiedSelectors, disabledVisitors, mediaQueriesMap, sonataResolvedConfig, configPath, tokens;
@@ -97,8 +98,9 @@ async function loadConfig(userConfig) {
     ({ sonataResolvedConfig, configPath } = await resolveConfig(userConfig));
     tokens = buildDesignTokens(sonataResolvedConfig.tokens);
     mediaQueriesMap = buildMediaQueriesMap(sonataResolvedConfig.tokens.breakpoints);
-    disabledVisitors = Object.entries(sonataResolvedConfig.visitors)
-        .map(v => v[1] === false ? v[0] : null)
+
+    disabledVisitors = Object.entries(sonataResolvedConfig.enabledVisitors)
+        .map(([name, enabled]) => registrableVisitors.includes(name) && enabled === false ? name : null)
         .filter(Boolean);
 }
 
