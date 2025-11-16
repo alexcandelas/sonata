@@ -114,6 +114,26 @@ function flattenDeeplyNestedTokens(tokens) {
     }
 }
 
+/**
+ * Transform all font-size, letter-spacing, and line-height
+ * token values defined in pixels into rem units.
+ *
+ * @param {Object} config
+ */
+function transformFontPxToRem(config) {
+    const regex = /^(\d+(\.\d+)?)px$/;
+
+    ['fontSize', 'letterSpacing', 'lineHeight'].forEach(property => {
+        for (const key in config.tokens[property]) {
+            const match = config.tokens[property][key].match(regex);
+
+            if (match) {
+                config.tokens[property][key] = (match[1] / 16).toString() + 'rem';
+            }
+        }
+    });
+}
+
 export function resolveCallbacks(value, config = null) {
     config = config || value;
     let resolved = typeof value === 'function' ? value(config.tokens) : value;
@@ -133,6 +153,10 @@ export async function resolveConfig(config) {
     mergedConfig.target = resolveBrowsersTarget(userConfig) ?? mergedConfig.target;
     mergedConfig = resolveCallbacks(cleanConfig(mergedConfig));
     flattenDeeplyNestedTokens(mergedConfig.tokens);
+
+    if (mergedConfig.enabledVisitors?.fontPxToRem !== false) {
+        transformFontPxToRem(mergedConfig);
+    }
 
     return {
         sonataResolvedConfig: mergedConfig,
