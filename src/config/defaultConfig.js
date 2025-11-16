@@ -4,10 +4,13 @@ export default {
     content: [],
     target: '> 0.5%, last 2 major versions, Firefox ESR, not dead',
     ignore: [],
-    visitors: {
+    enabledVisitors: {
         concatenateNestedClasses: true,
         emMediaQueries: true,
         fontPxToRem: true,
+        responsiveRule: true,
+        screenRule: true,
+        tokenFunction: true,
     },
     rules: [],
     variants: [],
