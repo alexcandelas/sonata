@@ -19,9 +19,9 @@ it.each([
 );
 
 it.each([
-    ['c-blue-50/0', '.c-blue-50\\/0 {color: color-mix(in srgb, var(--color-blue-50) 0%, transparent);}'],
-    ['c-blue-50/20', '.c-blue-50\\/20 {color: color-mix(in srgb, var(--color-blue-50) 20%, transparent);}'],
-    ['c-blue-50/100', '.c-blue-50\\/100 {color: color-mix(in srgb, var(--color-blue-50) 100%, transparent);}']
+    ['c-blue-50/0', '.c-blue-50\\/0 {color: color-mix(in oklab, var(--color-blue-50) 0%, transparent);}'],
+    ['c-blue-50/20', '.c-blue-50\\/20 {color: color-mix(in oklab, var(--color-blue-50) 20%, transparent);}'],
+    ['c-blue-50/100', '.c-blue-50\\/100 {color: color-mix(in oklab, var(--color-blue-50) 100%, transparent);}']
 ])('applies opacity to color utilities (%s)',
     (source, expected) => testUtility(source, expected, { colors })
 );
@@ -41,9 +41,9 @@ it.each([
 );
 
 it.each([
-    ['bg-blue-50/0', '.bg-blue-50\\/0 {background-color: color-mix(in srgb, var(--color-blue-50) 0%, transparent);}'],
-    ['bg-blue-50/20', '.bg-blue-50\\/20 {background-color: color-mix(in srgb, var(--color-blue-50) 20%, transparent);}'],
-    ['bg-blue-50/100', '.bg-blue-50\\/100 {background-color: color-mix(in srgb, var(--color-blue-50) 100%, transparent);}']
+    ['bg-blue-50/0', '.bg-blue-50\\/0 {background-color: color-mix(in oklab, var(--color-blue-50) 0%, transparent);}'],
+    ['bg-blue-50/20', '.bg-blue-50\\/20 {background-color: color-mix(in oklab, var(--color-blue-50) 20%, transparent);}'],
+    ['bg-blue-50/100', '.bg-blue-50\\/100 {background-color: color-mix(in oklab, var(--color-blue-50) 100%, transparent);}']
 ])('applies opacity to background-color utilities (%s)',
     (source, expected) => testUtility(source, expected, { colors })
 );

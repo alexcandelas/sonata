@@ -100,7 +100,7 @@ export const button = [
         {
             [symbols.selector]: selector => `${selector}::after`,
             'animation': 'sonata-btn-loading 750ms linear infinite',
-            'border-color': 'color-mix(in srgb, var(--color-text) 10%, transparent)',
+            'border-color': 'color-mix(in oklab, var(--color-text) 10%, transparent)',
             'border-right-color': 'var(--color-text)',
             'border-top-color': 'var(--color-text)',
             'border-radius': '50%',

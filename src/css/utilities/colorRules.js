@@ -9,7 +9,7 @@ function resolve(property, colors) {
         if (opacity === '') return;
 
         return {
-            [property]: `color-mix(in srgb, var(--color-${colorKey}) ${opacity}%, transparent)`
+            [property]: `color-mix(in oklab, var(--color-${colorKey}) ${opacity}%, transparent)`
         };
     };
 }
