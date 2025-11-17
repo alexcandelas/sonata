@@ -1,3 +1,9 @@
+function roundDecimals(number, count = 3) {
+    const multiplier = 10 ** count;
+
+    return Math.round(number * multiplier) / multiplier;
+}
+
 function handleAttributes(value) {
     const operators = {
         'equal': '=',
@@ -85,16 +91,32 @@ function handleCombinator(value) {
 }
 
 function handleColor(value) {
-    const hex = '#'
-        + value.r.toString(16).padStart(2, '0')
-        + value.g.toString(16).padStart(2, '0')
-        + value.b.toString(16).padStart(2, '0');
+    if (value.type === 'rgb') {
+        const hex = '#'
+            + value.r.toString(16).padStart(2, '0')
+            + value.g.toString(16).padStart(2, '0')
+            + value.b.toString(16).padStart(2, '0');
 
-    if (value.alpha === 1 || value.alpha === undefined) {
-        return hex;
+        if (value.alpha === 1 || value.alpha === undefined) {
+            return hex;
+        }
+
+        return hex + (Math.round(255 * value.alpha)).toString(16);
     }
 
-    return hex + (Math.round(255 * value.alpha)).toString(16);
+    if (value.type === 'oklab' || value.type === 'lab') {
+        const lab = `${roundDecimals(value.l, 4)} ${roundDecimals(value.a)} ${roundDecimals(value.b)}`;
+        const alpha = value.alpha !== 1 ? roundDecimals(value.alpha) : null;
+
+        return alpha ? `${value.type}(${lab} / ${alpha})` : `${value.type}(${lab})`;
+    }
+
+    if (value.type === 'oklch' || value.type === 'lch') {
+        const lch = `${roundDecimals(value.l, 4)} ${roundDecimals(value.c)} ${roundDecimals(value.h)}`;
+        const alpha = value.alpha !== 1 ? roundDecimals(value.alpha) : null;
+
+        return alpha ? `${value.type}(${lch} / ${alpha})` : `${value.type}(${lch})`;
+    }
 }
 
 /**
