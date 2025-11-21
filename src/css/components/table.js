@@ -77,7 +77,7 @@ export const table = [
      */
     ['table--borderless', {
         [symbols.selector]: selector => `${selector} :where(td)`,
-        'border': 0,
+        'border-width': 0,
     }],
     /**
      * Size variants.

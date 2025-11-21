@@ -3,7 +3,7 @@ import { it } from "vitest";
 
 it.each([
     ['visually-hidden', `.visually-hidden { 
-        border: 0;
+        border-width: 0;
         clip: rect(0, 0, 0, 0);
         height: 1px;
         margin: -1px;
@@ -14,7 +14,7 @@ it.each([
         width: 1px;
     }`],
     ['visually-hidden-focusable', `.visually-hidden-focusable:where(:not(:active):not(:focus):not(:focus-within)) { 
-        border: 0;
+        border-width: 0;
         clip: rect(0, 0, 0, 0);
         height: 1px;
         margin: -1px;

@@ -1,7 +1,7 @@
 import { symbols } from 'unocss';
 
 const visuallyHiddenProps = {
-    'border': '0',
+    'border-width': 0,
     'clip': 'rect(0, 0, 0, 0)',
     'height': '1px',
     'margin': '-1px',

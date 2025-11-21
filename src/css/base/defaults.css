@@ -279,7 +279,7 @@
  * Reset the default styles.
  */
 :where(fieldset) {
-    border: 0;
+    border-width: 0;
     margin: 0;
     padding: 0;
 }
@@ -391,7 +391,7 @@
  * Remove border from iframe.
  */
 :where(iframe) {
-    border: 0;
+    border-width: 0;
 }
 
 
