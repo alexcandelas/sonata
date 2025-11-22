@@ -22,14 +22,14 @@ it('retrieves a token from the palette configuration', () => {
     const tokens = {};
     const code = `p { color: colorFallback('purple.65') }`;
 
-    expect(runTokenVisitor(tokens, code)).toBe('p{color:#84009b}');
+    expect(runTokenVisitor(tokens, code)).toBe('p{color:oklch(44.6% .198 320)}');
 });
 
 it('accepts a color token with the `color-` prefix', () => {
     const tokens = {};
     const code = `p { color: colorFallback('color-purple-65') }`;
 
-    expect(runTokenVisitor(tokens, code)).toBe('p{color:#84009b}');
+    expect(runTokenVisitor(tokens, code)).toBe('p{color:oklch(44.6% .198 320)}');
 });
 
 it('throws error when no argument is passed', () => {

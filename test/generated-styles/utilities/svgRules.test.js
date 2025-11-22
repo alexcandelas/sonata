@@ -4,7 +4,7 @@ import { it } from "vitest";
 const colors = {
     white: '#fff',
     blue: '00c',
-    'blue-50': '#008ae8',
+    'blue-50': '#208ae1',
 }
 
 it.each([

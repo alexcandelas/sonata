@@ -3,7 +3,7 @@ import { it } from "vitest";
 
 const config = {
     colors: {
-        'red-50': '#f62025',
+        'red-50': '#f62027',
     },
     letterSpacing: {
         0: '0',

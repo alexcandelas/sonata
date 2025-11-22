@@ -48,11 +48,11 @@ export const alert = [
         type = type || 'neutral';
 
         const colors = {
-            neutral: 'gray-60',
-            info: 'blue-50',
+            neutral: 'gray-65',
+            info: 'blue-55',
             danger: 'red-50',
             success: 'green-45',
-            warning: 'orange-35',
+            warning: 'orange-40',
         };
 
         return {

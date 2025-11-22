@@ -6,7 +6,7 @@ const config = {
         lg: 1024,
     },
     colors: {
-        blue: '#008ae8',
+        blue: '#208ae1',
     }
 }
 

@@ -95,14 +95,14 @@ function cleanConfig(object) {
  * {
  *     colors: {
  *         blue: {
- *             50: #008ae8
+ *             50: #208ae1
  *         }
  *     }
  * }
  * // After:
  * {
  *     colors: {
- *         'blue-50': #008ae8
+ *         'blue-50': #208ae1
  *     }
  * }
  */

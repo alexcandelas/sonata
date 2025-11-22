@@ -11,7 +11,7 @@ const config = {
     colors: {
         'primary': '#502a7a',
         'red-20': '#ffd8d3',
-        'red-50': '#f62025',
+        'red-50': '#f62027',
     },
 };
 

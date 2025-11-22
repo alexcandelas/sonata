@@ -25,7 +25,6 @@ export default {
             '2xl': 1600,
         },
         colors: {
-            'primary': '#502a7a',
             'white': '#fff',
             'black': '#000',
             'gray': palette.gray,
@@ -42,7 +41,7 @@ export default {
             'link': `var(--color-blue-55, ${palette.blue[55]})`,
             'link-hover': `var(--color-blue-65, ${palette.blue[65]})`,
             'border': `var(--color-gray-30, ${palette.gray[30]})`,
-            'ring': palette.blue[55] + 'dd',
+            'ring': `color-mix(in oklab, var(--color-blue-55, ${palette.blue[55]}) 85%, transparent)`,
         },
         containerWidth: '80rem', // 1280px
         containerPadding: 'max(1rem, min(5vw, 2rem))',

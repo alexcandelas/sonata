@@ -3,9 +3,9 @@ import { it } from "vitest";
 
 const colors = {
     white: '#fff',
-    ring: '#007acddd',
-    'blue-5': '#f5faff',
-    'blue-50': '#008ae8',
+    ring: '#0078cbdd',
+    'blue-5': '#f5fafe',
+    'blue-50': '#208ae1',
 }
 
 it.each([
