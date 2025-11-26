@@ -146,7 +146,7 @@ export const alert = [
                 'background-image': `inline-svg("sonatacss/icons/${type}${solid}.svg", color: colorFallback("${colors[type]}"))`,
             }
             yield {
-                [symbols.selector]: selector => `${selector}:where(.alert--solid-${type})`,
+                [symbols.selector]: selector => `${selector}:where(.alert--solid, .alert--solid-${type})`,
                 'background-image': `inline-svg("sonatacss/icons/${type}${solid}.svg", color: #fff)`,
             }
         }
