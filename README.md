@@ -1,14 +1,18 @@
 # Sonata
 
-Sonata is a responsive CSS framework and UI toolkit that provides the structure and basic styles to start a web project. It is built with [Lightning CSS](https://lightningcss.dev) and powered by [UnoCSS](https://unocss.dev) for utilities generation.
+Sonata is a traditional CSS framework and UI toolkit with modern features. It provides on-demand styles to help you quickly start any web project. Built with [Lightning CSS](https://lightningcss.dev) and powered by [UnoCSS](https://unocss.dev) for dynamic class generation.
 
 Features:
+- All the included classes are generated on-demand based on your project's content.
 - Native CSS layers structure.
-- Fluid, responsive grid system.
-- On-demand utility classes.
-- Optional common components, like buttons, form elements and alerts.
+- Easy-to-use grid system for flexible layouts.
+- Default color palette with a wide range of shades.
+- Customizable design tokens for colors, fonts, spacing and more.
+- A large set of utility classes.
+- Optional essential components, like buttons, form elements and alerts.
+- No need to learn a framework. If you know CSS, you can use Sonata.
 
-Sonata does not include any JavaScript for components.
+Sonata is a CSS framework. No JavaScript is included for components.
 
 
 ## Requirements
@@ -20,7 +24,7 @@ Sonata does not include any JavaScript for components.
 
 #### 1. Install Sonata
 ```bash
-npm install --save-dev sonatacss@1.0.0-beta.2
+npm install --save-dev sonatacss@1.0.0-beta.3
 ```
 
 #### 2. Register Sonata plugin
@@ -43,7 +47,7 @@ This file can be placed in any path in your project and will be the entry point 
 
 @import "sonatacss";
 
-/* Add your CSS styles below. Example: */
+/* Your project imports here */
 /* @import "my-component.css" layer(components); */
 ```
 Don't forget to include the path to this file as an input in your Vite configuration.
