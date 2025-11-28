@@ -8,6 +8,7 @@ export default [
     'dvh',
     'dvw',
     'em',
+    'in',
     'lvh',
     'lvw',
     'mm',
