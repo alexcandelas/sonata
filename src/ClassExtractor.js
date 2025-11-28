@@ -6,31 +6,21 @@ import path from 'node:path';
 import unoConfig from '../src/config/uno.js';
 import { createGenerator } from 'unocss';
 
-const IGNORED_PATHS = [
-    '!**/vendor',
-    '!**/node_modules',
-    '!**/*.css',
-];
-
 /**
  * @param {Object} sonataConfig
  * @returns {Promise<{
  *   generateCSS: () => Promise<string>,
  *   getCopiedSelectors: () => Set,
  *   setCopiedSelectors: (Set) => void,
- *   matchesContentPatterns: (string) => boolean,
+ *   shouldWatch: (string) => boolean,
  *   watchFile: (string) => Promise<void>
  * }>}
  * @constructor
  */
 export async function ClassExtractor(sonataConfig) {
-    const patterns = [
-        ...IGNORED_PATHS,
-        ...sonataConfig.content,
-    ];
-
+    let matcher = micromatch.matcher(sonataConfig.content);
     let unoGenerator = await createGenerator(unoConfig(sonataConfig));
-    let watchedPaths = await fg(patterns);
+    let watchedPaths = await fg(sonataConfig.content);
     let scannedFiles = new Map();
     let classCandidates = new Set();
     let copiedSelectors = new Set();
@@ -135,10 +125,10 @@ export async function ClassExtractor(sonataConfig) {
      * @param {string} filePath
      * @returns {boolean}
      */
-    function matchesContentPatterns(filePath) {
+    function shouldWatch(filePath) {
         const relative = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
 
-        return micromatch.all(relative, patterns);
+        return matcher(relative);
     }
 
     /**
@@ -159,7 +149,7 @@ export async function ClassExtractor(sonataConfig) {
         generateCSS,
         getCopiedSelectors,
         setCopiedSelectors,
-        matchesContentPatterns,
+        shouldWatch,
         watchFile,
     };
 }

@@ -140,7 +140,7 @@ export default async function sonatacss(userConfig = {}) {
                     updateCssModules(cssInputs, server);
                 }
 
-                if (! extractor || ! extractor.matchesContentPatterns(file)) return;
+                if (! extractor || ! extractor.shouldWatch(file)) return;
 
                 await extractor.watchFile(file);
 
