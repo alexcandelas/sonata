@@ -61,6 +61,8 @@ it.each([
     ['b-primary', '.b-primary { border-color: var(--color-primary); }'],
     ['b-red-20', '.b-red-20 { border-color: var(--color-red-20); }'],
     ['b-red-50', '.b-red-50 { border-color: var(--color-red-50); }'],
+    ['b-red-50/50', '.b-red-50\\/50 { border-color: color-mix(in oklab, var(--color-red-50) 50%, transparent); }'],
+    ['bt-primary/20', '.bt-primary\\/20 { border-top-color: color-mix(in oklab, var(--color-primary) 20%, transparent); }'],
     ['bx-inherit', '.bx-inherit { border-inline-color: inherit; }'],
     ['bx-primary', '.bx-primary { border-inline-color: var(--color-primary); }'],
     ['by-transparent', '.by-transparent { border-block-color: transparent; }'],

@@ -1,5 +1,5 @@
+import { directionalDeclaration, numericDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
 import { directionsMap } from '../../utils/generated-styles/directionsMap.js';
-import { directionalDeclaration, numericDeclaration, tokenDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
 
 const borderWidthDirections = directionsMap('border', 'width');
 
@@ -10,6 +10,20 @@ const radiusByDirection = {
     l: ['border-top-left-radius', 'border-bottom-left-radius'],
 };
 
+function buildBorderColorDeclaration(propsByDirection, colorTokens) {
+    return ([_, direction, token, opacity]) => {
+        if (! Object.keys(colorTokens).includes(token)) return;
+
+        const prop = direction ? propsByDirection[direction] : 'border-color';
+
+        if (opacity) {
+            return { [prop]: `color-mix(in oklab, var(--color-${token}) ${opacity}%, transparent)` };
+        }
+
+        return { [prop]: `var(--color-${token})` };
+    };
+}
+
 export function borderColor(tokens) {
     const propsByDirection = directionsMap('border', 'color');
 
@@ -17,7 +31,7 @@ export function borderColor(tokens) {
         [/^()b([xytrbl])?-transparent$/, directionalDeclaration('border-color', { propsByDirection, forcedValue: 'transparent' })],
         [/^()b([xytrbl])?-inherit$/, directionalDeclaration('border-color', { propsByDirection, forcedValue: 'inherit' })],
         [/^()b([xytrbl])?-current$/, directionalDeclaration('border-color', { propsByDirection, forcedValue: 'currentColor' })],
-        [/^b([xytrbl])?-([\w-]+)$/, tokenDeclaration('border-color', { cssVariable: 'color', tokens, propsByDirection })],
+        [/^b([xytrbl])?-([\w-]+)(?:\/(\d{1,3}))?$/, buildBorderColorDeclaration(propsByDirection, tokens)],
     ];
 }
 
