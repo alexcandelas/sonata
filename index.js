@@ -8,7 +8,6 @@ import fontPxToRem from './src/visitors/fontPxToRem.js';
 import generateCustomProperties from './src/generateCustomProperties.js';
 import injectImports from './src/injectImports.js';
 import inlineSvgFunction from './src/visitors/inlineSvgFunction.js';
-import path from 'node:path';
 import registrableVisitors from './src/config/registrableVisitors.js';
 import responsiveRule from './src/visitors/responsiveRule.js';
 import screenRule from './src/visitors/screenRule.js';
@@ -19,7 +18,7 @@ import { buildMediaQueriesMap } from './src/utils/buildMediaQueriesMap.js';
 import { composeVisitors, Features, transform as lightningTransform } from 'lightningcss';
 import { resolveConfig } from './src/resolveConfig.js';
 
-let copiedSelectors, disabledVisitors, mediaQueriesMap, sonataResolvedConfig, configPath, tokens;
+let configPath, copiedSelectors, disabledVisitors, mediaQueriesMap, sonataResolvedConfig, tokens, hasCSSEntryPoint;
 
 const customAtRules = {
     apply: {
@@ -66,32 +65,45 @@ function getEnabledVisitor([visitor, ...params]) {
 }
 
 function getExtension(filename) {
-    const matches = filename.toLowerCase().match(/\.([a-z|A-Z]+)(?:\?\w+)?$/);
+    const matches = filename.toLowerCase().match(/\.([a-z|A-Z]+)?|$/);
 
     return matches ? matches[1] : null;
 }
 
-function updateCssModules(cssInputs, server) {
-    cssInputs.forEach(cssInput => {
-        const mods = server.moduleGraph.getModulesByFile(cssInput.absolutePath);
+function updateModules(file, server, forceCSSUpdate = false) {
+    const updateCSS = hasCSSEntryPoint && (forceCSSUpdate || !! server.moduleGraph.getModulesByFile(file));
+    const mods = server.moduleGraph.idToModuleMap.values();
 
-        if (! mods?.size) return;
+    for (const mod of mods) {
+        if (mod.url.startsWith('/node_modules/')) continue;
 
-        for (const mod of mods) {
-            server.moduleGraph.invalidateModule(mod)
-        }
+        server.moduleGraph.invalidateModule(mod);
 
         server.ws.send({
             type: 'update',
             updates: [
                 {
-                    type: 'css-update',
-                    path: cssInput.path,
-                    timestamp: Date.now(),
-                },
-            ],
+                    type: 'js-update',
+                    path: mod.url,
+                    acceptedPath: mod.url,
+                    timestamp: Date.now()
+                }
+            ]
         });
-    });
+
+        if (updateCSS && getExtension(mod.url) === 'css') {
+            server.ws.send({
+                type: 'update',
+                updates: [
+                    {
+                        type: 'css-update',
+                        path: mod.url,
+                        timestamp: Date.now()
+                    }
+                ]
+            });
+        }
+    }
 }
 
 async function loadConfig(userConfig) {
@@ -105,7 +117,7 @@ async function loadConfig(userConfig) {
 }
 
 export default async function sonatacss(userConfig = {}) {
-    let cssInputs, extractor, generatedCSS;
+    let extractor, generatedCSS;
 
     await loadConfig(userConfig);
 
@@ -126,25 +138,22 @@ export default async function sonatacss(userConfig = {}) {
             }),
             configResolved(config) {
                 const input = config.build.rollupOptions.input;
+                const cssEntryPoints = (Array.isArray(input) ? input : [input])
+                    .filter(i => i && i.endsWith('.css'));
 
-                cssInputs = (Array.isArray(input) ? input : [input])
-                    .filter(i => i.endsWith('.css'))
-                    .map(i => ({
-                        path: i,
-                        absolutePath: path.resolve(i),
-                    }));
+                hasCSSEntryPoint = cssEntryPoints.length > 0;
             },
             async handleHotUpdate({ file, server }) {
                 if (file === configPath) {
                     await loadConfig(userConfig);
-                    updateCssModules(cssInputs, server);
+                    updateModules(file, server, true);
                 }
 
                 if (! extractor || ! extractor.shouldWatch(file)) return;
 
                 await extractor.watchFile(file);
 
-                updateCssModules(cssInputs, server);
+                updateModules(file, server);
             },
             transform: async function (src, id) {
                 if (getExtension(id) !== 'css') return;
