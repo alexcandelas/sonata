@@ -1,5 +1,5 @@
 import { directionalDeclaration, numericDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
-import { directionsMap } from '../../utils/index.js';
+import { directionsMap } from '../../utils/generated-styles/directionsMap.js';
 
 const propsByDirection = directionsMap('scroll-padding', '', true);
 

@@ -1,5 +1,5 @@
+import { isObject } from '../isObject.js';
 import { resolveNumericValue } from './resolveNumericValue.js';
-import { isObject } from 'unocss';
 
 /**
  * @param {string} token

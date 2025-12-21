@@ -1,7 +1,7 @@
 import { directionalDeclaration, numericDeclaration } from '../../utils/generated-styles/buildUtilityDeclarations.js';
+import { directionsMap } from '../../utils/generated-styles/directionsMap.js';
 import { resolveNumericValue } from '../../utils/generated-styles/resolveNumericValue.js';
 import { symbols } from 'unocss';
-import { directionsMap } from '../../utils/index.js';
 
 const marginDirections = directionsMap('margin', '', true);
 const paddingDirections = directionsMap('padding', '', true);
