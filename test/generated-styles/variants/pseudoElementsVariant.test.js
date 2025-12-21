@@ -10,7 +10,7 @@ it.each([
     const source = pseudoElement + ':m-4';
     const expected = `.${pseudoElement}\\:m-4::${pseudoElement} { margin: 1rem; }`;
 
-    testUtility(source, expected);
+    return testUtility(source, expected);
 });
 
 it.each([
@@ -19,5 +19,5 @@ it.each([
     const source = pseudoElement + ':m-4';
     const expected = `.${pseudoElement}\\:m-4::${suffix} { margin: 1rem; }`;
 
-    testUtility(source, expected);
+    return testUtility(source, expected);
 });

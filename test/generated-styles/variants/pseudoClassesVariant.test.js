@@ -29,7 +29,7 @@ it.each([
     const source = pseudoClass + ':m-4';
     const expected = `.${pseudoClass}\\:m-4:${pseudoClass} { margin: 1rem; }`;
 
-    testUtility(source, expected);
+    return testUtility(source, expected);
 });
 
 it.each([
@@ -41,5 +41,5 @@ it.each([
     const source = pseudoClass + ':m-4';
     const expected = `.${pseudoClass}\\:m-4:${suffix} { margin: 1rem; }`;
 
-    testUtility(source, expected);
+    return testUtility(source, expected);
 });
