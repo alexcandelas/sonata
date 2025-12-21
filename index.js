@@ -79,17 +79,19 @@ function updateModules(file, server, forceCSSUpdate = false) {
 
         server.moduleGraph.invalidateModule(mod);
 
-        server.ws.send({
-            type: 'update',
-            updates: [
-                {
-                    type: 'js-update',
-                    path: mod.url,
-                    acceptedPath: mod.url,
-                    timestamp: Date.now()
-                }
-            ]
-        });
+        if (! hasCSSEntryPoint) {
+            server.ws.send({
+                type: 'update',
+                updates: [
+                    {
+                        type: 'js-update',
+                        path: mod.url,
+                        acceptedPath: mod.url,
+                        timestamp: Date.now(),
+                    }
+                ],
+            });
+        }
 
         if (updateCSS && getExtension(mod.url) === 'css') {
             server.ws.send({
@@ -98,9 +100,9 @@ function updateModules(file, server, forceCSSUpdate = false) {
                     {
                         type: 'css-update',
                         path: mod.url,
-                        timestamp: Date.now()
+                        timestamp: Date.now(),
                     }
-                ]
+                ],
             });
         }
     }
