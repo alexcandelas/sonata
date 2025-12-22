@@ -39,17 +39,34 @@ export default function() {
     return {
         name: 'pseudoClasses',
         match(matcher) {
-            const regex = new RegExp(`^(${joined}):.+$`);
+            const regex = new RegExp(`^(not-)?(${joined}):.+$`);
             const match = matcher.match(regex);
 
             if (! match) return matcher;
 
+            const [_, negation, pseudoClass] = match;
+            const newMatcher = matcher.slice((negation?.length ?? 0) + pseudoClass.length + 1);
+
+            if (pseudoClass === 'hover' && negation) {
+                return [
+                    {
+                        matcher: newMatcher,
+                        selector: s => `${s}:not(:${pseudoClasses[pseudoClass]})`,
+                    },
+                    {
+                        matcher: newMatcher,
+                        parent: '@media not (hover: hover)',
+                    },
+                ];
+            }
+
             return {
-                matcher: matcher.slice(match[1].length + 1),
-                selector: s => `${s}:${pseudoClasses[match[1]]}`,
-                parent: match[1] === 'hover' ? '@media (hover: hover)' : null
+                matcher: newMatcher,
+                selector: s => negation
+                    ? `${s}:not(:${pseudoClasses[pseudoClass]})`
+                    : `${s}:${pseudoClasses[pseudoClass]}`,
+                parent: pseudoClass === 'hover' ? `@media (hover: hover)` : null
             };
         },
-        multiPass: true,
     };
 }

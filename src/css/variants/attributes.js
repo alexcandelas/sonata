@@ -17,14 +17,18 @@ export default function() {
     return {
         name: 'attributes',
         match(matcher) {
-            const regex = new RegExp(`^(${joined}):.+$`);
+            const regex = new RegExp(`^(not-)?(${joined}):.+$`);
             const match = matcher.match(regex);
 
             if (! match) return matcher;
 
+            const [_, negation, attribute] = match;
+
             return {
-                matcher: matcher.slice(match[1].length + 1),
-                selector: s => `${s}[${attributes[match[1]]}="true"]`,
+                matcher: matcher.slice((negation?.length ?? 0) + attribute.length + 1),
+                selector: s => negation
+                    ? `${s}:not([${attributes[attribute]}="true"])`
+                    : `${s}[${attributes[attribute]}="true"]`,
             };
         }
     };
