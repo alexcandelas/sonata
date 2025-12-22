@@ -142,6 +142,7 @@ export const formField = [
         },
         {
             [symbols.selector]: selector => `${selector}:hover::file-selector-button`,
+            [symbols.parent]: '@media (hover: hover)',
             'background-color': 'var(--color-gray-15, colorFallback("gray-15"))',
         },
         {

@@ -28,8 +28,13 @@ a:where([href]) {
     text-decoration: underline;
 }
 
-a:where([href]:hover),
-a:where([href]:focus) {
+a:where([href]):focus {
     color: var(--color-link-hover);
     text-decoration: none;
+}
+
+@media (hover: hover) {
+    a:where([href]):hover {
+        @copy a:where([href]):focus;
+    }
 }

@@ -28,10 +28,12 @@ export const button = [
             'outline': 0,
         },
         {
-            [symbols.selector]: selector => `
-                ${selector}:focus:where(:not(:disabled)), 
-                ${selector}:hover:where(:not(:disabled))
-            `,
+            [symbols.selector]: selector => `${selector}:focus:where(:not(:disabled))`,
+            'background-color': 'var(--color-bg-focus)',
+        },
+        {
+            [symbols.selector]: selector => `${selector}:hover:where(:not(:disabled))`,
+            [symbols.parent]: '@media (hover: hover)',
             'background-color': 'var(--color-bg-focus)',
         },
     ]],

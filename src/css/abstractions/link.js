@@ -9,18 +9,20 @@ export const link = [
             `,
         },
         {
-            [symbols.selector]: selector => `${selector}:hover`,
-            [symbols.body]: '@copy a:where([href]:hover);',
+            [symbols.selector]: selector => `${selector}:focus`,
+            [symbols.body]: '@copy a:where([href]):focus;',
         },
         {
-            [symbols.selector]: selector => `${selector}:focus`,
-            [symbols.body]: '@copy a:where([href]:focus);',
+            [symbols.selector]: selector => `${selector}:hover`,
+            [symbols.parent]: '@media (hover: hover)',
+            [symbols.body]: '@copy a:where([href]):focus;',
         },
     ]],
     ['link-hover-underline', [
         { 'text-decoration': 'none' },
         {
             [symbols.selector]: selector => `${selector}:hover`,
+            [symbols.parent]: '@media (hover: hover)',
             'text-decoration': 'underline',
         }
     ]],

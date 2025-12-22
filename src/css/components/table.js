@@ -56,6 +56,7 @@ export const table = [
         },
         {
             [symbols.selector]: selector => `${selector} :where(tbody tr):hover`,
+            [symbols.parent]: '@media (hover: hover)',
             'background-color': 'var(--color-gray-10, colorFallback("gray-10"))',
         },
     ]],
