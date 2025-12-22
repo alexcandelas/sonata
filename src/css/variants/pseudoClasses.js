@@ -47,6 +47,7 @@ export default function() {
             return {
                 matcher: matcher.slice(match[1].length + 1),
                 selector: s => `${s}:${pseudoClasses[match[1]]}`,
+                parent: match[1] === 'hover' ? '@media (hover: hover)' : null
             };
         },
         multiPass: true,

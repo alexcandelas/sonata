@@ -20,7 +20,6 @@ it.each([
     'empty',
     'first-of-type',
     'last-of-type',
-    'hover',
     'active',
     'focus',
     'focus-visible',
@@ -28,6 +27,13 @@ it.each([
 ])('generates pseudo classes (%s)', (pseudoClass) => {
     const source = pseudoClass + ':m-4';
     const expected = `.${pseudoClass}\\:m-4:${pseudoClass} { margin: 1rem; }`;
+
+    return testUtility(source, expected);
+});
+
+it('generates `hover` pseudo class inside a media query', () => {
+    const source = 'hover:m-4';
+    const expected = `@media (hover: hover) { .hover\\:m-4:hover { margin: 1rem } }`;
 
     return testUtility(source, expected);
 });
