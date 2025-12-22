@@ -195,6 +195,9 @@ export const formField = [
             'background-image': 'var(--form-field-dropdown-icon), var(--form-field-icon-invalid)',
         },
     ]],
+    ['form-field--ring-invalid', {
+        [symbols.body]: '@copy .ring-invalid',
+    }],
     ['form-field--valid', [
         ...sharedValidationStyles,
         {
