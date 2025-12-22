@@ -20,7 +20,7 @@ export default function (breakpoints) {
                     breakpoints,
                     isRanged: false,
                     atRule: '@container' + (containerName ? ` ${containerName}` : ''),
-                });
+                }, 100);
             }
 
 
@@ -36,7 +36,7 @@ export default function (breakpoints) {
                     breakpoints,
                     isRanged: true,
                     atRule: '@container' + (containerName ? ` ${containerName}` : ''),
-                });
+                }, 100);
             }
 
             return matcher;

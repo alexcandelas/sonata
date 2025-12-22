@@ -34,9 +34,10 @@ function resolveQueryFeature(isRanged, widthOrSymbol, endWidth) {
  * @param {Object} options.breakpoints - An object of registered breakpoints.
  * @param {boolean} options.isRanged - Whether the query is a ranged one (e.g., 400<800).
  * @param {string} options.atRule - The rule to use (e.g., "@media", "@container" or "@container named").
+ * @param {number} order
  * @returns {Object}
  */
-export function buildWidthMediaQuery({ originalMatcher, match, breakpoints, isRanged, atRule }) {
+export function buildWidthMediaQuery({ originalMatcher, match, breakpoints, isRanged, atRule }, order = 1) {
     registeredBreakpoints = breakpoints;
 
     const [_, capture, widthOrSymbol, endWidth] = match;
@@ -47,7 +48,8 @@ export function buildWidthMediaQuery({ originalMatcher, match, breakpoints, isRa
         handle: (input, next) => {
             return next({
                 ...input,
-                parent: `${atRule} ${value}`
+                parent: `${atRule} ${value}`,
+                parentOrder: order,
             })
         }
     };
