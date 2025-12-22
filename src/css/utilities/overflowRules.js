@@ -5,3 +5,9 @@ export const overflow = [
     [/^overflow(-[xy])?-hidden$/, ([_, direction = '']) => ({ [`overflow${direction}`]: 'hidden' })],
     [/^overflow(-[xy])?-scroll$/, ([_, direction = '']) => ({ [`overflow${direction}`]: 'scroll' })],
 ];
+
+export const overflowWrap = [
+    ['wrap-normal', { 'overflow-wrap': 'normal' }],
+    ['wrap-anywhere', { 'overflow-wrap': 'anywhere' }],
+    ['wrap-break-word', { 'overflow-wrap': 'break-word' }],
+];

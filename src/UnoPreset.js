@@ -49,7 +49,7 @@ import { motionPreferenceRules } from './css/utilities/motionPreferenceRules.js'
 import { objectFit, objectPosition } from './css/utilities/objectRules.js';
 import { opacity } from './css/utilities/opacityRules.js';
 import { order } from './css/utilities/orderRules.js';
-import { overflow } from './css/utilities/overflowRules.js';
+import { overflow, overflowWrap } from './css/utilities/overflowRules.js';
 import { pointerEvents } from './css/utilities/pointerEventsRules.js';
 import { radio } from './css/components/radio.js';
 import { ratio } from './css/utilities/aspectRatioRules.js';
@@ -129,6 +129,7 @@ export default definePreset(async (tokens, _ignoreList = []) => {
         ...order,
         ...opacity,
         ...overflow,
+        ...overflowWrap,
         ...padding,
         ...place,
         ...pointerEvents,

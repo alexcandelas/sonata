@@ -18,3 +18,9 @@ it.each([
     ['overflow-y-visible', '.overflow-y-visible { overflow-y: visible; }'],
     ['overflow-y-scroll', '.overflow-y-scroll { overflow-y: scroll; }'],
 ])('generates overflow utilities (%s)', testUtility);
+
+it.each([
+    ['wrap-normal', '.wrap-normal { overflow-wrap: normal; }'],
+    ['wrap-anywhere', '.wrap-anywhere { overflow-wrap: anywhere; }'],
+    ['wrap-break-word', '.wrap-break-word { overflow-wrap: break-word; }'],
+])('generates overflow-wrap utilities (%s)', testUtility);
