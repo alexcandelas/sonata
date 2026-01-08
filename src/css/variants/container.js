@@ -1,4 +1,11 @@
+import { breakpointOrNumeric } from '../../utils/generated-styles/breakpointOrNumeric.js';
 import { buildWidthMediaQuery } from '../../utils/generated-styles/buildMediaQueries.js';
+
+function resolveOrder(value = '100', registeredBreakpoints) {
+    return parseInt(
+        breakpointOrNumeric(value, registeredBreakpoints)
+    ) / 10000;
+}
 
 export default function (breakpoints) {
     const joinedBreakpoints = Object.keys(breakpoints).join('|');
@@ -14,13 +21,15 @@ export default function (breakpoints) {
             let containerName = singleMatch?.[4];
 
             if (singleMatch) {
+                const order = 100 + resolveOrder(singleMatch[3], breakpoints);
+
                 return buildWidthMediaQuery({
                     originalMatcher: matcher,
                     match: singleMatch,
                     breakpoints,
                     isRanged: false,
                     atRule: '@container' + (containerName ? ` ${containerName}` : ''),
-                }, 100);
+                }, order);
             }
 
 
@@ -30,13 +39,15 @@ export default function (breakpoints) {
             containerName = rangedMatch?.[4];
 
             if (rangedMatch) {
+                const order = 100 + resolveOrder(rangedMatch[2], breakpoints);
+
                 return buildWidthMediaQuery({
                     originalMatcher: matcher,
                     match: rangedMatch,
                     breakpoints,
                     isRanged: true,
                     atRule: '@container' + (containerName ? ` ${containerName}` : ''),
-                }, 100);
+                }, order);
             }
 
             return matcher;
