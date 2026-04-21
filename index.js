@@ -139,7 +139,7 @@ export default async function sonatacss(userConfig = {}) {
                 }
             }),
             configResolved(config) {
-                const input = config.build.rollupOptions.input;
+                const input = config.build.rolldownOptions?.input || config.build.rollupOptions.input;
                 const cssEntryPoints = (Array.isArray(input) ? input : [input])
                     .filter(i => i && i.endsWith('.css'));
 
