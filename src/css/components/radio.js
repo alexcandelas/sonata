@@ -15,8 +15,10 @@ export const radio = [
         },
         {
             [symbols.selector]: selector => `${selector}:where(:checked)`,
-            'background': `var(--color-blue-50, colorFallback("blue-50")) inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><circle fill='#fff' cx='4' cy='4' r='2'></circle></svg>") center center no-repeat`,
-            'background-size': '0.75em',
+            'background': `
+                inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><circle fill='#fff' cx='4' cy='4' r='2'></circle></svg>")
+                center / 0.75em no-repeat 
+                var(--color-blue-50, colorFallback("blue-50"))`,
             'border-color': 'var(--color-blue-50, colorFallback("blue-50"))',
         },
         {

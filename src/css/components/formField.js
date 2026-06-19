@@ -121,8 +121,7 @@ export const formField = [
         {
             [symbols.selector]: selector => `${selector}::file-selector-button`,
             'align-items': 'center',
-            'background': 'var(--color-gray-10, colorFallback("gray-10")) var(--form-field-icon-file) center center no-repeat',
-            'background-size': '1.5em',
+            'background': 'var(--form-field-icon-file) center / 1.5em no-repeat var(--color-gray-10, colorFallback("gray-10"))',
             'border': 0,
             'border-left': '1px solid var(--color-gray-25, colorFallback("gray-25"))',
             'color': 'transparent',

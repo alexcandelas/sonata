@@ -15,10 +15,9 @@ export const checkbox = [
         {
             [symbols.selector]: selector => `${selector}:where(:checked)`,
             'background': `
-                var(--color-blue-50, colorFallback("blue-50"))
                 inline-svg("sonatacss/icons/check.svg", stroke: #fff, stroke-width: 3)
-                center center no-repeat`,
-            'background-size': '100%',
+                center / 100% no-repeat
+                var(--color-blue-50, colorFallback("blue-50"))`,
             'border-color': 'var(--color-blue-50, colorFallback("blue-50"))',
         },
         {
