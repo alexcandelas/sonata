@@ -64,10 +64,41 @@ function getEnabledVisitor([visitor, ...params]) {
     }
 }
 
-function getExtension(filename) {
-    const matches = filename.toLowerCase().match(/\.([a-z|A-Z]+)?|$/);
+function hasCssExtension(filename) {
+    const pathname = filename.split(/[?#]/, 1)[0];
+    const matches = pathname.toLowerCase().match(/\.([a-z]+)$/);
 
-    return matches ? matches[1] : null;
+    return matches?.[1] === 'css';
+}
+
+function getUrlParams(url) {
+    const query = url.split('?')[1]?.split('#')[0];
+
+    return new URLSearchParams(query ?? '');
+}
+
+function isCssFromStyleBlock(id) {
+    const params = getUrlParams(id);
+
+    if (params.get('type') !== 'style') {
+        return false;
+    }
+
+    if (params.get('lang') === 'css') {
+        return true;
+    }
+
+    for (const key of params.keys()) {
+        if (key.startsWith('lang.')) {
+            return key === 'lang.css';
+        }
+    }
+
+    return true;
+}
+
+function isCssRequest(id) {
+    return hasCssExtension(id) || isCssFromStyleBlock(id);
 }
 
 function updateModules(file, server, forceCSSUpdate = false) {
@@ -93,7 +124,7 @@ function updateModules(file, server, forceCSSUpdate = false) {
             });
         }
 
-        if (updateCSS && getExtension(mod.url) === 'css') {
+        if (updateCSS && hasCssExtension(mod.url)) {
             server.ws.send({
                 type: 'update',
                 updates: [
@@ -158,7 +189,7 @@ export default async function sonatacss(userConfig = {}) {
                 updateModules(file, server);
             },
             transform: async function (src, id) {
-                if (getExtension(id) !== 'css') return;
+                if (! isCssRequest(id)) return;
 
                 // Inject all Sonata @imports
                 return injectImports(src, sonataResolvedConfig.ignore);
@@ -166,7 +197,7 @@ export default async function sonatacss(userConfig = {}) {
         },
         {
             transform: async function (src, id) {
-                if (getExtension(id) !== 'css') return;
+                if (! isCssRequest(id)) return;
 
                 // Store all selectors needed for @copy rules
                 copiedSelectors = extractCopiedSelectors(src);
@@ -187,7 +218,7 @@ export default async function sonatacss(userConfig = {}) {
         // Run visitors
         visitors.map(batch => ({
             transform(src, id) {
-                if (getExtension(id) !== 'css') return;
+                if (! isCssRequest(id)) return;
 
                 const enabledVisitors = batch(src, id).map(getEnabledVisitor).filter(Boolean);
 
