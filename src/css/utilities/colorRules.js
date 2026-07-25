@@ -1,30 +1,42 @@
 function resolve(property, colors) {
     return ([_, colorKey, opacity = '']) => {
+        if (colorKey === 'current') {
+            return {
+                [property]: applyOpacity('currentColor', opacity)
+            };
+        }
+
+        const colorVariable = `var(--color-${colorKey})`;
+
         if ((colors[colorKey] && opacity === '') || colors[colorKey + '/' + opacity]) {
             return {
-                [property]: `var(--color-${colorKey})`
+                [property]: colorVariable
             };
         }
 
         if (opacity === '') return;
 
         return {
-            [property]: `color-mix(in oklab, var(--color-${colorKey}) ${opacity}%, transparent)`
+            [property]: applyOpacity(colorVariable, opacity)
         };
     };
 }
 
+function applyOpacity(color, opacity) {
+    if (opacity === '') return color;
+
+    return `color-mix(in oklab, ${color} ${opacity}%, transparent)`;
+}
+
 export function color(tokens) {
     return [
-        ['c-current', { color: 'currentColor' }],
         ['c-transparent', { color: 'transparent' }],
-        [/^c-([\w-]+)(?:\/(\d{1,3}))?$/, resolve('color', tokens)]
+        [/^c-([\w-]+)(?:\/(\d{1,3}))?$/, resolve('color', tokens)],
     ];
 }
 
 export function backgroundColor(tokens) {
     return [
-        ['bg-current', { 'background-color': 'currentColor' }],
         ['bg-transparent', { 'background-color': 'transparent' }],
         [/^bg-([\w-]+)(?:\/(\d{1,3}))?$/, resolve('background-color', tokens)]
     ];

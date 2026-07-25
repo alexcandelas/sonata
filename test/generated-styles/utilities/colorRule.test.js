@@ -19,6 +19,7 @@ it.each([
 );
 
 it.each([
+    ['c-current/50', '.c-current\\/50 {color: color-mix(in oklab, currentColor 50%, transparent);}'],
     ['c-blue-50/0', '.c-blue-50\\/0 {color: color-mix(in oklab, var(--color-blue-50) 0%, transparent);}'],
     ['c-blue-50/20', '.c-blue-50\\/20 {color: color-mix(in oklab, var(--color-blue-50) 20%, transparent);}'],
     ['c-blue-50/100', '.c-blue-50\\/100 {color: color-mix(in oklab, var(--color-blue-50) 100%, transparent);}']
@@ -41,6 +42,7 @@ it.each([
 );
 
 it.each([
+    ['bg-current/50', '.bg-current\\/50 {background-color: color-mix(in oklab, currentColor 50%, transparent);}'],
     ['bg-blue-50/0', '.bg-blue-50\\/0 {background-color: color-mix(in oklab, var(--color-blue-50) 0%, transparent);}'],
     ['bg-blue-50/20', '.bg-blue-50\\/20 {background-color: color-mix(in oklab, var(--color-blue-50) 20%, transparent);}'],
     ['bg-blue-50/100', '.bg-blue-50\\/100 {background-color: color-mix(in oklab, var(--color-blue-50) 100%, transparent);}']
