@@ -11,8 +11,8 @@ function concatenateSelector(selector, parentClasses) {
         return selector;
     }
 
-    const nestingIndex = selector.findIndex((node, i) =>
-        node.type === 'type' && selector[i - 1]?.type === 'nesting'
+    const nestingIndex = selector.findIndex((component, i) =>
+        component.type === 'type' && selector[i - 1]?.type === 'nesting'
     );
 
     if (nestingIndex !== -1) {
@@ -48,8 +48,10 @@ function transformRule(rule, parentClasses = []) {
 
         newParentClasses = selectors
             .map(s => {
-                const lastNode = s[s.length - 1];
-                return lastNode.type === 'class' ? lastNode.name : null;
+                const filteredComponents = s.filter((component) => component.type !== 'attribute');
+                const lastComponent = filteredComponents[filteredComponents.length - 1];
+
+                return lastComponent.type === 'class' ? lastComponent.name : null;
             })
             .filter(Boolean);
     } else if (rule.type === 'style') {

@@ -28,6 +28,22 @@ it('concatenates classes', () => {
     `);
 });
 
+it('concatenates classes in selectors with attributes', () => {
+    const res = runVisitor(`
+        .component[data-foo] {
+            color: #111;
+            &--modifier { color: #222 }
+        }
+    `);
+
+    expect(res).toMatchCss(`
+        .component[data-foo] {
+            color: #111;
+            &:where(.component--modifier) { color: #222 }
+        }
+    `);
+});
+
 it('concatenates only the last class in a selector of multiple classes', () => {
     const res = runVisitor(`
         .foo .bar {
