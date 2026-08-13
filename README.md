@@ -59,20 +59,20 @@ Usually, you'll want to specify the content (files that are scanned for utility 
 ```js
 // Example:
 export default {
-   content: [
-       'templates/**/*.html',
-       'src/js/**/*.js',
-   ],
-   tokens: {
-       colors: {
-           primary: '#502a7a',
-       },
-       fontFamily: {
-           base: "Inter",
-           headings: "Libre Baskerville",
-       },
-       // ....
-   } 
+    content: [
+        'templates/**/*.html',
+        'src/js/**/*.js',
+    ],
+    tokens: {
+        colors: {
+            primary: '#502a7a',
+        },
+        fontFamily: {
+            base: "Inter",
+            headings: "Libre Baskerville",
+        },
+        // ....
+    } 
 }
 ```
 
