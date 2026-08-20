@@ -23,6 +23,10 @@ const displayValues = [
 ];
 
 export const display = [
+    ['d-iblock', { display: 'inline-block' }],
+    ['d-iflex', { display: 'inline-flex' }],
+    ['d-igrid', { display: 'inline-grid' }],
+    ['d-itable', { display: 'inline-table' }],
     ['hidden', { display: 'none' }],
     [/^d-([\w-]+)$/, ([_, value]) => {
         if (displayValues.includes(value)) {
