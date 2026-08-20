@@ -24,7 +24,7 @@ Sonata is a CSS framework. No JavaScript is included for components.
 
 #### 1. Install Sonata
 ```bash
-npm install --save-dev sonatacss@0.4.0-beta.3
+npm install --save-dev sonatacss@0.4.0-beta.4
 ```
 
 #### 2. Register Sonata plugin
