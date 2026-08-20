@@ -117,3 +117,22 @@ it.each([
     ['place-self-start', '.place-self-start { place-self: start; }'],
     ['place-self-end', '.place-self-end { place-self: end; }'],
 ])('generates place-self utilities (%s)', testUtility);
+
+it.each([
+    ['place-stretch', `.place-stretch { 
+        place-content: stretch;
+        place-items: stretch;
+    }`],
+    ['place-center', `.place-center { 
+        place-content: center;
+        place-items: center;
+    }`],
+    ['place-start', `.place-start { 
+        place-content: start;
+        place-items: start;
+    }`],
+    ['place-end', `.place-end { 
+        place-content: end;
+        place-items: end;
+    }`],
+])('generates place shorthand utilities (%s)', testUtility);

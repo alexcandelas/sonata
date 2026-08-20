@@ -104,4 +104,22 @@ export const place = [
     ['place-self-center', { 'place-self': 'center' }],
     ['place-self-start', { 'place-self': 'start' }],
     ['place-self-end', { 'place-self': 'end' }],
+
+    // place shorthand
+    ['place-stretch', {
+        'place-content': 'stretch',
+        'place-items': 'stretch',
+    }],
+    ['place-center', {
+        'place-content': 'center',
+        'place-items': 'center',
+    }],
+    ['place-start', {
+        'place-content': 'start',
+        'place-items': 'start',
+    }],
+    ['place-end', {
+        'place-content': 'end',
+        'place-items': 'end',
+    }],
 ];
