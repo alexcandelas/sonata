@@ -4,7 +4,7 @@ import { it } from "vitest";
 const config = {
     fontFamily: {
         sans: 'Roboto, "Helvetica Neue"',
-        monospace: 'monospace',
+        mono: 'monospace',
         DEFAULT: 'sans-serif',
     },
     fontSize: {
@@ -23,7 +23,7 @@ const config = {
 
 it.each([
     ['ff-sans', '.ff-sans { font-family: var(--font-family-sans); }'],
-    ['ff-monospace', '.ff-monospace { font-family: var(--font-family-monospace); }'],
+    ['ff-mono', '.ff-mono { font-family: var(--font-family-mono); }'],
     ['ff', '.ff { font-family: var(--font-family); }'],
     ['ff-serif', ''],
 ])('generates font-family utilities (%s)',

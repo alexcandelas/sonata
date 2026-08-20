@@ -78,7 +78,7 @@
  * 1. Add the correct font size in all browsers.
  */
 :where(code, kbd, pre, samp) {
-    font-family: var(--font-family-monospace);
+    font-family: var(--font-family-mono);
     font-size: 1em; /* 1 */
 }
 
