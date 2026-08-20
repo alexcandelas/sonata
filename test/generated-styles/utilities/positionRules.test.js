@@ -109,3 +109,11 @@ it.each([
     ['place-items-start', '.place-items-start { place-items: start; }'],
     ['place-items-end', '.place-items-end { place-items: end; }'],
 ])('generates place-items utilities (%s)', testUtility);
+
+it.each([
+    ['place-self-auto', '.place-self-auto { place-self: auto; }'],
+    ['place-self-stretch', '.place-self-stretch { place-self: stretch; }'],
+    ['place-self-center', '.place-self-center { place-self: center; }'],
+    ['place-self-start', '.place-self-start { place-self: start; }'],
+    ['place-self-end', '.place-self-end { place-self: end; }'],
+])('generates place-self utilities (%s)', testUtility);
