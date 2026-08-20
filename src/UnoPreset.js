@@ -11,6 +11,15 @@ import theme from './css/variants/theme.js';
 import { definePreset } from 'unocss';
 import { alert } from './css/components/alert.js';
 import { align, inset, justify, place, position } from './css/utilities/positionRules.js';
+import {
+    animationDelay,
+    animationDirection,
+    animationDuration,
+    animationFillMode,
+    animationIterationCount,
+    animationPlayState,
+    animationTiming
+} from './css/utilities/animationRules.js';
 import { backgroundColor, color } from './css/utilities/colorRules.js';
 import { borderColor, borderStyle, borderWidth, radius } from './css/utilities/borderRules.js';
 import { boxShadow, insetBoxShadow } from './css/utilities/boxShadowRules.js';
@@ -90,6 +99,13 @@ export default definePreset(async (tokens, _ignoreList = []) => {
 
     const utilities = [
         ...align,
+        ...animationDelay,
+        ...animationDirection,
+        ...animationDuration,
+        ...animationFillMode,
+        ...animationIterationCount,
+        ...animationPlayState,
+        ...animationTiming,
         ...backgroundColor(tokens?.colors),
         ...borderColor(tokens?.colors),
         ...borderStyle,
