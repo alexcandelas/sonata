@@ -12,7 +12,7 @@ import { definePreset } from 'unocss';
 import { alert } from './css/components/alert.js';
 import { align, inset, justify, place, position } from './css/utilities/positionRules.js';
 import { backgroundColor, color } from './css/utilities/colorRules.js';
-import { borderColor, borderWidth, radius } from './css/utilities/borderRules.js';
+import { borderColor, borderStyle, borderWidth, radius } from './css/utilities/borderRules.js';
 import { boxShadow, insetBoxShadow } from './css/utilities/boxShadowRules.js';
 import { breaks } from './css/utilities/breakRules.js';
 import { button } from './css/components/button.js';
@@ -91,6 +91,7 @@ export default definePreset(async (tokens, _ignoreList = []) => {
         ...align,
         ...backgroundColor(tokens?.colors),
         ...borderColor(tokens?.colors),
+        ...borderStyle,
         ...borderWidth,
         ...breaks,
         ...boxShadow(tokens?.boxShadow),

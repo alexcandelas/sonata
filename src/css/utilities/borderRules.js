@@ -2,6 +2,7 @@ import { directionalDeclaration, numericDeclaration } from '../../utils/generate
 import { directionsMap } from '../../utils/generated-styles/directionsMap.js';
 
 const borderWidthDirections = directionsMap('border', 'width');
+const borderStyleDirections = directionsMap('border', 'style');
 
 const radiusByDirection = {
     t: ['border-top-left-radius', 'border-top-right-radius'],
@@ -34,6 +35,15 @@ export function borderColor(tokens) {
         [/^b([xytrbl])?-([\w-]+)(?:\/(\d{1,3}))?$/, buildBorderColorDeclaration(propsByDirection, tokens)],
     ];
 }
+
+export const borderStyle = [
+    [/^()b([xytrbl])?-none$/, directionalDeclaration('border-style', { propsByDirection: borderStyleDirections, forcedValue: 'none' })],
+    [/^()b([xytrbl])?-dotted$/, directionalDeclaration('border-style', { propsByDirection: borderStyleDirections, forcedValue: 'dotted' })],
+    [/^()b([xytrbl])?-dashed$/, directionalDeclaration('border-style', { propsByDirection: borderStyleDirections, forcedValue: 'dashed' })],
+    [/^()b([xytrbl])?-solid$/, directionalDeclaration('border-style', { propsByDirection: borderStyleDirections, forcedValue: 'solid' })],
+    [/^()b([xytrbl])?-double$/, directionalDeclaration('border-style', { propsByDirection: borderStyleDirections, forcedValue: 'double' })],
+    [/^()b([xytrbl])?-hidden$/, directionalDeclaration('border-style', { propsByDirection: borderStyleDirections, forcedValue: 'hidden' })],
+];
 
 export const borderWidth = [
     [/^()b-(\d+(?:\.\d+)?)([a-z]+|%)?$/, numericDeclaration('border-width')],

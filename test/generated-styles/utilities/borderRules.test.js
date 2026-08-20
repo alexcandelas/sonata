@@ -35,6 +35,23 @@ it.each([
 );
 
 it.each([
+    ['b-none', '.b-none { border-style: none; }'],
+    ['b-dotted', '.b-dotted { border-style: dotted; }'],
+    ['b-dashed', '.b-dashed { border-style: dashed; }'],
+    ['b-solid', '.b-solid { border-style: solid; }'],
+    ['b-double', '.b-double { border-style: double; }'],
+    ['b-hidden', '.b-hidden { border-style: hidden; }'],
+    ['bt-dashed', '.bt-dashed { border-top-style: dashed; }'],
+    ['br-double', '.br-double { border-right-style: double; }'],
+    ['bb-none', '.bb-none { border-bottom-style: none; }'],
+    ['bl-dotted', '.bl-dotted { border-left-style: dotted; }'],
+    ['bx-solid', '.bx-solid { border-inline-style: solid; }'],
+    ['by-hidden', '.by-hidden { border-block-style: hidden; }'],
+])('generates border-style utilities (%s)',
+    (source, expected) => testUtility(source, expected, config)
+);
+
+it.each([
     ['b-1', '.b-1 { border-width: 1px; }'],
     ['b-0', '.b-0 { border-width: 0; }'],
     ['b-1.5rem', '.b-1\\.5rem { border-width: 1.5rem; }'],
