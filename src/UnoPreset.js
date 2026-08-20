@@ -180,6 +180,7 @@ export default definePreset(async (tokens, _ignoreList = []) => {
             ...await importRule('listInline', 'abstractions'),
             ...await importRule('listReset', 'abstractions'),
             ...await importRule('media', 'abstractions'),
+            ...await importRule('stack', 'abstractions'),
             ...await importRule('tableScroll', 'abstractions'),
             ...await importRule('truncate', 'abstractions'),
 
