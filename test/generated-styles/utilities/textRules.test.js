@@ -99,6 +99,15 @@ it.each([
 );
 
 it.each([
+    ['text-wrap', '.text-wrap { text-wrap: wrap; }'],
+    ['text-nowrap', '.text-nowrap { text-wrap: nowrap; }'],
+    ['text-balance', '.text-balance { text-wrap: balance; }'],
+    ['text-pretty', '.text-pretty { text-wrap: pretty; }'],
+])('generates text-wrap utilities (%s)',
+    (source, expected) => testUtility(source, expected)
+);
+
+it.each([
     ['align-baseline', '.align-baseline { vertical-align: baseline; }'],
     ['align-sub', '.align-sub { vertical-align: sub; }'],
     ['align-super', '.align-super { vertical-align: super; }'],

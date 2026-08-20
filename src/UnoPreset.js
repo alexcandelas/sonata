@@ -41,6 +41,7 @@ import {
     textDecoration,
     textTransform,
     textUnderlineOffset,
+    textWrap,
     verticalAlign,
     whiteSpace
 } from './css/utilities/textRules.js';
@@ -147,6 +148,7 @@ export default definePreset(async (tokens, _ignoreList = []) => {
         ...textDecoration(tokens?.colors),
         ...textTransform,
         ...textUnderlineOffset,
+        ...textWrap,
         ...transition,
         ...transitionDelay,
         ...transitionDuration,
