@@ -8,7 +8,7 @@ export const button = [
             'align-items': 'center',
             'background-color': '#fff',
             'border': '1px solid var(--color-border)',
-            'border-radius': 'var(--radius-md)',
+            'border-radius': 'var(--radius)',
             'color': 'var(--color-text)',
             'font-size': '1rem',
             'display': 'inline-flex',
