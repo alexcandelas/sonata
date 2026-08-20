@@ -48,7 +48,7 @@ export default {
         ring: '0 0 0 2px var(--color-ring)',
         offsetRing: '0 0 0 1px #fff, 0 0 0 3px var(--color-ring)',
         fontFamily: {
-            'sans': 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+            'sans': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
             'serif': 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
             'monospace': 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
             'base': ({ fontFamily }) => fontFamily.sans,
