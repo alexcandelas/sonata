@@ -51,7 +51,7 @@ function transformRule(rule, parentClasses = []) {
                 const filteredComponents = s.filter((component) => component.type !== 'attribute');
                 const lastComponent = filteredComponents[filteredComponents.length - 1];
 
-                return lastComponent.type === 'class' ? lastComponent.name : null;
+                return lastComponent?.type === 'class' ? lastComponent.name : null;
             })
             .filter(Boolean);
     } else if (rule.type === 'style') {
