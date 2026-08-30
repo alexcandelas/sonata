@@ -1,5 +1,5 @@
 import UnoPreset from '../UnoPreset.js';
-import { defineConfig, definePreset } from 'unocss';
+import { defineConfig, definePreset, symbols } from 'unocss';
 import { merge } from '../utils/merge.js';
 
 /**
@@ -16,7 +16,7 @@ function resolveRulesOrVariants(rulesOrVariants, tokens) {
     }
 
     return rulesOrVariants.map(
-        item => Array.isArray(item) ? item : item(tokens)
+        item => Array.isArray(item) ? item : item(tokens, symbols)
     ).flat();
 }
 
