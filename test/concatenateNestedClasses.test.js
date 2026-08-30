@@ -94,7 +94,7 @@ it ('concatenates multiple parent classes', () => {
     `);
 });
 
-it ('can concatenate the same class multiple times', () => {
+it ('concatenates the same class multiple times', () => {
     const res = runVisitor(`
         .foo {
             &-one { color: #111 }
