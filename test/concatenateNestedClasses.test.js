@@ -110,6 +110,24 @@ it ('can concatenate the same class multiple times', () => {
     `);
 });
 
+it('concatenates classes inside a pseudo-class', () => {
+    const res = runVisitor(`
+        .foo {
+            :not(&--modifier) {
+                color: red
+            }
+        }
+    `);
+
+    expect(res).toMatchCss(`
+        .foo {
+            :not(&:where(.foo--modifier)) { 
+                color: red 
+            }
+        }
+    `);
+});
+
 it('does not concatenate elements or pseudo-classes', () => {
     const res = runVisitor(`
         p, :hover {

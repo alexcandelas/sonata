@@ -11,19 +11,25 @@ function concatenateSelector(selector, parentClasses) {
         return selector;
     }
 
-    const nestingIndex = selector.findIndex((component, i) =>
-        component.type === 'type' && selector[i - 1]?.type === 'nesting'
-    );
-
-    if (nestingIndex !== -1) {
-        selector[nestingIndex] = {
-            type: 'pseudo-class',
-            kind: 'where',
-            selectors: parentClasses.map(parentClass => ([
-                { type: 'class', name: parentClass + selector[nestingIndex].name }
-            ]))
+    selector.forEach((component, i) => {
+        // .foo { &--bar } -> .foo { &:where(.foo--bar) }
+        if (component.type === 'type' && selector[i - 1]?.type === 'nesting') {
+            selector[i] = {
+                type: 'pseudo-class',
+                kind: 'where',
+                selectors: parentClasses.map(parentClass => ([
+                    { type: 'class', name: parentClass + component.name }
+                ]))
+            }
         }
-    }
+
+        // Concatenate inside pseudo-classes: .foo { :not(&--bar) } -> .foo { :not(.foo--bar) }
+        if (component.type === 'pseudo-class' && component.selectors?.length) {
+            selector[i].selectors.forEach((s, j) => {
+                selector[i].selectors[j] = concatenateSelector(s, parentClasses)
+            });
+        }
+    });
 
     return selector;
 }
